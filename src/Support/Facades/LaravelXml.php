@@ -46,10 +46,4 @@ class LaravelXml
         return json_decode(json_encode($simple_xml), true);
     }
 
-    // TODO
-
-    // validate
-
-    // is_valid
-
 }

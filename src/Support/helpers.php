@@ -2,7 +2,7 @@
 
 use Bmatovu\LaravelXml\Support\ArrayToXml;
 
-//if (!function_exists('xml_encode')) {
+if (!function_exists('xml_encode')) {
     /**
      * Convert the an array to an xml string
      *
@@ -18,9 +18,9 @@ use Bmatovu\LaravelXml\Support\ArrayToXml;
     {
         return ArrayToXml::convert($array, $rootElementName, $replaceSpacesByUnderScoresInKeyNames, $xmlEncoding, $xmlVersion);
     }
-//}
+}
 
-//if (!function_exists('xml_decode')) {
+if (!function_exists('xml_decode')) {
     /**
      * Convert a string of XML into an array
      *
@@ -39,10 +39,4 @@ use Bmatovu\LaravelXml\Support\ArrayToXml;
         $simple_xml = simplexml_load_string($data, $class_name, $options, $ns, $is_prefix);
         return json_decode(json_encode($simple_xml), true);
     }
-//}
-
-// TODO
-
-// validate_xml
-
-// is valid_xml
+}
