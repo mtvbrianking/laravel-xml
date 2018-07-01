@@ -48,7 +48,7 @@
         "Bmatovu\\LaravelXml\\LaravelXmlServiceProvider"
       ],
       "aliases": {
-        "LaravelXml": "Bmatovu\\LaravelXml\\LaravelXml"
+        "Xml": "Bmatovu\\LaravelXml\\LaravelXml"
       }
     }
   }
