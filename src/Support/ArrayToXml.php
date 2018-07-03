@@ -7,7 +7,7 @@ use DOMDocument;
 use DOMException;
 
 /**
- * Convert array to xml
+ * Convert PHP Array to XML
  *
  * Class ArrayToXml
  * @package App\Http\Support
@@ -46,7 +46,7 @@ class ArrayToXml
         $this->document = new DOMDocument($xmlVersion, $xmlEncoding);
         $this->replaceSpacesByUnderScoresInKeyNames = $replaceSpacesByUnderScoresInKeyNames;
 
-        if ($this->isArrayAllKeySequential($array) && ! empty($array)) {
+        if ($this->isArrayAllKeySequential($array) && !empty($array)) {
             throw new DOMException('Invalid Character Error');
         }
 
@@ -105,14 +105,14 @@ class ArrayToXml
     {
         $sequential = $this->isArrayAllKeySequential($value);
 
-        if (! is_array($value)) {
+        if (!is_array($value)) {
             $element->nodeValue = htmlspecialchars($value);
 
             return;
         }
 
         foreach ($value as $key => $data) {
-            if (! $sequential) {
+            if (!$sequential) {
                 if (($key === '_attributes') || ($key === '@attributes')) {
                     $this->addAttributes($element, $data);
                 } elseif ((($key === '_value') || ($key === '@value')) && is_string($data)) {
@@ -199,7 +199,7 @@ class ArrayToXml
      */
     protected function isArrayAllKeySequential($value)
     {
-        if (! is_array($value)) {
+        if (!is_array($value)) {
             return false;
         }
 

@@ -1,6 +1,7 @@
 <?php
 
 use Bmatovu\LaravelXml\Support\ArrayToXml;
+use Bmatovu\LaravelXml\Support\XmlValidator;
 
 if (!function_exists('xml_encode')) {
     /**
@@ -38,5 +39,32 @@ if (!function_exists('xml_decode')) {
     {
         $simple_xml = simplexml_load_string($data, $class_name, $options, $ns, $is_prefix);
         return json_decode(json_encode($simple_xml), true);
+    }
+}
+
+if (!function_exists('is_valid_xml')) {
+    /**
+     * Check if a string is valid XML
+     * @param string $xml
+     * @return bool
+     */
+    function is_valid_xml($xml)
+    {
+        $validator = new XmlValidator();
+        return $validator->is_valid($xml);
+    }
+}
+
+if (!function_exists('validate_xml')) {
+    /**
+     * Validate XML string
+     * @param string $xml
+     * @param string $xsd file
+     * @return array errors
+     */
+    function validate_xml($xml, $xsd)
+    {
+        $validator = new XmlValidator();
+        return $validator->validate($xml, $xsd);
     }
 }

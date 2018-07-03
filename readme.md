@@ -4,7 +4,8 @@
 [![Latest Stable Version](https://poser.pugx.org/bmatovu/laravel-xml/v/stable)](https://packagist.org/packages/bmatovu/laravel-xml)
 [![License](https://poser.pugx.org/bmatovu/laravel-xml/license)](https://packagist.org/packages/bmatovu/laravel-xml)
 
-This package comes with hardy xml support for you Laravel project. It includes middleware to accept only xml requests, http response in xml, and more utilities for xml conversions as well as validation.
+This package comes with the much desired xml support for you Laravel project including middleware to accept only xml requests, 
+http response in xml, and more utilities for xml conversions as well as validation.
 
 **Supports:** Laravel versions 5.3, 5.4, 5.5, 5.6
 
@@ -18,7 +19,7 @@ This package comes with hardy xml support for you Laravel project. It includes m
 
 In `config/app.php`
 
-```
+```php
 'providers' => array(
     // ...
    Bmatovu\LaravelXml\LaravelXmlServiceProvider::class,
@@ -29,7 +30,7 @@ In `config/app.php`
 
 In `config/app.php`
 
-```
+```php
 'aliases' => [
     // ...
     'Xml' => Bmatovu\LaravelXml\LaravelXml::class,
@@ -67,14 +68,14 @@ With headers having...
 
 First register the middleware in `app\Http\Kernel.php`
 
-```$xslt
+```php
 protected $routeMiddleware = [
     // ...
     'xml' => \Bmatovu\LaravelXml\Http\Middleware\RequireXml::class,
 ];
 ```
 
-The add the middleware to your routes, or in the controllers. 
+Then use the middleware on your routes, or in the controllers. 
 
 ```php
 Route::post('/user/store', function (Request, $request) {
@@ -82,7 +83,7 @@ Route::post('/user/store', function (Request, $request) {
 })->middleware('xml');
 ```
 
-In case of the request is not sending xml, the response will be
+In case of the request is not sending xml, the response will be; [`406` - **Not Acceptable**]
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -95,21 +96,30 @@ In case of the request is not sending xml, the response will be
 
 **Encode: Array to Xml**
 
-`Xml::encode(['key' => 'value']);`
+```php
+use Xml;
+
+Xml::encode(['key' => 'value']);
+```
 
 Or
 
-`xml_encode(['key' => 'value']);`
+```php
+xml_encode(['key' => 'value']);
+```
 
 
 **Decode: Xml to Array**
-```
+
+```php
+use Xml;
+
 Xml::decode('<?xml version="1.0" encoding="UTF-8"?><document><key>value</key></document>');
 ```
 
 Or
 
-```
+```php
 xml_decode('<?xml version="1.0" encoding="UTF-8"?><document><key>value</key></document>');
 ```
 
@@ -117,7 +127,8 @@ xml_decode('<?xml version="1.0" encoding="UTF-8"?><document><key>value</key></do
 
 I Need help!
 ---
-Feel free to [open an issue on Github](https://github.com/mtvbrianking/laravel-xml/issues/new). Please be as specific as possible if you want to get help.
+Feel free to [open an issue on Github](https://github.com/mtvbrianking/laravel-xml/issues/new). 
+Please be as specific as possible if you want to get help.
 
 Reporting bugs
 --
@@ -126,4 +137,5 @@ If you've stumbled across a bug, please help us by leaving as much information a
 - Expected result
 - Actual result
 
-This will help me to fix the bug as quickly as possible, and if you'd like to fix it yourself feel free to [fork the package on GitHub](https://github.com/mtvbrianking/laravel-xml) and submit a pull request!
+This will help us to fix the bug as quickly as possible, and if you do wish to fix it yourself; 
+feel free to [fork the package on GitHub](https://github.com/mtvbrianking/laravel-xml) and submit a pull request!

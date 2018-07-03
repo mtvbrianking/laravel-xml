@@ -3,6 +3,7 @@
 namespace Bmatovu\LaravelXml\Support\Facades;
 
 use Bmatovu\LaravelXml\Support\ArrayToXml;
+use Bmatovu\LaravelXml\Support\XmlValidator;
 
 class LaravelXml
 {
@@ -44,6 +45,29 @@ class LaravelXml
     {
         $simple_xml = simplexml_load_string($data, $class_name, $options, $ns, $is_prefix);
         return json_decode(json_encode($simple_xml), true);
+    }
+
+    /**
+     * Check if a string is valid XML
+     * @param string $xml
+     * @return bool
+     */
+    public function is_valid($xml)
+    {
+        $validator = new XmlValidator();
+        return $validator->is_valid($xml);
+    }
+
+    /**
+     * Validate XML string
+     * @param string $xml
+     * @param string $xsd file
+     * @return array errors
+     */
+    public function validate($xml, $xsd)
+    {
+        $validator = new XmlValidator();
+        return $validator->validate($xml, $xsd);
     }
 
 }
