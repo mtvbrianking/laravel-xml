@@ -1,16 +1,10 @@
-**Helpers**
+**Validate request, response macros**
 
-- validate_xml($xml, $xsd = null) :: returns array of errors, or false
+- Using Ajax, Axios request
 
-- is_valid_xml($xml, $xsd = null) :: returns bool
+- Multiple values in `accept` header
 
-**Facade**
-
-* similar to the helpers
-
-- Xml::validate($xml, $xsd = null)
-
-- Xml::is_valid($xml, $xsd = null)
+- Different valid xml formats; say: `'text/xml'`, `'application/xml'`, `'application/x-xml'`
 
 **Configuration**
 
@@ -35,6 +29,6 @@
 
 - Implement tests
 
-**Continous Integration**
+**Continuous Integration**
 
 - Use Travis-CI

@@ -3,8 +3,10 @@
 namespace Bmatovu\LaravelXml;
 
 use Bmatovu\LaravelXml\Http\XmlResponse;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Str;
 
 class LaravelXmlServiceProvider extends ServiceProvider
 {
@@ -16,6 +18,32 @@ class LaravelXmlServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        /**
+         * Get the XML payload for the request.
+         */
+        Request::macro('xml', function () {
+            return $this->getContent();
+        });
+
+        /**
+         * Determine if the request is sending XML.
+         *
+         * @return bool
+         */
+        Request::macro('isXml', function () {
+            return $this->getContentType() == 'xml';
+        });
+
+        /**
+         * Determine if the current request is asking for XML in return.
+         *
+         * @return bool
+         */
+        Request::macro('wantsXml', function () {
+            $acceptable = $this->getAcceptableContentTypes();
+            return isset($acceptable[0]) && Str::contains($acceptable[0], ['/xml', '+xml']);
+        });
+
         /**
          * Return a new XML response from the application.
          *
@@ -38,7 +66,7 @@ class LaravelXmlServiceProvider extends ServiceProvider
     public function register()
     {
         // Bind facade
-        $this->app->bind('laravel-xml', function(){
+        $this->app->bind('laravel-xml', function () {
             return new \Bmatovu\LaravelXml\Support\Facades\LaravelXml();
         });
     }
