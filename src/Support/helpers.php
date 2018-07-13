@@ -1,6 +1,7 @@
 <?php
 
 use Bmatovu\LaravelXml\Support\ArrayToXml;
+use Bmatovu\LaravelXml\Support\JsonSimpleXMLElementDecorator;
 use Bmatovu\LaravelXml\Support\XmlValidator;
 
 if (!function_exists('xml_encode')) {
@@ -38,7 +39,8 @@ if (!function_exists('xml_decode')) {
     function xml_decode($data, $class_name = "SimpleXMLElement", $options = 0, $ns = "", $is_prefix = false)
     {
         $simple_xml = simplexml_load_string($data, $class_name, $options, $ns, $is_prefix);
-        return json_decode(json_encode($simple_xml), true);
+        $json_simple_xml = new JsonSimpleXMLElementDecorator($simple_xml);
+        return json_decode(json_encode($json_simple_xml), true);
     }
 }
 

@@ -3,6 +3,7 @@
 namespace Bmatovu\LaravelXml\Support\Facades;
 
 use Bmatovu\LaravelXml\Support\ArrayToXml;
+use Bmatovu\LaravelXml\Support\JsonSimpleXMLElementDecorator;
 use Bmatovu\LaravelXml\Support\XmlValidator;
 
 class LaravelXml
@@ -44,7 +45,8 @@ class LaravelXml
     public function decode($data, $class_name = "SimpleXMLElement", $options = 0, $ns = "", $is_prefix = false)
     {
         $simple_xml = simplexml_load_string($data, $class_name, $options, $ns, $is_prefix);
-        return json_decode(json_encode($simple_xml), true);
+        $json_simple_xml = new JsonSimpleXMLElementDecorator($simple_xml);
+        return json_decode(json_encode($json_simple_xml), true);
     }
 
     /**
