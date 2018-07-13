@@ -9,7 +9,7 @@
          processIsolation="false"
          stopOnFailure="false">
     <testsuites>
-        <testsuite name="Bmatovu MultiAuth Test Suite">
+        <testsuite name="Bmatovu Xml Support Test Suite">
             <directory>tests</directory>
         </testsuite>
     </testsuites>

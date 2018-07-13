@@ -43,7 +43,27 @@ If you cached your configurations, you need to run;
 
 ## Usage...
 
-### Response
+### Requests
+
+Get the XML payload from the request.
+
+```php
+$request->xml();
+```
+
+Determine if the request is sending XML.
+
+```php
+$request->isXml();
+```
+
+Determine if the current request is asking for XML in return.
+
+```php
+$request->wantsXml();
+```
+
+### Responses
 
 ```php
 Route::get('/user', function () {
@@ -83,12 +103,12 @@ Route::post('/user/store', function (Request, $request) {
 })->middleware('xml');
 ```
 
-In case of the request is not sending xml, the response will be; [`406` - **Not Acceptable**]
+In case of the request is not sending xml, the response will be; [`415` - **Unsupported Media Type**]
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <document>
-    <error>Only accepting text/xml</error>
+    <error>Only accepting xml content</error>
 </document>
 ```
 
