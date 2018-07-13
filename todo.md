@@ -1,3 +1,6 @@
+**Working with collections**
+- Determine if collection, and change it to an array before encoding to xml
+
 **Validate request, response macros**
 
 - Using Ajax, Axios request

@@ -21,7 +21,7 @@ In `config/app.php`
 
 ```php
 'providers' => array(
-    // ...
+   // ...
    Bmatovu\LaravelXml\LaravelXmlServiceProvider::class,
 ),
 ```
@@ -32,16 +32,14 @@ In `config/app.php`
 
 ```php
 'aliases' => [
-    // ...
-    'Xml' => Bmatovu\LaravelXml\LaravelXml::class,
+   // ...
+   'Xml' => Bmatovu\LaravelXml\LaravelXml::class,
 ],
 ```
 
 If you cached your configurations, you need to run;
 
 `$ php artisan config:cache`
-
-## Usage...
 
 ### Requests
 
@@ -76,21 +74,36 @@ if ($errors)
 ### Responses
 
 ```php
-Route::get('/user', function () {
-    return response()->xml(['user' => 'John Doe']);
+Route::get('/users', function () {
+   $users = App\User::all();
+   return response()->xml(['users' => $users->toArray()]);
 });
+
 ```
 
-The snippet above will return
+Sample response from above snippet
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <document>
-    <user>John Doe</user>
+   <users>
+      <id>1</id>
+      <name>John Doe</name>
+      <email>jdoe@example.com</email>
+      <created_at>2018-07-12 17:06:13</created_at>
+      <updated_at>2018-07-12 18:00:05</updated_at>
+   </users>
+   <users>
+      <id>2</id>
+      <name>Gary Plant</name>
+      <email>gplant@example.com</email>
+      <created_at>2018-07-12 18:02:26</created_at>
+      <updated_at>2018-07-13 11:22:44</updated_at>
+   </users>
 </document>
 ```
 
-With headers having... 
+And will automatically set the content type to xml
 
 `Content-Type → text/xml; charset=UTF-8`
 
