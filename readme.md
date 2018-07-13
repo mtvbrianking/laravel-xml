@@ -63,6 +63,16 @@ Determine if the current request is asking for XML in return.
 $request->wantsXml();
 ```
 
+Validation - Using XML Schema Definition
+```php
+use Xml;
+
+$errors = Xml::validate($request->xml(), 'path_to/sample.xsd');
+
+if ($errors)
+   return response()->xml(['error' => $errors], 422);
+```
+
 ### Responses
 
 ```php
