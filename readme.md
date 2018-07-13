@@ -63,7 +63,7 @@ Determine if the current request is asking for XML in return.
 $request->wantsXml();
 ```
 
-Validation - Using XML Schema Definition
+**Validation** - Using XML Schema Definition
 ```php
 use Xml;
 
