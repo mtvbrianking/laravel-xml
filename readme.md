@@ -7,7 +7,7 @@
 This package comes with the much desired xml support for you Laravel project including middleware to accept only xml requests, 
 http response in xml, and more utilities for xml conversions as well as validation.
 
-**Supports:** Laravel versions 5.3, 5.4, 5.5, 5.6
+**Supports:** Laravel versions 5.3, 5.4, 5.5, 5.6, 5.7
 
 ### Installation
 
@@ -15,7 +15,7 @@ http response in xml, and more utilities for xml conversions as well as validati
 
 **Register Service Provider** 
 
-(Only for Laravel versions 5.3 and 5.4)
+Only for Laravel versions 5.3 and 5.4. For later Laravel versions, this package will be [auto-discovered](https://laravel.com/docs/master/packages#package-discovery).
 
 In `config/app.php`
 
@@ -73,12 +73,13 @@ if ($errors)
 
 ### Responses
 
+Expects an array, convent you're objects to arrays prior...
+
 ```php
 Route::get('/users', function () {
    $users = App\User::all();
    return response()->xml(['users' => $users->toArray()]);
 });
-
 ```
 
 Sample response from above snippet
@@ -126,7 +127,9 @@ Route::post('/user/store', function (Request, $request) {
 })->middleware('xml');
 ```
 
-In case of the request is not sending xml, the response will be; [`415` - **Unsupported Media Type**]
+In case of the request `content-type` is not xml, the response will be; 
+
+[`415` - **Unsupported Media Type**]
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -167,6 +170,16 @@ xml_decode('<?xml version="1.0" encoding="UTF-8"?><document><key>value</key></do
 ```
 
 <hr/>
+
+Credits
+---
+Under the hood, I'm using;
+
+[Spatie's array to XML convernsion](https://github.com/spatie/array-to-xml)
+
+[Hakre's XML to JSON conversion](https://hakre.wordpress.com/2013/07/09/simplexml-and-json-encode-in-php-part-i)
+
+[Akande's XML validation](https://medium.com/@Sirolad/validating-xml-against-xsd-in-php-5607f725955a)
 
 I Need help!
 ---
