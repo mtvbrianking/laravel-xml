@@ -7,7 +7,7 @@
 This package comes with the much desired xml support for you Laravel project including middleware to accept only xml requests, 
 http response in xml, and more utilities for xml conversions as well as validation.
 
-**Supports:** Laravel versions 5.3, 5.4, 5.5, 5.6, 5.7
+**Supports:** Laravel versions 5.3, 5.4, 5.5, 5.6, 5.7, 5.8
 
 ### Installation
 
