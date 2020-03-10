@@ -49,6 +49,8 @@ Get the request content (body).
 $request->xml();
 ```
 
+\* Returns `Bmatovu\LaravelXml\Support\XMLElement` object.
+
 Determine if the request content type is XML.
 
 ```php
@@ -190,14 +192,10 @@ Under the hood, I'm using;
 
 [Akande's XML validation](https://medium.com/@Sirolad/validating-xml-against-xsd-in-php-5607f725955a)
 
-I Need help!
----
-Feel free to [open an issue on Github](https://github.com/mtvbrianking/laravel-xml/issues/new). 
-Please be as specific as possible if you want to get help.
-
 Reporting bugs
 --
 If you've stumbled across a bug, please help us by leaving as much information about the bug as possible, e.g.
+
 - Steps to reproduce
 - Expected result
 - Actual result
