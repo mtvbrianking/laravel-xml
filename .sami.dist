@@ -1,0 +1,36 @@
+<?php
+
+use Sami\Sami;
+use Symfony\Component\Finder\Finder;
+use Sami\Version\GitVersionCollection;
+use Sami\RemoteRepository\GitHubRemoteRepository;
+
+$dir = __DIR__ . '/src';
+
+$iterator = Finder::create()
+    ->files()
+    ->name('*.php')
+    ->exclude('tests')
+    ->exclude('vendor')
+    ->in($dir);
+
+$versions = GitVersionCollection::create($dir)
+    ->add('master', 'master branch');
+
+$repo = new GitHubRemoteRepository(
+    'mtvbrianking/laravel-xml',
+    dirname($dir),
+    'https://github.com/'
+);
+
+$options = [
+    'theme' => 'default',
+    'versions' => $versions,
+    'title' => 'Laravel XML',
+    'build_dir' => __DIR__ . '/docs',
+    'cache_dir' => __DIR__ . '/docs/cache',
+    'remote_repository' => $repo,
+    'default_opened_level' => 3,
+];
+
+return new Sami($iterator, $options);

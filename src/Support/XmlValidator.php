@@ -3,7 +3,7 @@
 namespace Bmatovu\LaravelXml\Support;
 
 /**
- * Class XmlValidator
+ * Class XmlValidator.
  *
  * Validates XML against XSD
  *
@@ -13,15 +13,16 @@ namespace Bmatovu\LaravelXml\Support;
  */
 class XmlValidator
 {
-
     /**
-     * DOM Document
+     * DOM Document.
+     *
      * @var string
      */
     protected $doc = '';
 
     /**
-     * XML Schema Definition
+     * XML Schema Definition.
+     *
      * @var string
      */
     protected $xsd = '';
@@ -32,32 +33,41 @@ class XmlValidator
     }
 
     /**
-     * Get element from message
+     * Get element from message.
+     *
      * @param $message
+     *
      * @return mixed
      */
     protected function getElement($message)
     {
-        $matches = array();
+        $matches = [];
         preg_match("/'([-_\w]+)'/", $message, $matches);
+
         return array_pop($matches);
     }
 
     /**
-     * Get refined message
+     * Get refined message.
+     *
      * @param $message
+     *
      * @return string
      */
     protected function getMessage($message)
     {
-        $parts = explode(":", $message);
+        $parts = explode(':', $message);
+
         return trim(array_pop($parts));
     }
 
     /**
-     * Check if a string is valid XML
+     * Check if a string is valid XML.
+     *
      * @link https://stackoverflow.com/a/31240779/2732184
+     *
      * @param string $xml
+     *
      * @return bool
      */
     public function is_valid($xml)
@@ -84,28 +94,31 @@ class XmlValidator
     }
 
     /**
-     * Validate XML string
+     * Validate XML string.
+     *
      * @param string $xml
      * @param string $xsd file
+     *
      * @return array
      */
     public function validate($xml, $xsd)
     {
         libxml_use_internal_errors(true);
 
-        if (!$this->is_valid($xml))
+        if (! $this->is_valid($xml)) {
             return ['error' => 'Invalid xml'];
+        }
 
         $this->doc->loadXML($xml);
 
-        $errors = array();
-        if (!$this->doc->schemaValidate($xsd)) {
+        $errors = [];
+        if (! $this->doc->schemaValidate($xsd)) {
             foreach (libxml_get_errors() as $error) {
                 $errors[$this->getElement($error->message)][] = $this->getMessage($error->message);
             }
             libxml_clear_errors();
         }
+
         return $errors;
     }
-
 }

@@ -6,9 +6,8 @@ use Illuminate\Support\Facades\Facade;
 
 class LaravelXml extends Facade
 {
-
     /**
-     * Get the binding in the IoC container
+     * Get the binding in the IoC container.
      *
      * @return string
      */
@@ -16,5 +15,4 @@ class LaravelXml extends Facade
     {
         return 'laravel-xml';
     }
-
 }

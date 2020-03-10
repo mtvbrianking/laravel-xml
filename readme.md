@@ -7,7 +7,7 @@
 This package comes with the much desired xml support for you Laravel project including middleware to accept only xml requests, 
 http response in xml, and more utilities for xml conversions as well as validation.
 
-**Supports:** Laravel versions 5.3, 5.4, 5.5, 5.6, 5.7, 5.8, 6.0
+**Supports:** Laravel versions 5.3, 5.4, 5.5, 5.6, 5.7, 5.8, 6.0, 7.0
 
 ### Installation
 
@@ -21,8 +21,8 @@ In `config/app.php`
 
 ```php
 'providers' => array(
-   // ...
-   Bmatovu\LaravelXml\LaravelXmlServiceProvider::class,
+    // ...
+    Bmatovu\LaravelXml\LaravelXmlServiceProvider::class,
 ),
 ```
 
@@ -32,8 +32,8 @@ In `config/app.php`
 
 ```php
 'aliases' => [
-   // ...
-   'Xml' => Bmatovu\LaravelXml\LaravelXml::class,
+    // ...
+    'Xml' => Bmatovu\LaravelXml\LaravelXml::class,
 ],
 ```
 
@@ -43,32 +43,41 @@ If you cached your configurations, you need to run;
 
 ### Requests
 
-Get the XML payload from the request.
+Get the request content (body).
 
 ```php
 $request->xml();
 ```
 
-Determine if the request is sending XML.
+Determine if the request content type is XML.
 
 ```php
 $request->isXml();
 ```
 
-Determine if the current request is asking for XML in return.
+Determine if the current request is accepting XML.
 
 ```php
 $request->wantsXml();
 ```
 
-**Validation** - Using XML Schema Definition
+Validate XML content
+
+```php
+use Xml;
+
+Xml::is_valid($request->xml());
+```
+
+**Validation** - Against XML Schema Definition
 ```php
 use Xml;
 
 $errors = Xml::validate($request->xml(), 'path_to/sample.xsd');
 
-if ($errors)
-   return response()->xml(['error' => $errors], 422);
+if ($errors) {
+    return response()->xml(['error' => $errors], 422);
+}
 ```
 
 ### Responses
@@ -77,8 +86,8 @@ Expects an array, convent you're objects to arrays prior...
 
 ```php
 Route::get('/users', function () {
-   $users = App\User::all();
-   return response()->xml(['users' => $users->toArray()]);
+    $users = App\User::all();
+    return response()->xml(['users' => $users->toArray()]);
 });
 ```
 
@@ -87,20 +96,20 @@ Sample response from above snippet
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <document>
-   <users>
-      <id>1</id>
-      <name>John Doe</name>
-      <email>jdoe@example.com</email>
-      <created_at>2018-07-12 17:06:13</created_at>
-      <updated_at>2018-07-12 18:00:05</updated_at>
-   </users>
-   <users>
-      <id>2</id>
-      <name>Gary Plant</name>
-      <email>gplant@example.com</email>
-      <created_at>2018-07-12 18:02:26</created_at>
-      <updated_at>2018-07-13 11:22:44</updated_at>
-   </users>
+    <users>
+        <id>1</id>
+        <name>John Doe</name>
+        <email>jdoe@example.com</email>
+        <created_at>2018-07-12 17:06:13</created_at>
+        <updated_at>2018-07-12 18:00:05</updated_at>
+    </users>
+    <users>
+        <id>2</id>
+        <name>Gary Plant</name>
+        <email>gplant@example.com</email>
+        <created_at>2018-07-12 18:02:26</created_at>
+        <updated_at>2018-07-13 11:22:44</updated_at>
+    </users>
 </document>
 ```
 

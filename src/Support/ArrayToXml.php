@@ -2,16 +2,19 @@
 
 namespace Bmatovu\LaravelXml\Support;
 
-use DOMElement;
 use DOMDocument;
+use DOMElement;
 use DOMException;
 
 /**
- * Convert PHP Array to XML
+ * Convert PHP Array to XML.
  *
  * Class ArrayToXml
+ *
  * @package App\Http\Support
+ *
  * @license MIT
+ *
  * @link https://github.com/spatie/array-to-xml
  */
 class ArrayToXml
@@ -33,20 +36,25 @@ class ArrayToXml
     /**
      * Construct a new instance.
      *
-     * @param string[] $array
+     * @param array        $content
      * @param string|array $rootElement
-     * @param bool $replaceSpacesByUnderScoresInKeyNames
-     * @param string $xmlEncoding
-     * @param string $xmlVersion
+     * @param bool         $replaceSpacesByUnderScoresInKeyNames
+     * @param string       $xmlEncoding
+     * @param string       $xmlVersion
      *
      * @throws DOMException
      */
-    public function __construct(array $array, $rootElement = '', $replaceSpacesByUnderScoresInKeyNames = true, $xmlEncoding = 'UTF-8', $xmlVersion = '1.0')
-    {
+    public function __construct(
+        array $content,
+        $rootElement = '',
+        $replaceSpacesByUnderScoresInKeyNames = true,
+        $xmlEncoding = 'UTF-8',
+        $xmlVersion = '1.0'
+    ) {
         $this->document = new DOMDocument($xmlVersion, $xmlEncoding);
         $this->replaceSpacesByUnderScoresInKeyNames = $replaceSpacesByUnderScoresInKeyNames;
 
-        if ($this->isArrayAllKeySequential($array) && !empty($array)) {
+        if ($this->isArrayAllKeySequential($content) && ! empty($content)) {
             throw new DOMException('Invalid Character Error');
         }
 
@@ -54,22 +62,27 @@ class ArrayToXml
 
         $this->document->appendChild($root);
 
-        $this->convertElement($root, $array);
+        $this->convertElement($root, $content);
     }
 
     /**
      * Convert the given array to an xml string.
      *
      * @param string[] $array
-     * @param string $rootElementName
-     * @param bool $replaceSpacesByUnderScoresInKeyNames
-     * @param string $xmlEncoding
-     * @param string $xmlVersion
+     * @param string   $rootElementName
+     * @param bool     $replaceSpacesByUnderScoresInKeyNames
+     * @param string   $xmlEncoding
+     * @param string   $xmlVersion
      *
      * @return string
      */
-    public static function convert(array $array, $rootElementName = 'document', $replaceSpacesByUnderScoresInKeyNames = true, $xmlEncoding = 'UTF-8', $xmlVersion = '1.0')
-    {
+    public static function convert(
+        array $array,
+        $rootElementName = 'document',
+        $replaceSpacesByUnderScoresInKeyNames = true,
+        $xmlEncoding = 'UTF-8',
+        $xmlVersion = '1.0'
+    ) {
         $converter = new static($array, $rootElementName, $replaceSpacesByUnderScoresInKeyNames, $xmlEncoding, $xmlVersion);
 
         return $converter->toXml();
@@ -98,21 +111,21 @@ class ArrayToXml
     /**
      * Parse individual element.
      *
-     * @param DOMElement $element
+     * @param DOMElement      $element
      * @param string|string[] $value
      */
     private function convertElement(DOMElement $element, $value)
     {
         $sequential = $this->isArrayAllKeySequential($value);
 
-        if (!is_array($value)) {
+        if (! is_array($value)) {
             $element->nodeValue = htmlspecialchars($value);
 
             return;
         }
 
         foreach ($value as $key => $data) {
-            if (!$sequential) {
+            if (! $sequential) {
                 if (($key === '_attributes') || ($key === '@attributes')) {
                     $this->addAttributes($element, $data);
                 } elseif ((($key === '_value') || ($key === '@value')) && is_string($data)) {
@@ -133,8 +146,8 @@ class ArrayToXml
     /**
      * Add node.
      *
-     * @param DOMElement $element
-     * @param string $key
+     * @param DOMElement      $element
+     * @param string          $key
      * @param string|string[] $value
      */
     protected function addNode(DOMElement $element, $key, $value)
@@ -151,7 +164,7 @@ class ArrayToXml
     /**
      * Add collection node.
      *
-     * @param DOMElement $element
+     * @param DOMElement      $element
      * @param string|string[] $value
      *
      * @internal param string $key
@@ -172,7 +185,7 @@ class ArrayToXml
     /**
      * Add sequential node.
      *
-     * @param DOMElement $element
+     * @param DOMElement      $element
      * @param string|string[] $value
      *
      * @internal param string $key
@@ -199,7 +212,7 @@ class ArrayToXml
      */
     protected function isArrayAllKeySequential($value)
     {
-        if (!is_array($value)) {
+        if (! is_array($value)) {
             return false;
         }
 
@@ -214,7 +227,7 @@ class ArrayToXml
      * Add attributes.
      *
      * @param DOMElement $element
-     * @param string[] $data
+     * @param string[]   $data
      */
     protected function addAttributes($element, $data)
     {
@@ -226,7 +239,8 @@ class ArrayToXml
     /**
      * Create the root element.
      *
-     * @param  string|array $rootElement
+     * @param string|array $rootElement
+     *
      * @return DOMElement
      */
     protected function createRootElement($rootElement)
@@ -251,5 +265,4 @@ class ArrayToXml
 
         return $element;
     }
-
 }

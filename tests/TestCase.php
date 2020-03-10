@@ -7,25 +7,25 @@ use Orchestra\Testbench\TestCase as Orchestra;
 
 abstract class TestCase extends Orchestra
 {
-
     /**
      * Setup test environment.
      */
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
     }
 
     /**
-     * Add package service provider
+     * Add package service provider.
      *
      * @param $app
+     *
      * @return array
      */
     protected function getPackageProviders($app)
     {
         return [
-            LaravelXmlServiceProvider::class
+            LaravelXmlServiceProvider::class,
         ];
     }
 
@@ -33,6 +33,7 @@ abstract class TestCase extends Orchestra
      * Define environment setup.
      *
      * @param \Illuminate\Foundation\Application $app
+     *
      * @return void
      */
     protected function getEnvironmentSetUp($app)
@@ -44,5 +45,4 @@ abstract class TestCase extends Orchestra
             'prefix' => '',
         ]);
     }
-
 }

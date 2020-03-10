@@ -6,15 +6,15 @@ use Closure;
 
 class RequireXml
 {
-
     /**
      * Handle an incoming request.
      *
      * @link https://stackoverflow.com/a/11973933/2732184
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
-     * @param  string|null  $guard
+     * @param \Illuminate\Http\Request $request
+     * @param \Closure                 $next
+     * @param string|null              $guard
+     *
      * @return mixed
      */
     public function handle($request, Closure $next, $guard = null)
@@ -25,5 +25,4 @@ class RequireXml
 
         return $next($request);
     }
-
 }

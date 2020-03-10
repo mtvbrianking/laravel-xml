@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1578035852">
+  <project timestamp="1578035852">
+    <package name="Bmatovu\HelloWorld">
+      <file name="C:\xampp\htdocs\packages\laravel-package-boilerplate\src\HelloWorld.php">
+        <class name="Bmatovu\HelloWorld\HelloWorld" namespace="Bmatovu\HelloWorld">
+          <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+        </class>
+        <metrics loc="8" ncloc="6" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </file>
+      <file name="C:\xampp\htdocs\packages\laravel-package-boilerplate\src\HelloWorldFacade.php">
+        <class name="Bmatovu\HelloWorld\HelloWorldFacade" namespace="Bmatovu\HelloWorld">
+          <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
+        </class>
+        <line num="17" type="method" name="getFacadeAccessor" visibility="protected" complexity="1" crap="2" count="0"/>
+        <line num="19" type="stmt" count="0"/>
+        <metrics loc="21" ncloc="13" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
+      </file>
+      <file name="C:\xampp\htdocs\packages\laravel-package-boilerplate\src\HelloWorldServiceProvider.php">
+        <class name="Bmatovu\HelloWorld\HelloWorldServiceProvider" namespace="Bmatovu\HelloWorld">
+          <metrics complexity="2" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="3" elements="6" coveredelements="4"/>
+        </class>
+        <line num="14" type="method" name="boot" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="17" type="stmt" count="1"/>
+        <line num="24" type="method" name="register" visibility="public" complexity="1" crap="1.04" count="1"/>
+        <line num="27" type="stmt" count="0"/>
+        <line num="28" type="stmt" count="1"/>
+        <line num="29" type="stmt" count="1"/>
+        <metrics loc="30" ncloc="18" classes="1" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="3" elements="6" coveredelements="4"/>
+      </file>
+    </package>
+    <metrics files="3" loc="59" ncloc="37" classes="2" methods="3" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="3" elements="8" coveredelements="4"/>
+  </project>
+</coverage>
