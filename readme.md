@@ -7,39 +7,13 @@
 This package comes with the much desired xml support for you Laravel project including middleware to accept only xml requests, 
 http response in xml, and more utilities for xml conversions as well as validation.
 
-**Supports:** Laravel versions 5.3, 5.4, 5.5, 5.6, 5.7, 5.8, 6.0, 7.0
+**Supports:** Laravel versions from v5.3 up to v7.0
 
 ### Installation
 
-`$ composer require bmatovu/laravel-xml`
-
-**Register Service Provider** 
-
-Only for Laravel versions 5.3 and 5.4. For later Laravel versions, this package will be [auto-discovered](https://laravel.com/docs/master/packages#package-discovery).
-
-In `config/app.php`
-
-```php
-'providers' => array(
-    // ...
-    Bmatovu\LaravelXml\LaravelXmlServiceProvider::class,
-),
+```bash
+$ composer require bmatovu/laravel-xml
 ```
-
-**Register Alias**
-
-In `config/app.php`
-
-```php
-'aliases' => [
-    // ...
-    'Xml' => Bmatovu\LaravelXml\LaravelXml::class,
-],
-```
-
-If you cached your configurations, you need to run;
-
-`$ php artisan config:cache`
 
 ### Requests
 
@@ -66,15 +40,11 @@ $request->wantsXml();
 Validate XML content
 
 ```php
-use Xml;
-
 Xml::is_valid($request->xml());
 ```
 
 **Validation** - Against XML Schema Definition
 ```php
-use Xml;
-
 $errors = Xml::validate($request->xml(), 'path_to/sample.xsd');
 
 if ($errors) {
@@ -154,8 +124,6 @@ In case of the request `content-type` is not xml, the response will be;
 **Encode: Array to Xml**
 
 ```php
-use Xml;
-
 Xml::encode(['key' => 'value']);
 ```
 
@@ -169,8 +137,6 @@ xml_encode(['key' => 'value']);
 **Decode: Xml to Array**
 
 ```php
-use Xml;
-
 Xml::decode('<?xml version="1.0" encoding="UTF-8"?><document><key>value</key></document>');
 ```
 
