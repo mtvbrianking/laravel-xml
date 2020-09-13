@@ -12,7 +12,7 @@ jobs:
 
     - stage: test
 
-      php: 7.2
+      php: 7.3
 
       before_script:
         - travis_retry composer self-update
@@ -33,7 +33,7 @@ jobs:
 
       if: branch = master
 
-      php: 7.2
+      php: 7.3
 
       before_script:
         - git clone https://github.com/mtvbrianking/laravel-package-boilerplate.git
