@@ -2,7 +2,7 @@
 
 namespace Bmatovu\LaravelXml\Support;
 
-class XMLElement extends \SimpleXMLElement
+class XmlElement extends \SimpleXMLElement
 {
     /**
      * Provides access to element's children.
