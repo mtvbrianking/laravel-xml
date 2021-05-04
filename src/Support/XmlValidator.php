@@ -14,7 +14,7 @@ class XmlValidator
     /**
      * DOM Document.
      *
-     * @var string
+     * @var DOMDocument
      */
     protected $doc = '';
 
@@ -25,6 +25,9 @@ class XmlValidator
      */
     protected $xsd = '';
 
+    /**
+     * Constructor.
+     */
     public function __construct()
     {
         $this->doc = new \DOMDocument();

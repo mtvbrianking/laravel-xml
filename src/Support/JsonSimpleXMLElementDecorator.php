@@ -19,8 +19,23 @@ class JsonSimpleXMLElementDecorator implements JsonSerializable
      */
     private $subject;
 
-    private $options = ['@attributes' => true, '@text' => true, 'depth' => self::DEF_DEPTH];
+    /**
+     * @var array
+     */
+    private $options = [
+        '@attributes' => true,
+        '@text' => true,
+        'depth' => self::DEF_DEPTH
+    ];
 
+    /**
+     * Constructor.
+     *
+     * @param SimpleXMLElement $element
+     * @param boolean          $useAttributes
+     * @param boolean          $useText
+     * @param int              $depth
+     */
     public function __construct(SimpleXMLElement $element, $useAttributes = true, $useText = true, $depth = self::DEF_DEPTH)
     {
         $this->subject = $element;
@@ -36,16 +51,37 @@ class JsonSimpleXMLElementDecorator implements JsonSerializable
         }
     }
 
+    /**
+     * Should use attributes.
+     *
+     * @param  bool $bool
+     *
+     * @return void
+     */
     public function useAttributes($bool): void
     {
         $this->options['@attributes'] = (bool) $bool;
     }
 
+    /**
+     * Should use text.
+     *
+     * @param  bool $bool
+     *
+     * @return void
+     */
     public function useText($bool): void
     {
         $this->options['@text'] = (bool) $bool;
     }
 
+    /**
+     * Set depth.
+     *
+     * @param  int $depth
+     *
+     * @return void
+     */
     public function setDepth($depth): void
     {
         $this->options['depth'] = (int) max(0, $depth);
@@ -54,7 +90,7 @@ class JsonSimpleXMLElementDecorator implements JsonSerializable
     /**
      * Specify data which should be serialized to JSON.
      *
-     * @return mixed data which can be serialized by json_encode
+     * @return mixed Data which can be serialized by json_encode
      */
     public function jsonSerialize()
     {
