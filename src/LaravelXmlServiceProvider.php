@@ -33,7 +33,7 @@ class LaravelXmlServiceProvider extends ServiceProvider
          */
         Request::macro('xml', function () {
             if (! $this->isXml() || ! $content = $this->getContent()) {
-                return new XmlElement('<root></root>');
+                return new XmlElement('<document></document>');
             }
 
             return simplexml_load_string($content, XmlElement::class);
