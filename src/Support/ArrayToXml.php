@@ -1,5 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of PHP CS Fixer.
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Bmatovu\LaravelXml\Support;
 
 use DOMDocument;
@@ -11,11 +21,9 @@ use DOMException;
  *
  * Class ArrayToXml
  *
- * @package App\Http\Support
- *
  * @license MIT
  *
- * @link https://github.com/spatie/array-to-xml
+ * @see https://github.com/spatie/array-to-xml
  */
 class ArrayToXml
 {
@@ -36,8 +44,7 @@ class ArrayToXml
     /**
      * Construct a new instance.
      *
-     * @param array        $content
-     * @param string|array $rootElement
+     * @param array|string $rootElement
      * @param bool         $replaceSpacesByUnderScoresInKeyNames
      * @param string       $xmlEncoding
      * @param string       $xmlVersion
@@ -109,48 +116,12 @@ class ArrayToXml
     }
 
     /**
-     * Parse individual element.
-     *
-     * @param DOMElement      $element
-     * @param string|string[] $value
-     */
-    private function convertElement(DOMElement $element, $value)
-    {
-        $sequential = $this->isArrayAllKeySequential($value);
-
-        if (! is_array($value)) {
-            $element->nodeValue = htmlspecialchars($value);
-
-            return;
-        }
-
-        foreach ($value as $key => $data) {
-            if (! $sequential) {
-                if (($key === '_attributes') || ($key === '@attributes')) {
-                    $this->addAttributes($element, $data);
-                } elseif ((($key === '_value') || ($key === '@value')) && is_string($data)) {
-                    $element->nodeValue = htmlspecialchars($data);
-                } elseif ((($key === '_cdata') || ($key === '@cdata')) && is_string($data)) {
-                    $element->appendChild($this->document->createCDATASection($data));
-                } else {
-                    $this->addNode($element, $key, $data);
-                }
-            } elseif (is_array($data)) {
-                $this->addCollectionNode($element, $data);
-            } else {
-                $this->addSequentialNode($element, $data);
-            }
-        }
-    }
-
-    /**
      * Add node.
      *
-     * @param DOMElement      $element
      * @param string          $key
      * @param string|string[] $value
      */
-    protected function addNode(DOMElement $element, $key, $value)
+    protected function addNode(DOMElement $element, $key, $value): void
     {
         if ($this->replaceSpacesByUnderScoresInKeyNames) {
             $key = str_replace(' ', '_', $key);
@@ -164,14 +135,13 @@ class ArrayToXml
     /**
      * Add collection node.
      *
-     * @param DOMElement      $element
      * @param string|string[] $value
      *
      * @internal param string $key
      */
-    protected function addCollectionNode(DOMElement $element, $value)
+    protected function addCollectionNode(DOMElement $element, $value): void
     {
-        if ($element->childNodes->length === 0 && $element->attributes->length === 0) {
+        if (0 === $element->childNodes->length && 0 === $element->attributes->length) {
             $this->convertElement($element, $value);
 
             return;
@@ -185,12 +155,11 @@ class ArrayToXml
     /**
      * Add sequential node.
      *
-     * @param DOMElement      $element
      * @param string|string[] $value
      *
      * @internal param string $key
      */
-    protected function addSequentialNode(DOMElement $element, $value)
+    protected function addSequentialNode(DOMElement $element, $value): void
     {
         if (empty($element->nodeValue)) {
             $element->nodeValue = htmlspecialchars($value);
@@ -212,11 +181,11 @@ class ArrayToXml
      */
     protected function isArrayAllKeySequential($value)
     {
-        if (! is_array($value)) {
+        if (! \is_array($value)) {
             return false;
         }
 
-        if (count($value) <= 0) {
+        if (\count($value) <= 0) {
             return true;
         }
 
@@ -229,7 +198,7 @@ class ArrayToXml
      * @param DOMElement $element
      * @param string[]   $data
      */
-    protected function addAttributes($element, $data)
+    protected function addAttributes($element, $data): void
     {
         foreach ($data as $attrKey => $attrVal) {
             $element->setAttribute($attrKey, $attrVal);
@@ -239,13 +208,13 @@ class ArrayToXml
     /**
      * Create the root element.
      *
-     * @param string|array $rootElement
+     * @param array|string $rootElement
      *
      * @return DOMElement
      */
     protected function createRootElement($rootElement)
     {
-        if (is_string($rootElement)) {
+        if (\is_string($rootElement)) {
             $rootElementName = $rootElement ?: 'root';
 
             return $this->document->createElement($rootElementName);
@@ -256,7 +225,7 @@ class ArrayToXml
         $element = $this->document->createElement($rootElementName);
 
         foreach ($rootElement as $key => $value) {
-            if ($key !== '_attributes' && $key !== '@attributes') {
+            if ('_attributes' !== $key && '@attributes' !== $key) {
                 continue;
             }
 
@@ -264,5 +233,39 @@ class ArrayToXml
         }
 
         return $element;
+    }
+
+    /**
+     * Parse individual element.
+     *
+     * @param string|string[] $value
+     */
+    private function convertElement(DOMElement $element, $value): void
+    {
+        $sequential = $this->isArrayAllKeySequential($value);
+
+        if (! \is_array($value)) {
+            $element->nodeValue = htmlspecialchars($value);
+
+            return;
+        }
+
+        foreach ($value as $key => $data) {
+            if (! $sequential) {
+                if (('_attributes' === $key) || ('@attributes' === $key)) {
+                    $this->addAttributes($element, $data);
+                } elseif ((('_value' === $key) || ('@value' === $key)) && \is_string($data)) {
+                    $element->nodeValue = htmlspecialchars($data);
+                } elseif ((('_cdata' === $key) || ('@cdata' === $key)) && \is_string($data)) {
+                    $element->appendChild($this->document->createCDATASection($data));
+                } else {
+                    $this->addNode($element, $key, $data);
+                }
+            } elseif (\is_array($data)) {
+                $this->addCollectionNode($element, $data);
+            } else {
+                $this->addSequentialNode($element, $data);
+            }
+        }
     }
 }

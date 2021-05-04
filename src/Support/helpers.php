@@ -1,5 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of PHP CS Fixer.
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 use Bmatovu\LaravelXml\Support\ArrayToXml;
 use Bmatovu\LaravelXml\Support\JsonSimpleXMLElementDecorator;
 use Bmatovu\LaravelXml\Support\XmlValidator;
@@ -26,14 +36,14 @@ if (! function_exists('xml_decode')) {
     /**
      * Convert a string of XML into an array.
      *
-     * @link http://php.net/manual/en/function.simplexml-load-string.php
-     * @link https://stackoverflow.com/a/20431742/2732184
-     * @link https://stackoverflow.com/a/2970701/2732184
+     * @see http://php.net/manual/en/function.simplexml-load-string.php
+     * @see https://stackoverflow.com/a/20431742/2732184
+     * @see https://stackoverflow.com/a/2970701/2732184
      *
      * @param string $data       A well-formed XML string
      * @param string $class_name [optional] Default: SimpleXMLElement
      * @param int    $options
-     * @param string $ns         [optional] Namespace prefix or URI.
+     * @param string $ns         [optional] Namespace prefix or URI
      * @param bool   $is_prefix  [optional] TRUE if ns is a prefix, FALSE if it's a URI, defaults to FALSE
      *
      * @return mixed Array or FALSE on failure

@@ -1,5 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of PHP CS Fixer.
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Bmatovu\LaravelXml;
 
 use Bmatovu\LaravelXml\Http\XmlResponse;
@@ -14,10 +24,8 @@ class LaravelXmlServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
-     *
-     * @return void
      */
-    public function boot()
+    public function boot(): void
     {
         /*
          * Determine if the request is sending XML.
@@ -25,7 +33,7 @@ class LaravelXmlServiceProvider extends ServiceProvider
          * @return bool
          */
         Request::macro('isXml', function () {
-            return $this->getContentType() == 'xml';
+            return 'xml' === $this->getContentType();
         });
 
         /*
@@ -68,10 +76,8 @@ class LaravelXmlServiceProvider extends ServiceProvider
 
     /**
      * Register the application services.
-     *
-     * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->app->bind('laravel-xml', function () {
             return new LaravelXml();

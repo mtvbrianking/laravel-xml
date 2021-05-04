@@ -1,5 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of PHP CS Fixer.
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Bmatovu\LaravelXml\Support;
 
 /**
@@ -7,9 +17,7 @@ namespace Bmatovu\LaravelXml\Support;
  *
  * Validates XML against XSD
  *
- * @package Bmatovu\LaravelXml\Support
- *
- * @link ValidatingXML https://medium.com/@Sirolad/validating-xml-against-xsd-in-php-5607f725955a
+ * @see ValidatingXML https://medium.com/@Sirolad/validating-xml-against-xsd-in-php-5607f725955a
  */
 class XmlValidator
 {
@@ -33,38 +41,9 @@ class XmlValidator
     }
 
     /**
-     * Get element from message.
-     *
-     * @param $message
-     *
-     * @return mixed
-     */
-    protected function getElement($message)
-    {
-        $matches = [];
-        preg_match("/'([-_\w]+)'/", $message, $matches);
-
-        return array_pop($matches);
-    }
-
-    /**
-     * Get refined message.
-     *
-     * @param $message
-     *
-     * @return string
-     */
-    protected function getMessage($message)
-    {
-        $parts = explode(':', $message);
-
-        return trim(array_pop($parts));
-    }
-
-    /**
      * Check if a string is valid XML.
      *
-     * @link https://stackoverflow.com/a/31240779/2732184
+     * @see https://stackoverflow.com/a/31240779/2732184
      *
      * @param string $xml
      *
@@ -78,7 +57,7 @@ class XmlValidator
         }
 
         // ignore html
-        if (stripos($content, '<!DOCTYPE html>') !== false) {
+        if (false !== stripos($content, '<!DOCTYPE html>')) {
             return false;
         }
 
@@ -120,5 +99,34 @@ class XmlValidator
         }
 
         return $errors;
+    }
+
+    /**
+     * Get element from message.
+     *
+     * @param $message
+     *
+     * @return mixed
+     */
+    protected function getElement($message)
+    {
+        $matches = [];
+        preg_match("/'([-_\\w]+)'/", $message, $matches);
+
+        return array_pop($matches);
+    }
+
+    /**
+     * Get refined message.
+     *
+     * @param $message
+     *
+     * @return string
+     */
+    protected function getMessage($message)
+    {
+        $parts = explode(':', $message);
+
+        return trim(array_pop($parts));
     }
 }

@@ -1,5 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of PHP CS Fixer.
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Bmatovu\LaravelXml\Test;
 
 use Bmatovu\LaravelXml\LaravelXmlServiceProvider;
@@ -10,7 +20,7 @@ abstract class TestCase extends Orchestra
     /**
      * Setup test environment.
      */
-    public function setUp(): void
+    protected function setUp(): void
     {
         parent::setUp();
     }
@@ -33,10 +43,8 @@ abstract class TestCase extends Orchestra
      * Define environment setup.
      *
      * @param \Illuminate\Foundation\Application $app
-     *
-     * @return void
      */
-    protected function getEnvironmentSetUp($app)
+    protected function getEnvironmentSetUp($app): void
     {
         $app['config']->set('database.default', 'testing');
         $app['config']->set('database.connections.testing', [

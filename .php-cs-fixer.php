@@ -1,6 +1,38 @@
 <?php
 
+require __DIR__.'/vendor/autoload.php';
+
+/*
+ * This file is part of PHP CS Fixer.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
+$header = <<<'EOF'
+This file is part of PHP CS Fixer.
+(c) Fabien Potencier <fabien@symfony.com>
+    Dariusz Rumiński <dariusz.ruminski@gmail.com>
+This source file is subject to the MIT license that is bundled
+with this source code in the file LICENSE.
+EOF;
+
 // https://mlocati.github.io/php-cs-fixer-configurator/
+
+$excludes = [
+    'build',
+    'vendor',
+];
+
+$finder = PhpCsFixer\Finder::create()
+    ->exclude($excludes)
+    ->in(__DIR__.'/src')
+    ->in(__DIR__.'/tests')
+    ->ignoreDotFiles(true)
+    ->ignoreVCS(true);
 
 $rules = [
     '@PSR2' => true,
@@ -13,7 +45,7 @@ $rules = [
     'no_whitespace_before_comma_in_array' => true,
     'whitespace_after_comma_in_array' => true,
     'no_trailing_comma_in_singleline_array' => true,
-    'trailing_comma_in_multiline_array' => true,
+    // 'trailing_comma_in_multiline_array' => true, // deprecated
     'not_operator_with_successor_space' => true,
 
     // General
@@ -55,7 +87,7 @@ $rules = [
     'phpdoc_separation' => true,
     'phpdoc_scalar' => true,
     'phpdoc_order' => true,
-    'phpdoc_inline_tag' => true,
+    // 'phpdoc_inline_tag' => true, // deprecated
     'phpdoc_return_self_reference' => true,
     'phpdoc_var_without_name' => true,
     'phpdoc_var_annotation_correct_order' => true,
@@ -65,19 +97,17 @@ $rules = [
     ],
 ];
 
-$excludes = [
-    'coverage',
-    'docs',
-    'vendor',
-];
+$config = new PhpCsFixer\Config();
+$config
+    ->setRiskyAllowed(true)
+    ->setRules(array_merge([
+        '@PHP71Migration:risky' => true,
+        '@PHPUnit75Migration:risky' => true,
+        '@PhpCsFixer' => true,
+        '@PhpCsFixer:risky' => true,
+        'general_phpdoc_annotation_remove' => ['annotations' => ['expectedDeprecation']],
+        'header_comment' => ['header' => $header],
+    ], $rules))
+    ->setFinder($finder);
 
-return PhpCsFixer\Config::create()
-    ->setRules($rules)
-    ->setFinder(
-        PhpCsFixer\Finder::create()
-            ->exclude($excludes)
-            ->in(__DIR__.'/src')
-            ->in(__DIR__.'/tests')
-            ->ignoreDotFiles(true)
-            ->ignoreVCS(true)
-    );
+return $config;

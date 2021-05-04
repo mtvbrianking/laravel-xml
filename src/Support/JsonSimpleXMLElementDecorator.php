@@ -1,5 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of PHP CS Fixer.
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Bmatovu\LaravelXml\Support;
 
 use JsonSerializable;
@@ -8,10 +18,7 @@ use SimpleXMLElement;
 /**
  * Class JsonSimpleXMLElementDecorator.
  *
- * @package Bmatovu\LaravelXml\Support
- * Implement JsonSerializable for SimpleXMLElement as a Decorator
- *
- * @link https://hakre.wordpress.com/2013/07/09/simplexml-and-json-encode-in-php-part-i
+ * @see https://hakre.wordpress.com/2013/07/09/simplexml-and-json-encode-in-php-part-i
  */
 class JsonSimpleXMLElementDecorator implements JsonSerializable
 {
@@ -28,28 +35,28 @@ class JsonSimpleXMLElementDecorator implements JsonSerializable
     {
         $this->subject = $element;
 
-        if (! is_null($useAttributes)) {
+        if (null !== $useAttributes) {
             $this->useAttributes($useAttributes);
         }
-        if (! is_null($useText)) {
+        if (null !== $useText) {
             $this->useText($useText);
         }
-        if (! is_null($depth)) {
+        if (null !== $depth) {
             $this->setDepth($depth);
         }
     }
 
-    public function useAttributes($bool)
+    public function useAttributes($bool): void
     {
         $this->options['@attributes'] = (bool) $bool;
     }
 
-    public function useText($bool)
+    public function useText($bool): void
     {
         $this->options['@text'] = (bool) $bool;
     }
 
-    public function setDepth($depth)
+    public function setDepth($depth): void
     {
         $this->options['depth'] = (int) max(0, $depth);
     }
@@ -57,7 +64,7 @@ class JsonSimpleXMLElementDecorator implements JsonSerializable
     /**
      * Specify data which should be serialized to JSON.
      *
-     * @return mixed data which can be serialized by json_encode.
+     * @return mixed data which can be serialized by json_encode
      */
     public function jsonSerialize()
     {
@@ -82,12 +89,12 @@ class JsonSimpleXMLElementDecorator implements JsonSerializable
 
         // json encode child elements if any. group on duplicate names as an array.
         foreach ($children as $name => $element) {
-            /* @var SimpleXMLElement $element */
+            /** @var SimpleXMLElement $element */
             $decorator = new self($element);
             $decorator->options = ['depth' => $depth] + $this->options;
 
             if (isset($array[$name])) {
-                if (! is_array($array[$name])) {
+                if (! \is_array($array[$name])) {
                     $array[$name] = [$array[$name]];
                 }
                 $array[$name][] = $decorator;
@@ -98,7 +105,7 @@ class JsonSimpleXMLElementDecorator implements JsonSerializable
 
         // json encode non-whitespace element simplexml text values.
         $text = trim($subject);
-        if (strlen($text)) {
+        if (\strlen($text)) {
             if ($array) {
                 $this->options['@text'] && $array['@text'] = $text;
             } else {
