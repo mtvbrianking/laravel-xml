@@ -1,6 +1,6 @@
 <?php
 
-// https://mlocati.github.io/php-cs-fixer-configurator/
+// https://mlocati.github.io/php-cs-fixer-configurator/#version:3.0
 
 $excludes = [
     'build',
@@ -81,7 +81,7 @@ $config = new PhpCsFixer\Config();
 $config
     ->setRiskyAllowed(true)
     ->setRules(array_merge([
-        '@PHP71Migration:risky' => true,
+        '@PHP71Migration:risky' => false,
         '@PHPUnit75Migration:risky' => true,
         '@PhpCsFixer' => true,
         '@PhpCsFixer:risky' => true,
