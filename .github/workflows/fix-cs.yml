@@ -2,7 +2,7 @@ name: fix-cs
 
 on:
   push:
-    branches: [ $default-branch ]
+    branches: [ master ]
 
 # on:
 #   workflow_dispatch:
