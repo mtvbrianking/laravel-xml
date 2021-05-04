@@ -5,7 +5,7 @@
 [![Documentation](https://github.com/mtvbrianking/laravel-xml/workflows/gen-docs/badge.svg)](https://mtvbrianking.github.io/laravel-xml)
 [![Code Quality](https://scrutinizer-ci.com/g/mtvbrianking/laravel-xml/badges/quality-score.png?b=master)]
 (https://scrutinizer-ci.com/g/mtvbrianking/laravel-xml/?branch=master)
-[![Code Style](https://github.styleci.io/repos/334360362/shield?branch=master)](https://github.styleci.io/repos/334360362)
+[![Code Style](https://github.styleci.io/repos/139325131/shield?branch=master)](https://github.styleci.io/repos/139325131)
 
 This package comes with the much desired xml support for you Laravel project including middleware to accept only xml requests, 
 http response in xml, and more utilities for xml conversions as well as validation.
