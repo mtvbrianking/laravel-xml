@@ -8,7 +8,7 @@
     "namespace": "Bmatovu\\LaravelXml",
     "file": "\/home\/runner\/work\/laravel-xml\/laravel-xml\/src\/LaravelXmlServiceProvider.php",
     "relative_file": "\/src\/LaravelXmlServiceProvider.php",
-    "hash": "f552d27c0ad9d22013f6bd25beee7d18cfcab843",
+    "hash": "6fd0f60d2a496f63402df43fcd0f197361dd49b8",
     "parent": "Illuminate\\Support\\ServiceProvider",
     "modifiers": 0,
     "is_trait": false,

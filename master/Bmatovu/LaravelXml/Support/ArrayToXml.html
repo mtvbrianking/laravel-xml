@@ -164,7 +164,7 @@
                     void
                 </div>
                 <div class="col-md-8">
-                    <a href="#method_addNode">addNode</a>(<a target="_blank" rel="noopener" href="https://www.php.net/DOMElement">DOMElement</a> $element, string $key, string|string[] $value)
+                    <a href="#method_addNode">addNode</a>(<a target="_blank" rel="noopener" href="https://www.php.net/DOMElement">DOMElement</a> $element, string $key, array $value)
         
                                             <p><p>Add node.</p></p>                </div>
                 <div class="col-md-2"></div>
@@ -174,7 +174,7 @@
                     void
                 </div>
                 <div class="col-md-8">
-                    <a href="#method_addCollectionNode">addCollectionNode</a>(<a target="_blank" rel="noopener" href="https://www.php.net/DOMElement">DOMElement</a> $element, string|string[] $value)
+                    <a href="#method_addCollectionNode">addCollectionNode</a>(<a target="_blank" rel="noopener" href="https://www.php.net/DOMElement">DOMElement</a> $element, array $value)
         
                                             <p><p>Add collection node.</p></p>                </div>
                 <div class="col-md-2"></div>
@@ -184,7 +184,7 @@
                     void
                 </div>
                 <div class="col-md-8">
-                    <a href="#method_addSequentialNode">addSequentialNode</a>(<a target="_blank" rel="noopener" href="https://www.php.net/DOMElement">DOMElement</a> $element, string|string[] $value)
+                    <a href="#method_addSequentialNode">addSequentialNode</a>(<a target="_blank" rel="noopener" href="https://www.php.net/DOMElement">DOMElement</a> $element, array $value)
         
                                             <p><p>Add sequential node.</p></p>                </div>
                 <div class="col-md-2"></div>
@@ -194,7 +194,7 @@
                     bool
                 </div>
                 <div class="col-md-8">
-                    <a href="#method_isArrayAllKeySequential">isArrayAllKeySequential</a>(array|string $value)
+                    <a href="#method_isArrayAllKeySequential">isArrayAllKeySequential</a>(array $value)
         
                                             <p><p>Check if array are all sequential.</p></p>                </div>
                 <div class="col-md-2"></div>
@@ -217,6 +217,16 @@
                     <a href="#method_createRootElement">createRootElement</a>(array|string $rootElement)
         
                                             <p><p>Create the root element.</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    void
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_convertElement">convertElement</a>(<a target="_blank" rel="noopener" href="https://www.php.net/DOMElement">DOMElement</a> $element, array $value)
+        
+                                            <p><p>Parse individual element.</p></p>                </div>
                 <div class="col-md-2"></div>
             </div>
             </div>
@@ -417,7 +427,7 @@
                     <h3 id="method_addNode">
         <div class="location"><a href="https://github.com/mtvbrianking/laravel-xml/blob/master/src/Support/ArrayToXml.php#L114">at line 114</a></div>
         <code>            protected        void
-    <strong>addNode</strong>(<a target="_blank" rel="noopener" href="https://www.php.net/DOMElement">DOMElement</a> $element, string $key, string|string[] $value)
+    <strong>addNode</strong>(<a target="_blank" rel="noopener" href="https://www.php.net/DOMElement">DOMElement</a> $element, string $key, array $value)
         </code>
     </h3>
     <div class="details">    
@@ -442,7 +452,7 @@
                 <td></td>
             </tr>
                     <tr>
-                <td>string|string[]</td>
+                <td>array</td>
                 <td>$value</td>
                 <td></td>
             </tr>
@@ -467,21 +477,14 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_addCollectionNode">
-        <div class="location"><a href="https://github.com/mtvbrianking/laravel-xml/blob/master/src/Support/ArrayToXml.php#L132">at line 132</a></div>
+        <div class="location"><a href="https://github.com/mtvbrianking/laravel-xml/blob/master/src/Support/ArrayToXml.php#L130">at line 130</a></div>
         <code>            protected        void
-    <strong>addCollectionNode</strong>(<a target="_blank" rel="noopener" href="https://www.php.net/DOMElement">DOMElement</a> $element, string|string[] $value)
+    <strong>addCollectionNode</strong>(<a target="_blank" rel="noopener" href="https://www.php.net/DOMElement">DOMElement</a> $element, array $value)
         </code>
     </h3>
     <div class="details">    
     
-                            <table>
-            <tr>
-                <td><span class="label label-warning">internal</span></td>
-                <td>&nbsp;param string $key</td>
-            </tr>
-        </table>
-                &nbsp;
-    
+            
 
         <div class="method-description">
                             <p><p>Add collection node.</p></p>                        
@@ -496,7 +499,7 @@
                 <td></td>
             </tr>
                     <tr>
-                <td>string|string[]</td>
+                <td>array</td>
                 <td>$value</td>
                 <td></td>
             </tr>
@@ -521,21 +524,14 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_addSequentialNode">
-        <div class="location"><a href="https://github.com/mtvbrianking/laravel-xml/blob/master/src/Support/ArrayToXml.php#L152">at line 152</a></div>
+        <div class="location"><a href="https://github.com/mtvbrianking/laravel-xml/blob/master/src/Support/ArrayToXml.php#L148">at line 148</a></div>
         <code>            protected        void
-    <strong>addSequentialNode</strong>(<a target="_blank" rel="noopener" href="https://www.php.net/DOMElement">DOMElement</a> $element, string|string[] $value)
+    <strong>addSequentialNode</strong>(<a target="_blank" rel="noopener" href="https://www.php.net/DOMElement">DOMElement</a> $element, array $value)
         </code>
     </h3>
     <div class="details">    
     
-                            <table>
-            <tr>
-                <td><span class="label label-warning">internal</span></td>
-                <td>&nbsp;param string $key</td>
-            </tr>
-        </table>
-                &nbsp;
-    
+            
 
         <div class="method-description">
                             <p><p>Add sequential node.</p></p>                        
@@ -550,7 +546,7 @@
                 <td></td>
             </tr>
                     <tr>
-                <td>string|string[]</td>
+                <td>array</td>
                 <td>$value</td>
                 <td></td>
             </tr>
@@ -575,9 +571,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_isArrayAllKeySequential">
-        <div class="location"><a href="https://github.com/mtvbrianking/laravel-xml/blob/master/src/Support/ArrayToXml.php#L172">at line 172</a></div>
+        <div class="location"><a href="https://github.com/mtvbrianking/laravel-xml/blob/master/src/Support/ArrayToXml.php#L168">at line 168</a></div>
         <code>            protected        bool
-    <strong>isArrayAllKeySequential</strong>(array|string $value)
+    <strong>isArrayAllKeySequential</strong>(array $value)
         </code>
     </h3>
     <div class="details">    
@@ -592,7 +588,7 @@
 
                     <table class="table table-condensed">
                     <tr>
-                <td>array|string</td>
+                <td>array</td>
                 <td>$value</td>
                 <td></td>
             </tr>
@@ -617,7 +613,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_addAttributes">
-        <div class="location"><a href="https://github.com/mtvbrianking/laravel-xml/blob/master/src/Support/ArrayToXml.php#L191">at line 191</a></div>
+        <div class="location"><a href="https://github.com/mtvbrianking/laravel-xml/blob/master/src/Support/ArrayToXml.php#L187">at line 187</a></div>
         <code>            protected        void
     <strong>addAttributes</strong>(<a target="_blank" rel="noopener" href="https://www.php.net/DOMElement">DOMElement</a> $element, string[] $data)
         </code>
@@ -664,7 +660,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_createRootElement">
-        <div class="location"><a href="https://github.com/mtvbrianking/laravel-xml/blob/master/src/Support/ArrayToXml.php#L205">at line 205</a></div>
+        <div class="location"><a href="https://github.com/mtvbrianking/laravel-xml/blob/master/src/Support/ArrayToXml.php#L201">at line 201</a></div>
         <code>            protected        <a target="_blank" rel="noopener" href="https://www.php.net/DOMElement">DOMElement</a>
     <strong>createRootElement</strong>(array|string $rootElement)
         </code>
@@ -693,6 +689,53 @@
                     <table class="table table-condensed">
         <tr>
             <td><a target="_blank" rel="noopener" href="https://www.php.net/DOMElement">DOMElement</a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_convertElement">
+        <div class="location"><a href="https://github.com/mtvbrianking/laravel-xml/blob/master/src/Support/ArrayToXml.php#L229">at line 229</a></div>
+        <code>            protected        void
+    <strong>convertElement</strong>(<a target="_blank" rel="noopener" href="https://www.php.net/DOMElement">DOMElement</a> $element, array $value)
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Parse individual element.</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a target="_blank" rel="noopener" href="https://www.php.net/DOMElement">DOMElement</a></td>
+                <td>$element</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>array</td>
+                <td>$value</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>void</td>
             <td></td>
         </tr>
     </table>

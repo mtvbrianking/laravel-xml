@@ -19,7 +19,7 @@
     "namespace": "Bmatovu\\LaravelXml\\Support",
     "file": "\/home\/runner\/work\/laravel-xml\/laravel-xml\/src\/Support\/ArrayToXml.php",
     "relative_file": "\/src\/Support\/ArrayToXml.php",
-    "hash": "10d51560d5329703ae5f923527540c3883c2840c",
+    "hash": "ee59b6cf8acb24d404be69b398700e5086806743",
     "parent": null,
     "modifiers": 0,
     "is_trait": false,
@@ -431,12 +431,8 @@
                     "long_desc": null,
                     "hint": [
                         [
-                            "string",
+                            "array",
                             false
-                        ],
-                        [
-                            "string",
-                            true
                         ]
                     ],
                     "tags": [],
@@ -450,7 +446,7 @@
         },
         "addCollectionNode": {
             "name": "addCollectionNode",
-            "line": 132,
+            "line": 130,
             "short_desc": "Add collection node.",
             "long_desc": "",
             "hint": [
@@ -460,15 +456,7 @@
                 ]
             ],
             "hint_desc": null,
-            "tags": {
-                "internal": [
-                    [
-                        "param",
-                        "string",
-                        "$key"
-                    ]
-                ]
-            },
+            "tags": [],
             "see": [],
             "modifiers": 2,
             "is_by_ref": "",
@@ -477,7 +465,7 @@
             "parameters": {
                 "element": {
                     "name": "element",
-                    "line": 132,
+                    "line": 130,
                     "short_desc": null,
                     "long_desc": null,
                     "hint": [
@@ -495,17 +483,13 @@
                 },
                 "value": {
                     "name": "value",
-                    "line": 132,
+                    "line": 130,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
                         [
-                            "string",
+                            "array",
                             false
-                        ],
-                        [
-                            "string",
-                            true
                         ]
                     ],
                     "tags": [],
@@ -519,7 +503,7 @@
         },
         "addSequentialNode": {
             "name": "addSequentialNode",
-            "line": 152,
+            "line": 148,
             "short_desc": "Add sequential node.",
             "long_desc": "",
             "hint": [
@@ -529,15 +513,7 @@
                 ]
             ],
             "hint_desc": null,
-            "tags": {
-                "internal": [
-                    [
-                        "param",
-                        "string",
-                        "$key"
-                    ]
-                ]
-            },
+            "tags": [],
             "see": [],
             "modifiers": 2,
             "is_by_ref": "",
@@ -546,7 +522,7 @@
             "parameters": {
                 "element": {
                     "name": "element",
-                    "line": 152,
+                    "line": 148,
                     "short_desc": null,
                     "long_desc": null,
                     "hint": [
@@ -564,17 +540,13 @@
                 },
                 "value": {
                     "name": "value",
-                    "line": 152,
+                    "line": 148,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
                         [
-                            "string",
+                            "array",
                             false
-                        ],
-                        [
-                            "string",
-                            true
                         ]
                     ],
                     "tags": [],
@@ -588,7 +560,7 @@
         },
         "isArrayAllKeySequential": {
             "name": "isArrayAllKeySequential",
-            "line": 172,
+            "line": 168,
             "short_desc": "Check if array are all sequential.",
             "long_desc": "",
             "hint": [
@@ -607,16 +579,12 @@
             "parameters": {
                 "value": {
                     "name": "value",
-                    "line": 172,
+                    "line": 168,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
                         [
                             "array",
-                            false
-                        ],
-                        [
-                            "string",
                             false
                         ]
                     ],
@@ -631,7 +599,7 @@
         },
         "addAttributes": {
             "name": "addAttributes",
-            "line": 191,
+            "line": 187,
             "short_desc": "Add attributes.",
             "long_desc": "",
             "hint": [
@@ -650,7 +618,7 @@
             "parameters": {
                 "element": {
                     "name": "element",
-                    "line": 191,
+                    "line": 187,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -668,7 +636,7 @@
                 },
                 "data": {
                     "name": "data",
-                    "line": 191,
+                    "line": 187,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -688,7 +656,7 @@
         },
         "createRootElement": {
             "name": "createRootElement",
-            "line": 205,
+            "line": 201,
             "short_desc": "Create the root element.",
             "long_desc": "",
             "hint": [
@@ -707,7 +675,7 @@
             "parameters": {
                 "rootElement": {
                     "name": "rootElement",
-                    "line": 205,
+                    "line": 201,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -717,6 +685,63 @@
                         ],
                         [
                             "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false
+                }
+            }
+        },
+        "convertElement": {
+            "name": "convertElement",
+            "line": 229,
+            "short_desc": "Parse individual element.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "void",
+                    false
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "see": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "element": {
+                    "name": "element",
+                    "line": 229,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\DOMElement",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false
+                },
+                "value": {
+                    "name": "value",
+                    "line": 229,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
                             false
                         ]
                     ],

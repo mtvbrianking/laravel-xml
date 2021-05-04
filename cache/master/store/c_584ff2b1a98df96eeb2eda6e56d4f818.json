@@ -8,7 +8,7 @@
     "namespace": "Bmatovu\\LaravelXml\\Http",
     "file": "\/home\/runner\/work\/laravel-xml\/laravel-xml\/src\/Http\/XmlResponse.php",
     "relative_file": "\/src\/Http\/XmlResponse.php",
-    "hash": "1a1dcbda45ad8408877f1c4e78ce4de7a95bb48a",
+    "hash": "5552dcbb400d7d998027ecb113d346e05dacfd1b",
     "parent": "Symfony\\Component\\HttpFoundation\\Response",
     "modifiers": 0,
     "is_trait": false,
@@ -295,7 +295,7 @@
         },
         "setContent": {
             "name": "setContent",
-            "line": 65,
+            "line": 71,
             "short_desc": "Set the content on the response.",
             "long_desc": "",
             "hint": [
@@ -314,7 +314,7 @@
             "parameters": {
                 "content": {
                     "name": "content",
-                    "line": 65,
+                    "line": 71,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [

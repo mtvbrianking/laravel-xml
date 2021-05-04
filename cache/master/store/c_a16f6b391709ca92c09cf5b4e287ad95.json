@@ -15,7 +15,7 @@
     "namespace": "Bmatovu\\LaravelXml\\Support",
     "file": "\/home\/runner\/work\/laravel-xml\/laravel-xml\/src\/Support\/XmlValidator.php",
     "relative_file": "\/src\/Support\/XmlValidator.php",
-    "hash": "2cc741f7f61a2d5d12c01545064ce99fb85e8c78",
+    "hash": "bcadda6b0981a8eaa5559dd8a43d41d97311d7a5",
     "parent": null,
     "modifiers": 0,
     "is_trait": false,
@@ -33,7 +33,7 @@
             "long_desc": "",
             "hint": [
                 [
-                    "string",
+                    "\\Bmatovu\\LaravelXml\\Support\\DOMDocument",
                     false
                 ]
             ],
@@ -84,9 +84,9 @@
     "methods": {
         "__construct": {
             "name": "__construct",
-            "line": 28,
-            "short_desc": null,
-            "long_desc": null,
+            "line": 31,
+            "short_desc": "Constructor.",
+            "long_desc": "",
             "hint": null,
             "hint_desc": null,
             "tags": [],
@@ -99,7 +99,7 @@
         },
         "is_valid": {
             "name": "is_valid",
-            "line": 42,
+            "line": 45,
             "short_desc": "Check if a string is valid XML.",
             "long_desc": "",
             "hint": [
@@ -132,7 +132,7 @@
             "parameters": {
                 "xml": {
                     "name": "xml",
-                    "line": 42,
+                    "line": 45,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -152,7 +152,7 @@
         },
         "validate": {
             "name": "validate",
-            "line": 73,
+            "line": 76,
             "short_desc": "Validate XML string.",
             "long_desc": "",
             "hint": [
@@ -171,7 +171,7 @@
             "parameters": {
                 "xml": {
                     "name": "xml",
-                    "line": 73,
+                    "line": 76,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -189,7 +189,7 @@
                 },
                 "xsd": {
                     "name": "xsd",
-                    "line": 73,
+                    "line": 76,
                     "short_desc": "file",
                     "long_desc": null,
                     "hint": [
@@ -209,7 +209,7 @@
         },
         "getElement": {
             "name": "getElement",
-            "line": 101,
+            "line": 104,
             "short_desc": "Get element from message.",
             "long_desc": "",
             "hint": [
@@ -228,7 +228,7 @@
             "parameters": {
                 "message": {
                     "name": "message",
-                    "line": 101,
+                    "line": 104,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [],
@@ -243,7 +243,7 @@
         },
         "getMessage": {
             "name": "getMessage",
-            "line": 116,
+            "line": 119,
             "short_desc": "Get refined message.",
             "long_desc": "",
             "hint": [
@@ -262,7 +262,7 @@
             "parameters": {
                 "message": {
                     "name": "message",
-                    "line": 116,
+                    "line": 119,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [],

@@ -14,7 +14,7 @@
     "namespace": "Bmatovu\\LaravelXml\\Support",
     "file": "\/home\/runner\/work\/laravel-xml\/laravel-xml\/src\/Support\/JsonSimpleXMLElementDecorator.php",
     "relative_file": "\/src\/Support\/JsonSimpleXMLElementDecorator.php",
-    "hash": "72e735de62ba614e1cc875e550a91023bcf05269",
+    "hash": "64d135ac7f216b4713f9a274c235ba79bcf5975f",
     "parent": null,
     "modifiers": 0,
     "is_trait": false,
@@ -29,13 +29,200 @@
         "JsonSerializable": "JsonSerializable"
     },
     "traits": [],
-    "properties": [],
+    "properties": {
+        "subject": {
+            "name": "subject",
+            "line": 20,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\SimpleXMLElement",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": [],
+            "is_read_only": false,
+            "is_write_only": false
+        },
+        "options": {
+            "name": "options",
+            "line": 25,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": {
+                "nodeType": "Expr_Array",
+                "items": [
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_String",
+                            "value": "@attributes",
+                            "attributes": {
+                                "startLine": 26,
+                                "endLine": 26,
+                                "kind": 1
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Expr_ConstFetch",
+                            "name": {
+                                "nodeType": "Name",
+                                "parts": [
+                                    "true"
+                                ],
+                                "attributes": {
+                                    "startLine": 26,
+                                    "endLine": 26,
+                                    "namespacedName": {
+                                        "nodeType": "Name_FullyQualified",
+                                        "parts": [
+                                            "Bmatovu",
+                                            "LaravelXml",
+                                            "Support",
+                                            "true"
+                                        ],
+                                        "attributes": {
+                                            "startLine": 26,
+                                            "endLine": 26
+                                        }
+                                    }
+                                }
+                            },
+                            "attributes": {
+                                "startLine": 26,
+                                "endLine": 26
+                            }
+                        },
+                        "byRef": false,
+                        "unpack": false,
+                        "attributes": {
+                            "startLine": 26,
+                            "endLine": 26
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_String",
+                            "value": "@text",
+                            "attributes": {
+                                "startLine": 27,
+                                "endLine": 27,
+                                "kind": 1
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Expr_ConstFetch",
+                            "name": {
+                                "nodeType": "Name",
+                                "parts": [
+                                    "true"
+                                ],
+                                "attributes": {
+                                    "startLine": 27,
+                                    "endLine": 27,
+                                    "namespacedName": {
+                                        "nodeType": "Name_FullyQualified",
+                                        "parts": [
+                                            "Bmatovu",
+                                            "LaravelXml",
+                                            "Support",
+                                            "true"
+                                        ],
+                                        "attributes": {
+                                            "startLine": 27,
+                                            "endLine": 27
+                                        }
+                                    }
+                                }
+                            },
+                            "attributes": {
+                                "startLine": 27,
+                                "endLine": 27
+                            }
+                        },
+                        "byRef": false,
+                        "unpack": false,
+                        "attributes": {
+                            "startLine": 27,
+                            "endLine": 27
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_String",
+                            "value": "depth",
+                            "attributes": {
+                                "startLine": 28,
+                                "endLine": 28,
+                                "kind": 1
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Expr_ClassConstFetch",
+                            "class": {
+                                "nodeType": "Name",
+                                "parts": [
+                                    "self"
+                                ],
+                                "attributes": {
+                                    "startLine": 28,
+                                    "endLine": 28
+                                }
+                            },
+                            "name": {
+                                "nodeType": "Identifier",
+                                "name": "DEF_DEPTH",
+                                "attributes": {
+                                    "startLine": 28,
+                                    "endLine": 28
+                                }
+                            },
+                            "attributes": {
+                                "startLine": 28,
+                                "endLine": 28
+                            }
+                        },
+                        "byRef": false,
+                        "unpack": false,
+                        "attributes": {
+                            "startLine": 28,
+                            "endLine": 28
+                        }
+                    }
+                ],
+                "attributes": {
+                    "startLine": 25,
+                    "endLine": 29,
+                    "kind": 2
+                }
+            },
+            "errors": [],
+            "is_read_only": false,
+            "is_write_only": false
+        }
+    },
     "methods": {
         "__construct": {
             "name": "__construct",
-            "line": 24,
-            "short_desc": null,
-            "long_desc": null,
+            "line": 34,
+            "short_desc": "Constructor.",
+            "long_desc": "",
             "hint": null,
             "hint_desc": null,
             "tags": [],
@@ -47,7 +234,7 @@
             "parameters": {
                 "element": {
                     "name": "element",
-                    "line": 24,
+                    "line": 35,
                     "short_desc": null,
                     "long_desc": null,
                     "hint": [
@@ -65,10 +252,15 @@
                 },
                 "useAttributes": {
                     "name": "useAttributes",
-                    "line": 24,
+                    "line": 36,
                     "short_desc": null,
                     "long_desc": null,
-                    "hint": null,
+                    "hint": [
+                        [
+                            "bool",
+                            false
+                        ]
+                    ],
                     "tags": [],
                     "modifiers": 0,
                     "default": "true",
@@ -78,10 +270,15 @@
                 },
                 "useText": {
                     "name": "useText",
-                    "line": 24,
+                    "line": 37,
                     "short_desc": null,
                     "long_desc": null,
-                    "hint": null,
+                    "hint": [
+                        [
+                            "bool",
+                            false
+                        ]
+                    ],
                     "tags": [],
                     "modifiers": 0,
                     "default": "true",
@@ -91,10 +288,15 @@
                 },
                 "depth": {
                     "name": "depth",
-                    "line": 24,
+                    "line": 38,
                     "short_desc": null,
                     "long_desc": null,
-                    "hint": null,
+                    "hint": [
+                        [
+                            "int",
+                            false
+                        ]
+                    ],
                     "tags": [],
                     "modifiers": 0,
                     "default": "self::DEF_DEPTH",
@@ -106,9 +308,9 @@
         },
         "useAttributes": {
             "name": "useAttributes",
-            "line": 39,
-            "short_desc": null,
-            "long_desc": null,
+            "line": 58,
+            "short_desc": "Should use attributes.",
+            "long_desc": "",
             "hint": [
                 [
                     "void",
@@ -125,10 +327,15 @@
             "parameters": {
                 "bool": {
                     "name": "bool",
-                    "line": 39,
-                    "short_desc": null,
+                    "line": 58,
+                    "short_desc": "",
                     "long_desc": null,
-                    "hint": null,
+                    "hint": [
+                        [
+                            "bool",
+                            false
+                        ]
+                    ],
                     "tags": [],
                     "modifiers": 0,
                     "default": null,
@@ -140,9 +347,9 @@
         },
         "useText": {
             "name": "useText",
-            "line": 44,
-            "short_desc": null,
-            "long_desc": null,
+            "line": 68,
+            "short_desc": "Should use text.",
+            "long_desc": "",
             "hint": [
                 [
                     "void",
@@ -159,10 +366,15 @@
             "parameters": {
                 "bool": {
                     "name": "bool",
-                    "line": 44,
-                    "short_desc": null,
+                    "line": 68,
+                    "short_desc": "",
                     "long_desc": null,
-                    "hint": null,
+                    "hint": [
+                        [
+                            "bool",
+                            false
+                        ]
+                    ],
                     "tags": [],
                     "modifiers": 0,
                     "default": null,
@@ -174,9 +386,9 @@
         },
         "setDepth": {
             "name": "setDepth",
-            "line": 49,
-            "short_desc": null,
-            "long_desc": null,
+            "line": 78,
+            "short_desc": "Set depth.",
+            "long_desc": "",
             "hint": [
                 [
                     "void",
@@ -193,10 +405,15 @@
             "parameters": {
                 "depth": {
                     "name": "depth",
-                    "line": 49,
-                    "short_desc": null,
+                    "line": 78,
+                    "short_desc": "",
                     "long_desc": null,
-                    "hint": null,
+                    "hint": [
+                        [
+                            "int",
+                            false
+                        ]
+                    ],
                     "tags": [],
                     "modifiers": 0,
                     "default": null,
@@ -208,7 +425,7 @@
         },
         "jsonSerialize": {
             "name": "jsonSerialize",
-            "line": 59,
+            "line": 88,
             "short_desc": "Specify data which should be serialized to JSON.",
             "long_desc": "",
             "hint": [
@@ -217,7 +434,7 @@
                     false
                 ]
             ],
-            "hint_desc": "data which can be serialized by json_encode",
+            "hint_desc": "Data which can be serialized by json_encode",
             "tags": [],
             "see": [],
             "modifiers": 1,
