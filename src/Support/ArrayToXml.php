@@ -108,8 +108,8 @@ class ArrayToXml
     /**
      * Add node.
      *
-     * @param string          $key
-     * @param string|string[] $value
+     * @param string $key
+     * @param array  $value
      */
     protected function addNode(DOMElement $element, $key, $value): void
     {
@@ -125,9 +125,7 @@ class ArrayToXml
     /**
      * Add collection node.
      *
-     * @param string|string[] $value
-     *
-     * @internal param string $key
+     * @param array $value
      */
     protected function addCollectionNode(DOMElement $element, $value): void
     {
@@ -145,9 +143,7 @@ class ArrayToXml
     /**
      * Add sequential node.
      *
-     * @param string|string[] $value
-     *
-     * @internal param string $key
+     * @param array $value
      */
     protected function addSequentialNode(DOMElement $element, $value): void
     {
@@ -165,7 +161,7 @@ class ArrayToXml
     /**
      * Check if array are all sequential.
      *
-     * @param array|string $value
+     * @param array $value
      *
      * @return bool
      */
@@ -228,9 +224,9 @@ class ArrayToXml
     /**
      * Parse individual element.
      *
-     * @param string|string[] $value
+     * @param array $value
      */
-    private function convertElement(DOMElement $element, $value): void
+    protected function convertElement(DOMElement $element, $value): void
     {
         $sequential = $this->isArrayAllKeySequential($value);
 

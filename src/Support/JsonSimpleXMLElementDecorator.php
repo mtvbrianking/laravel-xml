@@ -17,27 +17,26 @@ class JsonSimpleXMLElementDecorator implements JsonSerializable
     /**
      * @var SimpleXMLElement
      */
-    private $subject;
+    protected $subject;
 
     /**
      * @var array
      */
-    private $options = [
+    protected $options = [
         '@attributes' => true,
         '@text' => true,
-        'depth' => self::DEF_DEPTH
+        'depth' => self::DEF_DEPTH,
     ];
 
     /**
      * Constructor.
-     *
-     * @param SimpleXMLElement $element
-     * @param boolean          $useAttributes
-     * @param boolean          $useText
-     * @param int              $depth
      */
-    public function __construct(SimpleXMLElement $element, $useAttributes = true, $useText = true, $depth = self::DEF_DEPTH)
-    {
+    public function __construct(
+        SimpleXMLElement $element,
+        bool $useAttributes = true,
+        bool $useText = true,
+        int $depth = self::DEF_DEPTH
+    ) {
         $this->subject = $element;
 
         if (null !== $useAttributes) {
@@ -54,9 +53,7 @@ class JsonSimpleXMLElementDecorator implements JsonSerializable
     /**
      * Should use attributes.
      *
-     * @param  bool $bool
-     *
-     * @return void
+     * @param bool $bool
      */
     public function useAttributes($bool): void
     {
@@ -66,9 +63,7 @@ class JsonSimpleXMLElementDecorator implements JsonSerializable
     /**
      * Should use text.
      *
-     * @param  bool $bool
-     *
-     * @return void
+     * @param bool $bool
      */
     public function useText($bool): void
     {
@@ -78,9 +73,7 @@ class JsonSimpleXMLElementDecorator implements JsonSerializable
     /**
      * Set depth.
      *
-     * @param  int $depth
-     *
-     * @return void
+     * @param int $depth
      */
     public function setDepth($depth): void
     {
