@@ -11,17 +11,17 @@ filter:
 # Tests
 # https://scrutinizer-ci.com/docs/configuration/build_reference
 
-build:
-  environment:
-    php:
-      version: '8.0'
-  requires:
-    - branch: master
-  nodes:
-    analysis:
-      tests:
-        override:
-          - php-scrutinizer-run
+# build:
+#   environment:
+#     php:
+#       version: '8.0'
+#   requires:
+#     - branch: master
+#   nodes:
+#     analysis:
+#       tests:
+#         override:
+#           - php-scrutinizer-run
 
 # Analysis
 # https://scrutinizer-ci.com/docs/tools/external-code-coverage/
