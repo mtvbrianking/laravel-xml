@@ -31,8 +31,12 @@ jobs:
             testbench: ^5.0
     name: TESTS PHP ${{ matrix.php }} - LARAVEL ${{ matrix.laravel }} - TESTBENCH ${{ matrix.testbench }}
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v2
+        with:
+          php-version: ${{ matrix.php }}
+          fetch-depth: 0
+          persist-credentials: false
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2

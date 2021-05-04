@@ -17,8 +17,12 @@ jobs:
     name: CS PHP ${{ matrix.php }}
 
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v2
+        with:
+          php-version: ${{ matrix.php }}
+          fetch-depth: 0
+          persist-credentials: false
 
       - name: Fix style
         uses: docker://oskarstark/php-cs-fixer-ga
