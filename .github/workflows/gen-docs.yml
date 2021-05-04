@@ -14,12 +14,13 @@ jobs:
       fail-fast: true
       matrix:
         php: [7.3]
-    name: Docs P${{ matrix.php }}
+    name: DOCS PHP ${{ matrix.php }}
 
     steps:
       - name: Checkout
         uses: actions/checkout@v2
         with:
+          php-version: ${{ matrix.php }}
           fetch-depth: 0
           persist-credentials: false
 

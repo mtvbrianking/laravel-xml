@@ -29,7 +29,7 @@ jobs:
         include:
           - laravel: ^7.0
             testbench: ^5.0
-    name: Tests P${{ matrix.php }} - L${{ matrix.laravel }} - T${{ matrix.testbench }}
+    name: TESTS PHP ${{ matrix.php }} - LARAVEL ${{ matrix.laravel }} - TESTBENCH ${{ matrix.testbench }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -78,7 +78,7 @@ jobs:
       fail-fast: true
       matrix:
         php: [7.3]
-    name: Coverage P${{ matrix.php }}
+    name: Coverage PHP ${{ matrix.php }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
