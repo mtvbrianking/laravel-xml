@@ -1,25 +1,5 @@
 <?php
 
-// require __DIR__.'/vendor/autoload.php';
-
-/*
- * This file is part of PHP CS Fixer.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
- *
- * This source file is subject to the MIT license that is bundled
- * with this source code in the file LICENSE.
- */
-
-$header = <<<'EOF'
-This file is part of PHP CS Fixer.
-(c) Fabien Potencier <fabien@symfony.com>
-    Dariusz Rumiński <dariusz.ruminski@gmail.com>
-This source file is subject to the MIT license that is bundled
-with this source code in the file LICENSE.
-EOF;
-
 // https://mlocati.github.io/php-cs-fixer-configurator/
 
 $excludes = [
@@ -106,7 +86,6 @@ $config
         '@PhpCsFixer' => true,
         '@PhpCsFixer:risky' => true,
         'general_phpdoc_annotation_remove' => ['annotations' => ['expectedDeprecation']],
-        'header_comment' => ['header' => $header],
     ], $rules))
     ->setFinder($finder);
 

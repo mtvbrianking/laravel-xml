@@ -2,7 +2,6 @@
 
 ![](./art/banner.png)
 
-[![Documentation](https://github.com/mtvbrianking/laravel-xml/workflows/gen-docs/badge.svg)](https://mtvbrianking.github.io/laravel-xml)
 [![Code Quality](https://scrutinizer-ci.com/g/mtvbrianking/laravel-xml/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/mtvbrianking/laravel-xml/?branch=master)
 [![Code Style](https://github.styleci.io/repos/139325131/shield?branch=master)](https://github.styleci.io/repos/139325131)
 [![Total Downloads](https://poser.pugx.org/bmatovu/laravel-xml/downloads)](https://packagist.org/packages/bmatovu/laravel-xml)
