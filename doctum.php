@@ -1,11 +1,13 @@
 <?php
 
-use Sami\Sami;
-use Symfony\Component\Finder\Finder;
-use Sami\Version\GitVersionCollection;
-use Sami\RemoteRepository\GitHubRemoteRepository;
+require __DIR__.'/vendor/autoload.php';
 
-$dir = __DIR__ . '/src';
+use Doctum\Doctum;
+use Doctum\RemoteRepository\GitHubRemoteRepository;
+use Doctum\Version\GitVersionCollection;
+use Symfony\Component\Finder\Finder;
+
+$dir = __DIR__.'/src';
 
 $iterator = Finder::create()
     ->files()
@@ -15,7 +17,7 @@ $iterator = Finder::create()
     ->in($dir);
 
 $versions = GitVersionCollection::create($dir)
-    ->add('master', 'master branch');
+    ->add('master', 'Master branch');
 
 $repo = new GitHubRemoteRepository(
     'mtvbrianking/laravel-xml',
@@ -27,10 +29,10 @@ $options = [
     'theme' => 'default',
     'versions' => $versions,
     'title' => 'Laravel XML',
-    'build_dir' => __DIR__ . '/docs',
-    'cache_dir' => __DIR__ . '/docs/cache',
+    'build_dir' => __DIR__.'/build/docs',
+    'cache_dir' => __DIR__.'/build/docs/cache',
     'remote_repository' => $repo,
     'default_opened_level' => 3,
 ];
 
-return new Sami($iterator, $options);
+return new Doctum($iterator, $options);
