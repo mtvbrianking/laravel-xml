@@ -8,7 +8,7 @@ filter:
     - "build/"
     - "tests/"
 
-# Tessts
+# Tests
 # https://scrutinizer-ci.com/docs/configuration/build_reference
 
 # build:
