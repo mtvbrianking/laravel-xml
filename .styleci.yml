@@ -8,8 +8,7 @@ risky: false
 
 finder:
   exclude:
-    - "coverage"
-    - "docs"
+    - "build"
     - "tests"
     - "vendor"
   name:
