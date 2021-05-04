@@ -1,0 +1,47 @@
+{
+    "name": "Bmatovu\\LaravelXml\\LaravelXml",
+    "line": 7,
+    "short_desc": null,
+    "long_desc": null,
+    "hint": null,
+    "tags": [],
+    "namespace": "Bmatovu\\LaravelXml",
+    "file": "\/home\/runner\/work\/laravel-xml\/laravel-xml\/src\/LaravelXml.php",
+    "relative_file": "\/src\/LaravelXml.php",
+    "hash": "1f899e423b559260bae8838392b6b9ce77eec344",
+    "parent": "Illuminate\\Support\\Facades\\Facade",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "is_read_only": false,
+    "aliases": {
+        "Facade": "Illuminate\\Support\\Facades\\Facade"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "getFacadeAccessor": {
+            "name": "getFacadeAccessor",
+            "line": 15,
+            "short_desc": "Get the binding in the IoC container",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "see": [],
+            "modifiers": 10,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

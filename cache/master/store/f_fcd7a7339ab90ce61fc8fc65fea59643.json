@@ -1,0 +1,111 @@
+{
+    "namespace": "",
+    "name": "xml_encode",
+    "line": 19,
+    "short_desc": "Convert the an array to an xml string.",
+    "long_desc": "",
+    "hint": [
+        [
+            "string",
+            false
+        ]
+    ],
+    "hint_desc": "",
+    "tags": [],
+    "modifiers": 0,
+    "is_by_ref": "",
+    "exceptions": [],
+    "errors": [],
+    "parameters": {
+        "array": {
+            "name": "array",
+            "line": 19,
+            "short_desc": "",
+            "long_desc": null,
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "tags": [],
+            "modifiers": 0,
+            "default": null,
+            "variadic": false,
+            "is_by_ref": false,
+            "is_read_only": false
+        },
+        "rootElementName": {
+            "name": "rootElementName",
+            "line": 19,
+            "short_desc": "",
+            "long_desc": null,
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "tags": [],
+            "modifiers": 0,
+            "default": "'document'",
+            "variadic": false,
+            "is_by_ref": false,
+            "is_read_only": false
+        },
+        "replaceSpacesByUnderScoresInKeyNames": {
+            "name": "replaceSpacesByUnderScoresInKeyNames",
+            "line": 19,
+            "short_desc": "",
+            "long_desc": null,
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "tags": [],
+            "modifiers": 0,
+            "default": "true",
+            "variadic": false,
+            "is_by_ref": false,
+            "is_read_only": false
+        },
+        "xmlEncoding": {
+            "name": "xmlEncoding",
+            "line": 19,
+            "short_desc": "",
+            "long_desc": null,
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "tags": [],
+            "modifiers": 0,
+            "default": "'UTF-8'",
+            "variadic": false,
+            "is_by_ref": false,
+            "is_read_only": false
+        },
+        "xmlVersion": {
+            "name": "xmlVersion",
+            "line": 19,
+            "short_desc": "",
+            "long_desc": null,
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "tags": [],
+            "modifiers": 0,
+            "default": "'1.0'",
+            "variadic": false,
+            "is_by_ref": false,
+            "is_read_only": false
+        }
+    }
+}

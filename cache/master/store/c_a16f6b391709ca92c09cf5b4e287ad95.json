@@ -1,0 +1,280 @@
+{
+    "name": "Bmatovu\\LaravelXml\\Support\\XmlValidator",
+    "line": 12,
+    "short_desc": "Class XmlValidator.",
+    "long_desc": "Validates XML against XSD",
+    "hint": null,
+    "tags": {
+        "see": [
+            [
+                "\\Bmatovu\\LaravelXml\\Support\\ValidatingXML",
+                "https:\/\/medium.com\/@Sirolad\/validating-xml-against-xsd-in-php-5607f725955a"
+            ]
+        ]
+    },
+    "namespace": "Bmatovu\\LaravelXml\\Support",
+    "file": "\/home\/runner\/work\/laravel-xml\/laravel-xml\/src\/Support\/XmlValidator.php",
+    "relative_file": "\/src\/Support\/XmlValidator.php",
+    "hash": "2cc741f7f61a2d5d12c01545064ce99fb85e8c78",
+    "parent": null,
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "is_read_only": false,
+    "aliases": [],
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": {
+        "doc": {
+            "name": "doc",
+            "line": 19,
+            "short_desc": "DOM Document.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": {
+                "nodeType": "Scalar_String",
+                "value": "",
+                "attributes": {
+                    "startLine": 19,
+                    "endLine": 19,
+                    "kind": 1
+                }
+            },
+            "errors": [],
+            "is_read_only": false,
+            "is_write_only": false
+        },
+        "xsd": {
+            "name": "xsd",
+            "line": 26,
+            "short_desc": "XML Schema Definition.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": {
+                "nodeType": "Scalar_String",
+                "value": "",
+                "attributes": {
+                    "startLine": 26,
+                    "endLine": 26,
+                    "kind": 1
+                }
+            },
+            "errors": [],
+            "is_read_only": false,
+            "is_write_only": false
+        }
+    },
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 28,
+            "short_desc": null,
+            "long_desc": null,
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "is_valid": {
+            "name": "is_valid",
+            "line": 42,
+            "short_desc": "Check if a string is valid XML.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": {
+                "see": [
+                    [
+                        "https:\/\/stackoverflow.com\/a\/31240779\/2732184"
+                    ]
+                ]
+            },
+            "see": [
+                [
+                    "https:\/\/stackoverflow.com\/a\/31240779\/2732184",
+                    "",
+                    false,
+                    false,
+                    "https:\/\/stackoverflow.com\/a\/31240779\/2732184"
+                ]
+            ],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "xml": {
+                    "name": "xml",
+                    "line": 42,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false
+                }
+            }
+        },
+        "validate": {
+            "name": "validate",
+            "line": 73,
+            "short_desc": "Validate XML string.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "xml": {
+                    "name": "xml",
+                    "line": 73,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false
+                },
+                "xsd": {
+                    "name": "xsd",
+                    "line": 73,
+                    "short_desc": "file",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false
+                }
+            }
+        },
+        "getElement": {
+            "name": "getElement",
+            "line": 101,
+            "short_desc": "Get element from message.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "mixed",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "see": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "message": {
+                    "name": "message",
+                    "line": 101,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false
+                }
+            }
+        },
+        "getMessage": {
+            "name": "getMessage",
+            "line": 116,
+            "short_desc": "Get refined message.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "see": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "message": {
+                    "name": "message",
+                    "line": 116,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

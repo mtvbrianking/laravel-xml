@@ -1,0 +1,396 @@
+{
+    "name": "Bmatovu\\LaravelXml\\Support\\Facades\\LaravelXml",
+    "line": 9,
+    "short_desc": null,
+    "long_desc": null,
+    "hint": null,
+    "tags": [],
+    "namespace": "Bmatovu\\LaravelXml\\Support\\Facades",
+    "file": "\/home\/runner\/work\/laravel-xml\/laravel-xml\/src\/Support\/Facades\/LaravelXml.php",
+    "relative_file": "\/src\/Support\/Facades\/LaravelXml.php",
+    "hash": "bce524d56cc1a4c3b9046bdc9c72242afb019d4b",
+    "parent": null,
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "is_read_only": false,
+    "aliases": {
+        "ArrayToXml": "Bmatovu\\LaravelXml\\Support\\ArrayToXml",
+        "JsonSimpleXMLElementDecorator": "Bmatovu\\LaravelXml\\Support\\JsonSimpleXMLElementDecorator",
+        "XmlValidator": "Bmatovu\\LaravelXml\\Support\\XmlValidator"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 11,
+            "short_desc": null,
+            "long_desc": null,
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "encode": {
+            "name": "encode",
+            "line": 27,
+            "short_desc": "Convert the an array to an xml string.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "array": {
+                    "name": "array",
+                    "line": 28,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false
+                },
+                "rootElementName": {
+                    "name": "rootElementName",
+                    "line": 29,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": "'document'",
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false
+                },
+                "replaceSpacesByUnderScoresInKeyNames": {
+                    "name": "replaceSpacesByUnderScoresInKeyNames",
+                    "line": 30,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "bool",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": "true",
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false
+                },
+                "xmlEncoding": {
+                    "name": "xmlEncoding",
+                    "line": 31,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": "'UTF-8'",
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false
+                },
+                "xmlVersion": {
+                    "name": "xmlVersion",
+                    "line": 32,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": "'1.0'",
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false
+                }
+            }
+        },
+        "decode": {
+            "name": "decode",
+            "line": 52,
+            "short_desc": "Convert a string of XML into an array.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "mixed",
+                    false
+                ]
+            ],
+            "hint_desc": "Array or FALSE on failure",
+            "tags": {
+                "see": [
+                    [
+                        "http:\/\/php.net\/manual\/en\/function.simplexml-load-string.php"
+                    ],
+                    [
+                        "https:\/\/stackoverflow.com\/a\/20431742\/2732184"
+                    ],
+                    [
+                        "https:\/\/stackoverflow.com\/a\/2970701\/2732184"
+                    ]
+                ]
+            },
+            "see": [
+                [
+                    "http:\/\/php.net\/manual\/en\/function.simplexml-load-string.php",
+                    "",
+                    false,
+                    false,
+                    "http:\/\/php.net\/manual\/en\/function.simplexml-load-string.php"
+                ],
+                [
+                    "https:\/\/stackoverflow.com\/a\/20431742\/2732184",
+                    "",
+                    false,
+                    false,
+                    "https:\/\/stackoverflow.com\/a\/20431742\/2732184"
+                ],
+                [
+                    "https:\/\/stackoverflow.com\/a\/2970701\/2732184",
+                    "",
+                    false,
+                    false,
+                    "https:\/\/stackoverflow.com\/a\/2970701\/2732184"
+                ]
+            ],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "data": {
+                    "name": "data",
+                    "line": 52,
+                    "short_desc": "A well-formed XML string",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false
+                },
+                "class_name": {
+                    "name": "class_name",
+                    "line": 52,
+                    "short_desc": "[optional] Default: SimpleXMLElement",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": "'SimpleXMLElement'",
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false
+                },
+                "options": {
+                    "name": "options",
+                    "line": 52,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "int",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": "0",
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false
+                },
+                "ns": {
+                    "name": "ns",
+                    "line": 52,
+                    "short_desc": "[optional] Namespace prefix or URI",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": "''",
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false
+                },
+                "is_prefix": {
+                    "name": "is_prefix",
+                    "line": 52,
+                    "short_desc": "[optional] TRUE if ns is a prefix, FALSE if it's a URI, defaults to FALSE",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "bool",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": "false",
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false
+                }
+            }
+        },
+        "is_valid": {
+            "name": "is_valid",
+            "line": 67,
+            "short_desc": "Check if a string is valid XML.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "xml": {
+                    "name": "xml",
+                    "line": 67,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false
+                }
+            }
+        },
+        "validate": {
+            "name": "validate",
+            "line": 82,
+            "short_desc": "Validate XML string.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": "errors",
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "xml": {
+                    "name": "xml",
+                    "line": 82,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false
+                },
+                "xsd": {
+                    "name": "xsd",
+                    "line": 82,
+                    "short_desc": "file",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

@@ -1,0 +1,123 @@
+{
+    "namespace": "",
+    "name": "xml_decode",
+    "line": 39,
+    "short_desc": "Convert a string of XML into an array",
+    "long_desc": "",
+    "hint": [
+        [
+            "mixed",
+            false
+        ]
+    ],
+    "hint_desc": "Array or FALSE on failure",
+    "tags": {
+        "link": [
+            [
+                "http:\/\/php.net\/manual\/en\/function.simplexml-load-string.php"
+            ],
+            [
+                "https:\/\/stackoverflow.com\/a\/20431742\/2732184"
+            ],
+            [
+                "https:\/\/stackoverflow.com\/a\/2970701\/2732184"
+            ]
+        ]
+    },
+    "modifiers": 0,
+    "is_by_ref": "",
+    "exceptions": [],
+    "errors": [],
+    "parameters": {
+        "data": {
+            "name": "data",
+            "line": 39,
+            "short_desc": "A well-formed XML string",
+            "long_desc": null,
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "tags": [],
+            "modifiers": 0,
+            "default": null,
+            "variadic": false,
+            "is_by_ref": false,
+            "is_read_only": false
+        },
+        "class_name": {
+            "name": "class_name",
+            "line": 39,
+            "short_desc": "[optional] Default: SimpleXMLElement",
+            "long_desc": null,
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "tags": [],
+            "modifiers": 0,
+            "default": "\"SimpleXMLElement\"",
+            "variadic": false,
+            "is_by_ref": false,
+            "is_read_only": false
+        },
+        "options": {
+            "name": "options",
+            "line": 39,
+            "short_desc": "",
+            "long_desc": null,
+            "hint": [
+                [
+                    "int",
+                    false
+                ]
+            ],
+            "tags": [],
+            "modifiers": 0,
+            "default": "0",
+            "variadic": false,
+            "is_by_ref": false,
+            "is_read_only": false
+        },
+        "ns": {
+            "name": "ns",
+            "line": 39,
+            "short_desc": "[optional] Namespace prefix or URI.",
+            "long_desc": null,
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "tags": [],
+            "modifiers": 0,
+            "default": "\"\"",
+            "variadic": false,
+            "is_by_ref": false,
+            "is_read_only": false
+        },
+        "is_prefix": {
+            "name": "is_prefix",
+            "line": 39,
+            "short_desc": "[optional] TRUE if ns is a prefix, FALSE if it's a URI, defaults to FALSE",
+            "long_desc": null,
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "tags": [],
+            "modifiers": 0,
+            "default": "false",
+            "variadic": false,
+            "is_by_ref": false,
+            "is_read_only": false
+        }
+    }
+}

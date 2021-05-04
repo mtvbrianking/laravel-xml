@@ -1,0 +1,71 @@
+{
+    "name": "Bmatovu\\LaravelXml\\LaravelXmlServiceProvider",
+    "line": 11,
+    "short_desc": null,
+    "long_desc": null,
+    "hint": null,
+    "tags": [],
+    "namespace": "Bmatovu\\LaravelXml",
+    "file": "\/home\/runner\/work\/laravel-xml\/laravel-xml\/src\/LaravelXmlServiceProvider.php",
+    "relative_file": "\/src\/LaravelXmlServiceProvider.php",
+    "hash": "092d4f6e629eb6cfb53e7dc53195426eea88d457",
+    "parent": "Illuminate\\Support\\ServiceProvider",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "is_read_only": false,
+    "aliases": {
+        "XmlResponse": "Bmatovu\\LaravelXml\\Http\\XmlResponse",
+        "Request": "Illuminate\\Support\\Facades\\Request",
+        "Response": "Illuminate\\Support\\Facades\\Response",
+        "ServiceProvider": "Illuminate\\Support\\ServiceProvider",
+        "Str": "Illuminate\\Support\\Str"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "boot": {
+            "name": "boot",
+            "line": 19,
+            "short_desc": "Bootstrap the application services.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "void",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "register": {
+            "name": "register",
+            "line": 66,
+            "short_desc": "Register the application services.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "void",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

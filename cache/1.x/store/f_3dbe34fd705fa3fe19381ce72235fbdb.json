@@ -1,0 +1,57 @@
+{
+    "namespace": "",
+    "name": "validate_xml",
+    "line": 67,
+    "short_desc": "Validate XML string",
+    "long_desc": "",
+    "hint": [
+        [
+            "array",
+            false
+        ]
+    ],
+    "hint_desc": "errors",
+    "tags": [],
+    "modifiers": 0,
+    "is_by_ref": "",
+    "exceptions": [],
+    "errors": [],
+    "parameters": {
+        "xml": {
+            "name": "xml",
+            "line": 67,
+            "short_desc": "",
+            "long_desc": null,
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "tags": [],
+            "modifiers": 0,
+            "default": null,
+            "variadic": false,
+            "is_by_ref": false,
+            "is_read_only": false
+        },
+        "xsd": {
+            "name": "xsd",
+            "line": 67,
+            "short_desc": "file",
+            "long_desc": null,
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "tags": [],
+            "modifiers": 0,
+            "default": null,
+            "variadic": false,
+            "is_by_ref": false,
+            "is_read_only": false
+        }
+    }
+}

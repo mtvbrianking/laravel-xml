@@ -1,0 +1,39 @@
+{
+    "namespace": "",
+    "name": "is_valid_xml",
+    "line": 53,
+    "short_desc": "Check if a string is valid XML",
+    "long_desc": "",
+    "hint": [
+        [
+            "bool",
+            false
+        ]
+    ],
+    "hint_desc": "",
+    "tags": [],
+    "modifiers": 0,
+    "is_by_ref": "",
+    "exceptions": [],
+    "errors": [],
+    "parameters": {
+        "xml": {
+            "name": "xml",
+            "line": 53,
+            "short_desc": "",
+            "long_desc": null,
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "tags": [],
+            "modifiers": 0,
+            "default": null,
+            "variadic": false,
+            "is_by_ref": false,
+            "is_read_only": false
+        }
+    }
+}
