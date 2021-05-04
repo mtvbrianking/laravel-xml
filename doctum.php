@@ -17,6 +17,7 @@ $iterator = Finder::create()
     ->in($dir);
 
 $versions = GitVersionCollection::create($dir)
+    ->add('1.x', 'v1.x')
     ->add('master', 'Master branch');
 
 $repo = new GitHubRemoteRepository(
@@ -29,8 +30,8 @@ $options = [
     'theme' => 'default',
     'versions' => $versions,
     'title' => 'Laravel XML',
-    'build_dir' => __DIR__.'/build/docs',
-    'cache_dir' => __DIR__.'/build/docs/cache',
+    'build_dir' => __DIR__.'/build/docs/%version%',
+    'cache_dir' => __DIR__.'/build/docs/cache/%version%',
     'remote_repository' => $repo,
     'default_opened_level' => 3,
 ];

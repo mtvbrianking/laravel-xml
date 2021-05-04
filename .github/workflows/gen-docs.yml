@@ -13,7 +13,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        php: [7.3]
+        php: [8.0]
     name: DOCS PHP ${{ matrix.php }}
 
     steps:
@@ -22,7 +22,7 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: false
-          
+
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
