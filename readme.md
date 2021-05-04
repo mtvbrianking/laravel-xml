@@ -7,6 +7,7 @@
 [![Total Downloads](https://poser.pugx.org/bmatovu/laravel-xml/downloads)](https://packagist.org/packages/bmatovu/laravel-xml)
 [![Latest Stable Version](https://poser.pugx.org/bmatovu/laravel-xml/v/stable)](https://packagist.org/packages/bmatovu/laravel-xml)
 [![License](https://poser.pugx.org/bmatovu/laravel-xml/license)](https://packagist.org/packages/bmatovu/laravel-xml)
+[![Documentation](https://github.com/mtvbrianking/laravel-xml/workflows/gen-docs/badge.svg)](https://mtvbrianking.github.io/laravel-xml/master/)
 
 This package comes with the much desired xml support for you Laravel project including middleware to accept only xml requests, 
 http response in xml, and more utilities for xml conversions as well as validation.
