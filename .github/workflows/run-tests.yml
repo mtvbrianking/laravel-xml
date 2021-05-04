@@ -25,10 +25,10 @@ jobs:
       #       testbench: ^6.0
       matrix:
         php: [7.3]
-        laravel: [^7.3]
+        laravel: [^7.0]
         include:
-          - laravel: ^8.0
-            testbench: ^6.0
+          - laravel: ^7.0
+            testbench: ^5.0
     name: Tests P${{ matrix.php }} - L${{ matrix.laravel }} - T${{ matrix.testbench }}
     steps:
       - name: Checkout code
