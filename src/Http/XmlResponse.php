@@ -38,6 +38,12 @@ class XmlResponse extends BaseResponse
 
         $this->options = array_merge($this->options, $options);
 
+        if($data instanceof \SimpleXmlElement) {
+            parent::__construct($data->asXML(), $status, $headers);
+
+            return;
+        }
+
         if ($data instanceof Model || $data instanceof Collection) {
             $data = $data->toArray();
         }
