@@ -87,8 +87,6 @@
     
         
 
-            <div class="description">
-            <p><p>Convert PHP Array to XML.</p></p>            <p><p>Class ArrayToXml</p></p>        </div>
             
         
     
@@ -237,7 +235,7 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location"><a href="https://github.com/mtvbrianking/laravel-xml/blob/master/src/Support/ArrayToXml.php#L44">at line 44</a></div>
+        <div class="location"><a href="https://github.com/mtvbrianking/laravel-xml/blob/master/src/Support/ArrayToXml.php#L38">at line 38</a></div>
         <code>                    
     <strong>__construct</strong>(array $content, array|string $rootElement = &#039;&#039;, bool $replaceSpacesByUnderScoresInKeyNames = true, string $xmlEncoding = &#039;UTF-8&#039;, string $xmlVersion = &#039;1.0&#039;)
         </code>
@@ -299,7 +297,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_convert">
-        <div class="location"><a href="https://github.com/mtvbrianking/laravel-xml/blob/master/src/Support/ArrayToXml.php#L76">at line 76</a></div>
+        <div class="location"><a href="https://github.com/mtvbrianking/laravel-xml/blob/master/src/Support/ArrayToXml.php#L70">at line 70</a></div>
         <code>        static            string
     <strong>convert</strong>(array $array, string $rootElementName = &#039;document&#039;, bool $replaceSpacesByUnderScoresInKeyNames = true, string $xmlEncoding = &#039;UTF-8&#039;, string $xmlVersion = &#039;1.0&#039;)
         </code>
@@ -361,7 +359,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_toXml">
-        <div class="location"><a href="https://github.com/mtvbrianking/laravel-xml/blob/master/src/Support/ArrayToXml.php#L93">at line 93</a></div>
+        <div class="location"><a href="https://github.com/mtvbrianking/laravel-xml/blob/master/src/Support/ArrayToXml.php#L87">at line 87</a></div>
         <code>                    string
     <strong>toXml</strong>()
         </code>
@@ -393,7 +391,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_toDom">
-        <div class="location"><a href="https://github.com/mtvbrianking/laravel-xml/blob/master/src/Support/ArrayToXml.php#L103">at line 103</a></div>
+        <div class="location"><a href="https://github.com/mtvbrianking/laravel-xml/blob/master/src/Support/ArrayToXml.php#L97">at line 97</a></div>
         <code>                    <a target="_blank" rel="noopener" href="https://www.php.net/DOMDocument">DOMDocument</a>
     <strong>toDom</strong>()
         </code>
@@ -425,7 +423,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_addNode">
-        <div class="location"><a href="https://github.com/mtvbrianking/laravel-xml/blob/master/src/Support/ArrayToXml.php#L114">at line 114</a></div>
+        <div class="location"><a href="https://github.com/mtvbrianking/laravel-xml/blob/master/src/Support/ArrayToXml.php#L108">at line 108</a></div>
         <code>            protected        void
     <strong>addNode</strong>(<a target="_blank" rel="noopener" href="https://www.php.net/DOMElement">DOMElement</a> $element, string $key, array $value)
         </code>
@@ -477,7 +475,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_addCollectionNode">
-        <div class="location"><a href="https://github.com/mtvbrianking/laravel-xml/blob/master/src/Support/ArrayToXml.php#L130">at line 130</a></div>
+        <div class="location"><a href="https://github.com/mtvbrianking/laravel-xml/blob/master/src/Support/ArrayToXml.php#L124">at line 124</a></div>
         <code>            protected        void
     <strong>addCollectionNode</strong>(<a target="_blank" rel="noopener" href="https://www.php.net/DOMElement">DOMElement</a> $element, array $value)
         </code>
@@ -524,7 +522,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_addSequentialNode">
-        <div class="location"><a href="https://github.com/mtvbrianking/laravel-xml/blob/master/src/Support/ArrayToXml.php#L148">at line 148</a></div>
+        <div class="location"><a href="https://github.com/mtvbrianking/laravel-xml/blob/master/src/Support/ArrayToXml.php#L142">at line 142</a></div>
         <code>            protected        void
     <strong>addSequentialNode</strong>(<a target="_blank" rel="noopener" href="https://www.php.net/DOMElement">DOMElement</a> $element, array $value)
         </code>
@@ -571,7 +569,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_isArrayAllKeySequential">
-        <div class="location"><a href="https://github.com/mtvbrianking/laravel-xml/blob/master/src/Support/ArrayToXml.php#L168">at line 168</a></div>
+        <div class="location"><a href="https://github.com/mtvbrianking/laravel-xml/blob/master/src/Support/ArrayToXml.php#L162">at line 162</a></div>
         <code>            protected        bool
     <strong>isArrayAllKeySequential</strong>(array $value)
         </code>
@@ -613,7 +611,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_addAttributes">
-        <div class="location"><a href="https://github.com/mtvbrianking/laravel-xml/blob/master/src/Support/ArrayToXml.php#L187">at line 187</a></div>
+        <div class="location"><a href="https://github.com/mtvbrianking/laravel-xml/blob/master/src/Support/ArrayToXml.php#L181">at line 181</a></div>
         <code>            protected        void
     <strong>addAttributes</strong>(<a target="_blank" rel="noopener" href="https://www.php.net/DOMElement">DOMElement</a> $element, string[] $data)
         </code>
@@ -660,7 +658,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_createRootElement">
-        <div class="location"><a href="https://github.com/mtvbrianking/laravel-xml/blob/master/src/Support/ArrayToXml.php#L201">at line 201</a></div>
+        <div class="location"><a href="https://github.com/mtvbrianking/laravel-xml/blob/master/src/Support/ArrayToXml.php#L195">at line 195</a></div>
         <code>            protected        <a target="_blank" rel="noopener" href="https://www.php.net/DOMElement">DOMElement</a>
     <strong>createRootElement</strong>(array|string $rootElement)
         </code>
@@ -702,7 +700,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_convertElement">
-        <div class="location"><a href="https://github.com/mtvbrianking/laravel-xml/blob/master/src/Support/ArrayToXml.php#L229">at line 229</a></div>
+        <div class="location"><a href="https://github.com/mtvbrianking/laravel-xml/blob/master/src/Support/ArrayToXml.php#L223">at line 223</a></div>
         <code>            protected        void
     <strong>convertElement</strong>(<a target="_blank" rel="noopener" href="https://www.php.net/DOMElement">DOMElement</a> $element, array $value)
         </code>

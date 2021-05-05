@@ -1,15 +1,10 @@
 {
     "name": "Bmatovu\\LaravelXml\\Support\\ArrayToXml",
-    "line": 18,
-    "short_desc": "Convert PHP Array to XML.",
-    "long_desc": "Class ArrayToXml",
+    "line": 12,
+    "short_desc": "",
+    "long_desc": "",
     "hint": null,
     "tags": {
-        "license": [
-            [
-                "MIT"
-            ]
-        ],
         "see": [
             [
                 "https:\/\/github.com\/spatie\/array-to-xml"
@@ -19,7 +14,7 @@
     "namespace": "Bmatovu\\LaravelXml\\Support",
     "file": "\/home\/runner\/work\/laravel-xml\/laravel-xml\/src\/Support\/ArrayToXml.php",
     "relative_file": "\/src\/Support\/ArrayToXml.php",
-    "hash": "ee59b6cf8acb24d404be69b398700e5086806743",
+    "hash": "6b8032b6627c366513c6c201d744c559c21b3a5f",
     "parent": null,
     "modifiers": 0,
     "is_trait": false,
@@ -36,7 +31,7 @@
     "properties": {
         "document": {
             "name": "document",
-            "line": 25,
+            "line": 19,
             "short_desc": "The root DOM Document.",
             "long_desc": "",
             "hint": [
@@ -55,7 +50,7 @@
         },
         "replaceSpacesByUnderScoresInKeyNames": {
             "name": "replaceSpacesByUnderScoresInKeyNames",
-            "line": 32,
+            "line": 26,
             "short_desc": "Set to enable replacing space with underscore.",
             "long_desc": "",
             "hint": [
@@ -75,8 +70,8 @@
                         "true"
                     ],
                     "attributes": {
-                        "startLine": 32,
-                        "endLine": 32,
+                        "startLine": 26,
+                        "endLine": 26,
                         "namespacedName": {
                             "nodeType": "Name_FullyQualified",
                             "parts": [
@@ -86,15 +81,15 @@
                                 "true"
                             ],
                             "attributes": {
-                                "startLine": 32,
-                                "endLine": 32
+                                "startLine": 26,
+                                "endLine": 26
                             }
                         }
                     }
                 },
                 "attributes": {
-                    "startLine": 32,
-                    "endLine": 32
+                    "startLine": 26,
+                    "endLine": 26
                 }
             },
             "errors": [],
@@ -105,7 +100,7 @@
     "methods": {
         "__construct": {
             "name": "__construct",
-            "line": 44,
+            "line": 38,
             "short_desc": "Construct a new instance.",
             "long_desc": "",
             "hint": null,
@@ -124,7 +119,7 @@
             "parameters": {
                 "content": {
                     "name": "content",
-                    "line": 45,
+                    "line": 39,
                     "short_desc": null,
                     "long_desc": null,
                     "hint": [
@@ -142,7 +137,7 @@
                 },
                 "rootElement": {
                     "name": "rootElement",
-                    "line": 46,
+                    "line": 40,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -164,7 +159,7 @@
                 },
                 "replaceSpacesByUnderScoresInKeyNames": {
                     "name": "replaceSpacesByUnderScoresInKeyNames",
-                    "line": 47,
+                    "line": 41,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -182,7 +177,7 @@
                 },
                 "xmlEncoding": {
                     "name": "xmlEncoding",
-                    "line": 48,
+                    "line": 42,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -200,7 +195,7 @@
                 },
                 "xmlVersion": {
                     "name": "xmlVersion",
-                    "line": 49,
+                    "line": 43,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -220,7 +215,7 @@
         },
         "convert": {
             "name": "convert",
-            "line": 76,
+            "line": 70,
             "short_desc": "Convert the given array to an xml string.",
             "long_desc": "",
             "hint": [
@@ -239,7 +234,7 @@
             "parameters": {
                 "array": {
                     "name": "array",
-                    "line": 77,
+                    "line": 71,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -257,7 +252,7 @@
                 },
                 "rootElementName": {
                     "name": "rootElementName",
-                    "line": 78,
+                    "line": 72,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -275,7 +270,7 @@
                 },
                 "replaceSpacesByUnderScoresInKeyNames": {
                     "name": "replaceSpacesByUnderScoresInKeyNames",
-                    "line": 79,
+                    "line": 73,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -293,7 +288,7 @@
                 },
                 "xmlEncoding": {
                     "name": "xmlEncoding",
-                    "line": 80,
+                    "line": 74,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -311,7 +306,7 @@
                 },
                 "xmlVersion": {
                     "name": "xmlVersion",
-                    "line": 81,
+                    "line": 75,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -331,7 +326,7 @@
         },
         "toXml": {
             "name": "toXml",
-            "line": 93,
+            "line": 87,
             "short_desc": "Return as XML.",
             "long_desc": "",
             "hint": [
@@ -351,7 +346,7 @@
         },
         "toDom": {
             "name": "toDom",
-            "line": 103,
+            "line": 97,
             "short_desc": "Return as DOM object.",
             "long_desc": "",
             "hint": [
@@ -371,7 +366,7 @@
         },
         "addNode": {
             "name": "addNode",
-            "line": 114,
+            "line": 108,
             "short_desc": "Add node.",
             "long_desc": "",
             "hint": [
@@ -390,7 +385,7 @@
             "parameters": {
                 "element": {
                     "name": "element",
-                    "line": 114,
+                    "line": 108,
                     "short_desc": null,
                     "long_desc": null,
                     "hint": [
@@ -408,7 +403,7 @@
                 },
                 "key": {
                     "name": "key",
-                    "line": 114,
+                    "line": 108,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -426,7 +421,7 @@
                 },
                 "value": {
                     "name": "value",
-                    "line": 114,
+                    "line": 108,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -446,7 +441,7 @@
         },
         "addCollectionNode": {
             "name": "addCollectionNode",
-            "line": 130,
+            "line": 124,
             "short_desc": "Add collection node.",
             "long_desc": "",
             "hint": [
@@ -465,7 +460,7 @@
             "parameters": {
                 "element": {
                     "name": "element",
-                    "line": 130,
+                    "line": 124,
                     "short_desc": null,
                     "long_desc": null,
                     "hint": [
@@ -483,7 +478,7 @@
                 },
                 "value": {
                     "name": "value",
-                    "line": 130,
+                    "line": 124,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -503,7 +498,7 @@
         },
         "addSequentialNode": {
             "name": "addSequentialNode",
-            "line": 148,
+            "line": 142,
             "short_desc": "Add sequential node.",
             "long_desc": "",
             "hint": [
@@ -522,7 +517,7 @@
             "parameters": {
                 "element": {
                     "name": "element",
-                    "line": 148,
+                    "line": 142,
                     "short_desc": null,
                     "long_desc": null,
                     "hint": [
@@ -540,7 +535,7 @@
                 },
                 "value": {
                     "name": "value",
-                    "line": 148,
+                    "line": 142,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -560,7 +555,7 @@
         },
         "isArrayAllKeySequential": {
             "name": "isArrayAllKeySequential",
-            "line": 168,
+            "line": 162,
             "short_desc": "Check if array are all sequential.",
             "long_desc": "",
             "hint": [
@@ -579,7 +574,7 @@
             "parameters": {
                 "value": {
                     "name": "value",
-                    "line": 168,
+                    "line": 162,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -599,7 +594,7 @@
         },
         "addAttributes": {
             "name": "addAttributes",
-            "line": 187,
+            "line": 181,
             "short_desc": "Add attributes.",
             "long_desc": "",
             "hint": [
@@ -618,7 +613,7 @@
             "parameters": {
                 "element": {
                     "name": "element",
-                    "line": 187,
+                    "line": 181,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -636,7 +631,7 @@
                 },
                 "data": {
                     "name": "data",
-                    "line": 187,
+                    "line": 181,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -656,7 +651,7 @@
         },
         "createRootElement": {
             "name": "createRootElement",
-            "line": 201,
+            "line": 195,
             "short_desc": "Create the root element.",
             "long_desc": "",
             "hint": [
@@ -675,7 +670,7 @@
             "parameters": {
                 "rootElement": {
                     "name": "rootElement",
-                    "line": 201,
+                    "line": 195,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -699,7 +694,7 @@
         },
         "convertElement": {
             "name": "convertElement",
-            "line": 229,
+            "line": 223,
             "short_desc": "Parse individual element.",
             "long_desc": "",
             "hint": [
@@ -718,7 +713,7 @@
             "parameters": {
                 "element": {
                     "name": "element",
-                    "line": 229,
+                    "line": 223,
                     "short_desc": null,
                     "long_desc": null,
                     "hint": [
@@ -736,7 +731,7 @@
                 },
                 "value": {
                     "name": "value",
-                    "line": 229,
+                    "line": 223,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [

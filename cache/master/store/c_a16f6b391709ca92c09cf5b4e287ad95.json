@@ -15,7 +15,7 @@
     "namespace": "Bmatovu\\LaravelXml\\Support",
     "file": "\/home\/runner\/work\/laravel-xml\/laravel-xml\/src\/Support\/XmlValidator.php",
     "relative_file": "\/src\/Support\/XmlValidator.php",
-    "hash": "bcadda6b0981a8eaa5559dd8a43d41d97311d7a5",
+    "hash": "62b534d97c505e954545982f7a9a28768fd0e4ec",
     "parent": null,
     "modifiers": 0,
     "is_trait": false,
@@ -152,7 +152,7 @@
         },
         "validate": {
             "name": "validate",
-            "line": 76,
+            "line": 79,
             "short_desc": "Validate XML string.",
             "long_desc": "",
             "hint": [
@@ -162,8 +162,22 @@
                 ]
             ],
             "hint_desc": "",
-            "tags": [],
-            "see": [],
+            "tags": {
+                "see": [
+                    [
+                        "https:\/\/www.php.net\/manual\/en\/class.simplexmlelement.php#107869"
+                    ]
+                ]
+            },
+            "see": [
+                [
+                    "https:\/\/www.php.net\/manual\/en\/class.simplexmlelement.php#107869",
+                    "",
+                    false,
+                    false,
+                    "https:\/\/www.php.net\/manual\/en\/class.simplexmlelement.php#107869"
+                ]
+            ],
             "modifiers": 1,
             "is_by_ref": "",
             "exceptions": [],
@@ -171,7 +185,7 @@
             "parameters": {
                 "xml": {
                     "name": "xml",
-                    "line": 76,
+                    "line": 79,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -189,8 +203,8 @@
                 },
                 "xsd": {
                     "name": "xsd",
-                    "line": 76,
-                    "short_desc": "file",
+                    "line": 79,
+                    "short_desc": "File path",
                     "long_desc": null,
                     "hint": [
                         [
@@ -204,12 +218,30 @@
                     "variadic": false,
                     "is_by_ref": false,
                     "is_read_only": false
+                },
+                "flags": {
+                    "name": "flags",
+                    "line": 79,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "int",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": "0",
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false
                 }
             }
         },
         "getElement": {
             "name": "getElement",
-            "line": 104,
+            "line": 107,
             "short_desc": "Get element from message.",
             "long_desc": "",
             "hint": [
@@ -228,7 +260,7 @@
             "parameters": {
                 "message": {
                     "name": "message",
-                    "line": 104,
+                    "line": 107,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [],
@@ -243,7 +275,7 @@
         },
         "getMessage": {
             "name": "getMessage",
-            "line": 119,
+            "line": 122,
             "short_desc": "Get refined message.",
             "long_desc": "",
             "hint": [
@@ -262,7 +294,7 @@
             "parameters": {
                 "message": {
                     "name": "message",
-                    "line": 119,
+                    "line": 122,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [],

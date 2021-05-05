@@ -144,7 +144,7 @@
                     array
                 </div>
                 <div class="col-md-8">
-                    <a href="#method_validate">validate</a>(string $xml, string $xsd)
+                    <a href="#method_validate">validate</a>(string $xml, string $xsd, int $flags = 0)
         
                                             <p><p>Validate XML string.</p></p>                </div>
                 <div class="col-md-2"></div>
@@ -253,9 +253,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_validate">
-        <div class="location"><a href="https://github.com/mtvbrianking/laravel-xml/blob/master/src/Support/XmlValidator.php#L76">at line 76</a></div>
+        <div class="location"><a href="https://github.com/mtvbrianking/laravel-xml/blob/master/src/Support/XmlValidator.php#L79">at line 79</a></div>
         <code>                    array
-    <strong>validate</strong>(string $xml, string $xsd)
+    <strong>validate</strong>(string $xml, string $xsd, int $flags = 0)
         </code>
     </h3>
     <div class="details">    
@@ -277,7 +277,12 @@
                     <tr>
                 <td>string</td>
                 <td>$xsd</td>
-                <td><p>file</p></td>
+                <td><p>File path</p></td>
+            </tr>
+                    <tr>
+                <td>int</td>
+                <td>$flags</td>
+                <td></td>
             </tr>
             </table>
 
@@ -293,6 +298,17 @@
 
             
             
+                            <h4>See also</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+                                            <a href="https://www.php.net/manual/en/class.simplexmlelement.php#107869">https://www.php.net/manual/en/class.simplexmlelement.php#107869</a>
+                                    </td>
+                <td></td>
+            </tr>
+            </table>
+
             
                     </div>
     </div>
@@ -300,7 +316,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getElement">
-        <div class="location"><a href="https://github.com/mtvbrianking/laravel-xml/blob/master/src/Support/XmlValidator.php#L104">at line 104</a></div>
+        <div class="location"><a href="https://github.com/mtvbrianking/laravel-xml/blob/master/src/Support/XmlValidator.php#L107">at line 107</a></div>
         <code>            protected        mixed
     <strong>getElement</strong>($message)
         </code>
@@ -342,7 +358,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getMessage">
-        <div class="location"><a href="https://github.com/mtvbrianking/laravel-xml/blob/master/src/Support/XmlValidator.php#L119">at line 119</a></div>
+        <div class="location"><a href="https://github.com/mtvbrianking/laravel-xml/blob/master/src/Support/XmlValidator.php#L122">at line 122</a></div>
         <code>            protected        string
     <strong>getMessage</strong>($message)
         </code>
