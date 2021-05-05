@@ -8,7 +8,11 @@ use Bmatovu\LaravelXml\LaravelXml;
 use Bmatovu\LaravelXml\Support\XmlElement;
 use Illuminate\Http\Request;
 
-class ExampleTest extends TestCase
+/**
+ * @internal
+ * @coversNothing
+ */
+final class ExampleTest extends TestCase
 {
     // Bmatovu\LaravelXml\LaravelXmlServiceProvider
 
@@ -20,7 +24,7 @@ class ExampleTest extends TestCase
             'Accept' => 'application/xml',
         ]);
 
-        $this->assertTrue($request->wantsXml());
+        static::assertTrue($request->wantsXml());
     }
 
     public function testRequestContentTypeHeader()
@@ -31,14 +35,14 @@ class ExampleTest extends TestCase
             'Content-Type' => 'application/xml',
         ]);
 
-        $this->assertTrue($request->isXml());
+        static::assertTrue($request->isXml());
     }
 
     public function testRequestGetXmlContentForEmptyBody()
     {
         $request = Request::create('/resources', 'POST');
 
-        $this->assertInstanceOf(\SimpleXMLElement::class, $request->xml());
+        static::assertInstanceOf(\SimpleXMLElement::class, $request->xml());
     }
 
     public function testRequestGetXmlContent()
@@ -51,9 +55,9 @@ class ExampleTest extends TestCase
             'Content-Type' => 'application/xml',
         ]);
 
-        $this->assertInstanceOf(\SimpleXMLElement::class, $request->xml());
+        static::assertInstanceOf(\SimpleXMLElement::class, $request->xml());
 
-        $this->assertInstanceOf(XmlElement::class, $request->xml());
+        static::assertInstanceOf(XmlElement::class, $request->xml());
     }
 
     public function testRespondsWithXml()
@@ -66,9 +70,9 @@ class ExampleTest extends TestCase
 
         $response = $this->app->handle($request);
 
-        $this->assertInstanceOf(XmlResponse::class, $response);
+        static::assertInstanceOf(XmlResponse::class, $response);
 
-        $this->assertTrue(false !== mb_strpos($response->headers->get('Content-Type'), 'xml'));
+        static::assertTrue(false !== mb_strpos($response->headers->get('Content-Type'), 'xml'));
     }
 
     // Bmatovu\LaravelXml\Support\Facades\LaravelXml
@@ -79,28 +83,28 @@ class ExampleTest extends TestCase
 
         $xmlStr = LaravelXml::encode(['alias' => 'jdoe']);
 
-        $this->assertSame($xmlElement->asXML(), $xmlStr);
+        static::assertSame($xmlElement->asXML(), $xmlStr);
     }
 
     public function testDecodeArrayFromXml()
     {
         $arr = LaravelXml::decode('<document><alias>jdoe</alias></document>');
 
-        $this->assertSame(['alias' => 'jdoe'], $arr);
+        static::assertSame(['alias' => 'jdoe'], $arr);
     }
 
     public function testIsValidXmlStr()
     {
         $isValid = LaravelXml::is_valid('');
 
-        $this->assertFalse($isValid);
+        static::assertFalse($isValid);
 
         $isValid = LaravelXml::is_valid('<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><title></title></head><body></body></html>');
-        $this->assertFalse($isValid);
+        static::assertFalse($isValid);
 
         $isValid = LaravelXml::is_valid('<document><alias>jdoe</alias></document>');
 
-        $this->assertTrue($isValid);
+        static::assertTrue($isValid);
     }
 
     public function testXmlStrIsValidAgainstXsdSchemaThrowsExceptionForMissingXsdSchema()
@@ -114,11 +118,11 @@ class ExampleTest extends TestCase
     {
         $errors = LaravelXml::validate('', __DIR__.'/user.xsd');
 
-        $this->assertSame(['error' => 'Invalid xml'], $errors);
+        static::assertSame(['error' => 'Invalid xml'], $errors);
 
         $errors = LaravelXml::validate('<document></document>', __DIR__.'/user.xsd');
 
-        $this->assertSame([
+        static::assertSame([
             'document' => [
                 'Missing child element(s). Expected is ( alias ).',
             ],
@@ -126,7 +130,7 @@ class ExampleTest extends TestCase
 
         $errors = LaravelXml::validate('<document><alias>jdoe</alias></document>', __DIR__.'/user.xsd');
 
-        $this->assertEmpty($errors);
+        static::assertEmpty($errors);
     }
 
     // Bmatovu\LaravelXml\Support\XmlElement
@@ -135,9 +139,9 @@ class ExampleTest extends TestCase
     {
         $user = new XmlElement('<document><alias>jdoe</alias></document>');
 
-        $this->assertEquals('jdoe', $user->get('alias'));
-        $this->assertNull($user->get('email'));
-        $this->assertFalse($user->get('is_admin', false));
+        static::assertSame('jdoe', $user->get('alias'));
+        static::assertNull($user->get('email'));
+        static::assertFalse($user->get('is_admin', false));
     }
 
     // Bmatovu\LaravelXml\Http\Middleware\RequireXml
@@ -145,18 +149,19 @@ class ExampleTest extends TestCase
 
     public function testRequireXmlContentType()
     {
-        $request = new Request;
+        $request = new Request();
 
-        $middleware = new RequireXml;
+        $middleware = new RequireXml();
 
-        $response = $middleware->handle($request, function () {});
+        $response = $middleware->handle($request, function () {
+        });
 
-        $this->assertInstanceOf(XmlResponse::class, $response);
+        static::assertInstanceOf(XmlResponse::class, $response);
 
-        $this->assertEquals(415, $response->getStatusCode());
+        static::assertSame(415, $response->getStatusCode());
 
         $xmlElement = new XmlElement('<?xml version="1.0" encoding="UTF-8"?><document><error>Only accepting xml content</error></document>');
 
-        $this->assertEquals($xmlElement->asXML(), $response->getContent());
+        static::assertSame($xmlElement->asXML(), $response->getContent());
     }
 }
