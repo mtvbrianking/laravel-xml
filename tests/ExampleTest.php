@@ -7,13 +7,9 @@ use Bmatovu\LaravelXml\LaravelXml;
 use Bmatovu\LaravelXml\Support\XmlElement;
 use Illuminate\Http\Request;
 
-/**
- * @internal
- * @coversNothing
- */
 final class ExampleTest extends TestCase
 {
-    /** @see Bmatovu\LaravelXml\LaravelXmlServiceProvider */
+    // Bmatovu\LaravelXml\LaravelXmlServiceProvider
     public function testRequestAcceptHeader()
     {
         $request = Request::create('/resources', 'POST');
@@ -73,7 +69,7 @@ final class ExampleTest extends TestCase
         static::assertTrue(false !== mb_strpos($response->headers->get('Content-Type'), 'xml'));
     }
 
-    /** @see Bmatovu\LaravelXml\Support\Facades\LaravelXml */
+    // Bmatovu\LaravelXml\Support\Facades\LaravelXml
     public function testEncodeArrayToXml()
     {
         $xmlElement = new XmlElement('<?xml version="1.0" encoding="UTF-8"?><document><alias>jdoe</alias></document>');
@@ -81,14 +77,6 @@ final class ExampleTest extends TestCase
         $xmlStr = LaravelXml::encode(['alias' => 'jdoe']);
 
         static::assertSame($xmlElement->asXML(), $xmlStr);
-
-        // $isValid = LaravelXml::is_valid('');
-
-        // $this->assertFalse($isValid);
-
-        // $isValid = LaravelXml::is_valid('<document><alias>jdoe</alias></document>');
-
-        // $this->assertTrue($isValid);
     }
 
     public function testDecodeArrayFromXml()
@@ -138,7 +126,7 @@ final class ExampleTest extends TestCase
         static::assertEmpty($errors);
     }
 
-    /** @see Bmatovu\LaravelXml\Support\XmlElement; */
+    // Bmatovu\LaravelXml\Support\XmlElement
     public function testXmlElementGetter()
     {
         $user = new XmlElement('<document><alias>jdoe</alias></document>');
