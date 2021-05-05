@@ -3,16 +3,19 @@
 namespace Bmatovu\LaravelXml\Test;
 
 use Bmatovu\LaravelXml\LaravelXmlServiceProvider;
+use Bmatovu\LaravelXml\Support\XmlElement;
 use Orchestra\Testbench\TestCase as Orchestra;
 
 abstract class TestCase extends Orchestra
 {
     /**
-     * Setup test environment.
+     * Setup the test environment.
      */
     protected function setUp(): void
     {
         parent::setUp();
+
+        // $this->app['router']->post('/resources', function() {});
     }
 
     /**
@@ -30,17 +33,30 @@ abstract class TestCase extends Orchestra
     }
 
     /**
-     * Define environment setup.
+     * Get package aliases.
      *
      * @param \Illuminate\Foundation\Application $app
+     *
+     * @return array
      */
-    protected function getEnvironmentSetUp($app): void
+    protected function getPackageAliases($app)
     {
-        $app['config']->set('database.default', 'testing');
-        $app['config']->set('database.connections.testing', [
-            'driver' => 'sqlite',
-            'database' => ':memory:',
-            'prefix' => '',
-        ]);
+        return [
+            // 'Xml' => 'Bmatovu\LaravelXml\LaravelXml',
+        ];
+    }
+
+    /**
+     * Define routes setup.
+     *
+     * @param \Illuminate\Routing\Router $router
+     */
+    protected function defineRoutes($router)
+    {
+        $router->post('/resources', function () {
+            $xmlElement = new XmlElement('<document><alias>jdoe</alias></document>');
+
+            return response()->xml($xmlElement);
+        });
     }
 }

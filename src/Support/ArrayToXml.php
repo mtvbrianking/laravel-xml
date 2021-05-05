@@ -7,12 +7,6 @@ use DOMElement;
 use DOMException;
 
 /**
- * Convert PHP Array to XML.
- *
- * Class ArrayToXml
- *
- * @license MIT
- *
  * @see https://github.com/spatie/array-to-xml
  */
 class ArrayToXml
