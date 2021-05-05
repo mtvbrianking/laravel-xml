@@ -158,6 +158,5 @@ class ExampleTest extends TestCase
         $xmlElement = new XmlElement('<?xml version="1.0" encoding="UTF-8"?><document><error>Only accepting xml content</error></document>');
 
         $this->assertEquals($xmlElement->asXML(), $response->getContent());
-
     }
 }
