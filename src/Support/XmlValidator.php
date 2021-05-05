@@ -68,12 +68,15 @@ class XmlValidator
     /**
      * Validate XML string.
      *
+     * @see https://www.php.net/manual/en/class.simplexmlelement.php#107869
+     *
      * @param string $xml
-     * @param string $xsd file
+     * @param string $xsd   File path
+     * @param int    $flags
      *
      * @return array
      */
-    public function validate($xml, $xsd)
+    public function validate($xml, $xsd, $flags = 0)
     {
         libxml_use_internal_errors(true);
 
@@ -84,7 +87,7 @@ class XmlValidator
         $this->doc->loadXML($xml);
 
         $errors = [];
-        if (! $this->doc->schemaValidate($xsd)) {
+        if (! $this->doc->schemaValidate($xsd, $flags)) {
             foreach (libxml_get_errors() as $error) {
                 $errors[$this->getElement($error->message)][] = $this->getMessage($error->message);
             }
