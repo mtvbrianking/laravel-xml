@@ -139,7 +139,7 @@ final class ExampleTest extends TestCase
     {
         $user = new XmlElement('<document><alias>jdoe</alias></document>');
 
-        static::assertSame('jdoe', $user->get('alias'));
+        static::assertSame('jdoe', (string)$user->get('alias'));
         static::assertNull($user->get('email'));
         static::assertFalse($user->get('is_admin', false));
     }
