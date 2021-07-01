@@ -62,7 +62,7 @@ class XmlValidator
 
         libxml_clear_errors();
 
-        if (!empty($errors)) {
+        if (! empty($errors)) {
             return $errors;
         } else {
             return true;
