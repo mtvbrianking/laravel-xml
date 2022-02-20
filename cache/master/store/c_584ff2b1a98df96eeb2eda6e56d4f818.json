@@ -8,7 +8,7 @@
     "namespace": "Bmatovu\\LaravelXml\\Http",
     "file": "\/home\/runner\/work\/laravel-xml\/laravel-xml\/src\/Http\/XmlResponse.php",
     "relative_file": "\/src\/Http\/XmlResponse.php",
-    "hash": "6118ff9bd2c660a146c3c9c302eb10d7c53bb5a4",
+    "hash": "b45de26c864b5ae84d0ea41d814d7c43a4abc15e",
     "parent": "Symfony\\Component\\HttpFoundation\\Response",
     "modifiers": 0,
     "is_trait": false,
@@ -301,7 +301,7 @@
             "long_desc": "",
             "hint": [
                 [
-                    "$this",
+                    "Bmatovu\\LaravelXml\\Http\\XmlResponse",
                     false
                 ]
             ],
