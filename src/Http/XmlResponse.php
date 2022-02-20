@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\ResponseTrait;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Traits\Macroable;
+use SimpleXMLElement;
 use Symfony\Component\HttpFoundation\Response as BaseResponse;
 
 class XmlResponse extends BaseResponse
@@ -38,7 +39,7 @@ class XmlResponse extends BaseResponse
 
         $this->options = array_merge($this->options, $options);
 
-        if ($data instanceof \SimpleXmlElement) {
+        if ($data instanceof SimpleXmlElement) {
             parent::__construct($data->asXML(), $status, $headers);
 
             return;

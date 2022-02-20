@@ -9,15 +9,14 @@
 [![License](https://poser.pugx.org/bmatovu/laravel-xml/license)](https://packagist.org/packages/bmatovu/laravel-xml)
 [![Documentation](https://github.com/mtvbrianking/laravel-xml/workflows/gen-docs/badge.svg)](https://mtvbrianking.github.io/laravel-xml/master/)
 
-This package comes with the much desired xml support for you Laravel project including middleware to accept only xml requests, 
-http response in xml, and more utilities for xml conversions as well as validation.
+This package comes with the much desired xml support for you Laravel project.
 
 **Supports:** Laravel versions v5.3 and above
 
 ### Installation
 
 ```bash
-$ composer require bmatovu/laravel-xml
+composer require bmatovu/laravel-xml
 ```
 
 ### Requests
@@ -33,7 +32,7 @@ $request->xml();
 Determine if the request content type is XML.
 
 ```php
-$request->isXml();
+$request->sentXml();
 ```
 
 Determine if the current request is accepting XML.
@@ -45,30 +44,91 @@ $request->wantsXml();
 Validate XML content
 
 ```php
-Xml::is_valid($request->xml());
+$isValid = Xml::is_valid($request->xml());
+
+if (! $isValid) {
+    return response()->xml(['message' => 'The given data was malformed.'], 400);
+}
 ```
 
 **Validation** - Against XML Schema Definition
+
 ```php
 $errors = Xml::validate($request->xml(), 'path_to/sample.xsd');
 
 if ($errors) {
-    return response()->xml(['error' => $errors], 422);
+    return response()->xml([
+        'message' => 'The given data was invalid.',
+        'errors' => $errors,
+    ], 422);
 }
 ```
 
 ### Responses
 
-Expects an array, convent you're objects to arrays prior...
 
 ```php
-Route::get('/users', function () {
-    $users = App\User::all();
-    return response()->xml(['users' => $users->toArray()]);
+Route::get('/users/{user}', function (Request $request, int $userId) {
+    $user = User::findOrFail($userId);
+
+    return response()->xml($user);
 });
 ```
 
-Sample response from above snippet
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+    <id>1</id>
+    <name>jdoe</name>
+    <email>jdoe@example.com</email>
+</document>
+```
+
+
+```php
+Route::get('/users/{user}', function (Request $request, int $userId) {
+    $user = User::findOrFail($userId);
+
+    return response()->xml(['user' => $user->toArray()]);
+});
+```
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+    <user>
+        <id>1</id>
+        <name>jdoe</name>
+        <email>jdoe@example.com</email>
+    </user>
+</document>
+```
+
+```php
+Route::get('/users/{user}', function (Request $request, int $userId) {
+    $user = User::findOrFail($userId);
+
+    return response()->xml($user, 200, [], ['root' => 'user']);
+});
+```
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<user>
+    <id>1</id>
+    <name>jdoe</name>
+    <email>jdoe@example.com</email>
+</user>
+```
+
+
+```php
+Route::get('/users', function () {
+    $users = User::get();
+
+    return response()->xml(['users' => $users->toArray()]);
+});
+```
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -77,15 +137,11 @@ Sample response from above snippet
         <id>1</id>
         <name>John Doe</name>
         <email>jdoe@example.com</email>
-        <created_at>2018-07-12 17:06:13</created_at>
-        <updated_at>2018-07-12 18:00:05</updated_at>
     </users>
     <users>
         <id>2</id>
         <name>Gary Plant</name>
         <email>gplant@example.com</email>
-        <created_at>2018-07-12 18:02:26</created_at>
-        <updated_at>2018-07-13 11:22:44</updated_at>
     </users>
 </document>
 ```
@@ -108,19 +164,36 @@ protected $routeMiddleware = [
 Then use the middleware on your routes, or in the controllers. 
 
 ```php
-Route::post('/user/store', function (Request, $request) {
+Route::post('/users', function (Request, $request) {
     // do something...
 })->middleware('xml');
 ```
 
-In case of the request `content-type` is not xml, the response will be; 
+This middleware only checks the `Content-Type` by defaul;
 
 [`415` - **Unsupported Media Type**]
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <document>
-    <error>Only accepting xml content</error>
+    <message>Only accepting content of type XML.</message>
+</document>
+```
+
+To check is the passed content is valid XML, pass a bool to the middleware
+
+```php
+Route::post('/users', function (Request, $request) {
+    // do something...
+})->middleware('xml:1');
+```
+
+[`400` - **Bad Request**]
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+    <message>The given data was malformed.</message>
 </document>
 ```
 

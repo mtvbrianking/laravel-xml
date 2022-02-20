@@ -19,10 +19,20 @@ class LaravelXmlServiceProvider extends ServiceProvider
     {
         /*
          * Determine if the request is sending XML.
+         * @deprecated v3.0.0
          *
          * @return bool
          */
         Request::macro('isXml', function () {
+            return 'xml' === $this->getContentType();
+        });
+
+        /*
+         * Determine if the request is sending XML.
+         *
+         * @return bool
+         */
+        Request::macro('sentXml', function () {
             return 'xml' === $this->getContentType();
         });
 
@@ -57,6 +67,7 @@ class LaravelXmlServiceProvider extends ServiceProvider
          * @param  int $status
          * @param  array $headers
          * @param  array $options
+         *
          * @return \Bmatovu\LaravelXml\Http\XmlResponse
          */
         Response::macro('xml', function ($data, $status = 200, array $headers = [], $options = []) {

@@ -9,13 +9,15 @@ use SimpleXMLElement;
  * Class JsonSimpleXMLElementDecorator.
  *
  * @see https://hakre.wordpress.com/2013/07/09/simplexml-and-json-encode-in-php-part-i
+ * @see https://gist.github.com/hakre/1d9e555ac1ebb1fc4ea8
+ * @see https://gist.github.com/hakre/c36a66708259f54e564a
  */
 class JsonSimpleXMLElementDecorator implements JsonSerializable
 {
     const DEF_DEPTH = 512;
 
     /**
-     * @var SimpleXMLElement
+     * @var \SimpleXMLElement
      */
     protected $subject;
 

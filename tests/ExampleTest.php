@@ -114,12 +114,23 @@ final class ExampleTest extends TestCase
         LaravelXml::validate('<document></document>', 'unknown.xsd');
     }
 
-    public function testXmlStrIsValidAgainstXsdSchema()
+    public function testXmlStrIsValidAgainstXsdSchemaThrowsExceptionForMalformedXml()
     {
+        // $this->expectException(\ErrorException::class);
+
+        // LaravelXml::validate('<document></document>', 'unknown.xsd');
+
+        // ....
+
+        $this->expectException(\Exception::class);
+
         $errors = LaravelXml::validate('', __DIR__.'/user.xsd');
 
         static::assertSame(['error' => 'Invalid xml'], $errors);
+    }
 
+    public function testXmlStrIsValidAgainstXsdSchema()
+    {
         $errors = LaravelXml::validate('<document></document>', __DIR__.'/user.xsd');
 
         static::assertSame([
@@ -139,9 +150,9 @@ final class ExampleTest extends TestCase
     {
         $user = new XmlElement('<document><alias>jdoe</alias></document>');
 
-        static::assertSame('jdoe', $user->get('alias'));
+        static::assertSame('jdoe', (string) $user->get('alias'));
         static::assertNull($user->get('email'));
-        static::assertFalse($user->get('is_admin', false));
+        static::assertFalse((bool) $user->get('is_admin', false));
     }
 
     // Bmatovu\LaravelXml\Http\Middleware\RequireXml
@@ -160,7 +171,7 @@ final class ExampleTest extends TestCase
 
         static::assertSame(415, $response->getStatusCode());
 
-        $xmlElement = new XmlElement('<?xml version="1.0" encoding="UTF-8"?><document><error>Only accepting xml content</error></document>');
+        $xmlElement = new XmlElement('<?xml version="1.0" encoding="UTF-8"?><document><message>Only accepting content of type XML.</message></document>');
 
         static::assertSame($xmlElement->asXML(), $response->getContent());
     }

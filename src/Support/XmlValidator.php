@@ -2,6 +2,8 @@
 
 namespace Bmatovu\LaravelXml\Support;
 
+use DOMDocument;
+
 /**
  * Class XmlValidator.
  *
@@ -14,9 +16,9 @@ class XmlValidator
     /**
      * DOM Document.
      *
-     * @var DOMDocument
+     * @var \DOMDocument
      */
-    protected $doc = '';
+    protected $domDocument = '';
 
     /**
      * XML Schema Definition.
@@ -30,7 +32,7 @@ class XmlValidator
      */
     public function __construct()
     {
-        $this->doc = new \DOMDocument();
+        $this->domDocument = new DOMDocument();
     }
 
     /**
@@ -38,25 +40,26 @@ class XmlValidator
      *
      * @see https://stackoverflow.com/a/31240779/2732184
      *
-     * @param string $xml
+     * @param string $xmlStr
+     * @param bool   $ignoreHtml
      *
      * @return bool
      */
-    public function is_valid($xml)
+    public function is_valid($xmlStr, $ignoreHtml = true)
     {
-        $content = trim($xml);
-        if (empty($content)) {
+        $xmlStr = trim($xmlStr);
+
+        if (0 === \strlen($xmlStr)) {
             return false;
         }
 
-        // ignore html
-        if (false !== stripos($content, '<!DOCTYPE html>')) {
+        if ($ignoreHtml && false !== stripos($xmlStr, '<!DOCTYPE html>')) {
             return false;
         }
 
         libxml_use_internal_errors(true);
 
-        simplexml_load_string($content);
+        simplexml_load_string($xmlStr);
 
         $errors = libxml_get_errors();
 
@@ -70,24 +73,27 @@ class XmlValidator
      *
      * @see https://www.php.net/manual/en/class.simplexmlelement.php#107869
      *
-     * @param string $xml
-     * @param string $xsd   File path
+     * @param string $xmlStr
+     * @param string $xsdFilePath
      * @param int    $flags
+     * @param bool   $checkXml
+     *
+     * @throws \Exception
      *
      * @return array
      */
-    public function validate($xml, $xsd, $flags = 0)
+    public function validate($xmlStr, $xsdFilePath, $flags = 0, $checkXml = false)
     {
         libxml_use_internal_errors(true);
 
-        if (! $this->is_valid($xml)) {
-            return ['error' => 'Invalid xml'];
+        if ($checkXml && ! $this->is_valid($xmlStr)) {
+            throw new \Exception('Malformed XML.');
         }
 
-        $this->doc->loadXML($xml);
+        $this->domDocument->loadXML($xmlStr);
 
         $errors = [];
-        if (! $this->doc->schemaValidate($xsd, $flags)) {
+        if (! $this->domDocument->schemaValidate($xsdFilePath, $flags)) {
             foreach (libxml_get_errors() as $error) {
                 $errors[$this->getElement($error->message)][] = $this->getMessage($error->message);
             }

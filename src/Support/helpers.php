@@ -30,17 +30,18 @@ if (! function_exists('xml_decode')) {
      * @see https://stackoverflow.com/a/20431742/2732184
      * @see https://stackoverflow.com/a/2970701/2732184
      *
-     * @param string $data       A well-formed XML string
-     * @param string $class_name [optional] Default: SimpleXMLElement
+     * @param string $data                A well-formed XML string
+     * @param string $class_name          [optional] Default: SimpleXMLElement
      * @param int    $options
-     * @param string $ns         [optional] Namespace prefix or URI
-     * @param bool   $is_prefix  [optional] TRUE if ns is a prefix, FALSE if it's a URI, defaults to FALSE
+     * @param string $namespace_or_prefix [optional] Namespace prefix or URI
+     * @param bool   $is_prefix           [optional] TRUE if ns is a prefix, FALSE if it's a URI, defaults to FALSE
      *
      * @return mixed Array or FALSE on failure
      */
-    function xml_decode($data, $class_name = 'SimpleXMLElement', $options = 0, $ns = '', $is_prefix = false)
+    function xml_decode($data, $class_name = SimpleXMLElement::class, $options = 0, $namespace_or_prefix = '', $is_prefix = false)
     {
-        $simple_xml = simplexml_load_string($data, $class_name, $options, $ns, $is_prefix);
+        $simple_xml = simplexml_load_string($data, $class_name, $options, $namespace_or_prefix, $is_prefix);
+
         $json_simple_xml = new JsonSimpleXMLElementDecorator($simple_xml);
 
         return json_decode(json_encode($json_simple_xml), true);

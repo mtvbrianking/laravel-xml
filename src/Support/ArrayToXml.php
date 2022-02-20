@@ -12,11 +12,11 @@ use DOMException;
 class ArrayToXml
 {
     /**
-     * The root DOM Document.
+     * The DOM Document.
      *
-     * @var DOMDocument
+     * @var \DOMDocument
      */
-    protected $document;
+    protected $domDocument;
 
     /**
      * Set to enable replacing space with underscore.
@@ -33,7 +33,7 @@ class ArrayToXml
      * @param string       $xmlEncoding
      * @param string       $xmlVersion
      *
-     * @throws DOMException
+     * @throws \DOMException
      */
     public function __construct(
         array $content,
@@ -42,7 +42,7 @@ class ArrayToXml
         $xmlEncoding = 'UTF-8',
         $xmlVersion = '1.0'
     ) {
-        $this->document = new DOMDocument($xmlVersion, $xmlEncoding);
+        $this->domDocument = new DOMDocument($xmlVersion, $xmlEncoding);
         $this->replaceSpacesByUnderScoresInKeyNames = $replaceSpacesByUnderScoresInKeyNames;
 
         if ($this->isArrayAllKeySequential($content) && ! empty($content)) {
@@ -51,7 +51,7 @@ class ArrayToXml
 
         $root = $this->createRootElement($rootElement);
 
-        $this->document->appendChild($root);
+        $this->domDocument->appendChild($root);
 
         $this->convertElement($root, $content);
     }
@@ -59,7 +59,7 @@ class ArrayToXml
     /**
      * Convert the given array to an xml string.
      *
-     * @param string[] $array
+     * @param string[] $arr
      * @param string   $rootElementName
      * @param bool     $replaceSpacesByUnderScoresInKeyNames
      * @param string   $xmlEncoding
@@ -68,13 +68,13 @@ class ArrayToXml
      * @return string
      */
     public static function convert(
-        array $array,
+        array $arr,
         $rootElementName = 'document',
         $replaceSpacesByUnderScoresInKeyNames = true,
         $xmlEncoding = 'UTF-8',
         $xmlVersion = '1.0'
     ) {
-        $converter = new static($array, $rootElementName, $replaceSpacesByUnderScoresInKeyNames, $xmlEncoding, $xmlVersion);
+        $converter = new static($arr, $rootElementName, $replaceSpacesByUnderScoresInKeyNames, $xmlEncoding, $xmlVersion);
 
         return $converter->toXml();
     }
@@ -86,17 +86,17 @@ class ArrayToXml
      */
     public function toXml()
     {
-        return $this->document->saveXML();
+        return $this->domDocument->saveXML();
     }
 
     /**
      * Return as DOM object.
      *
-     * @return DOMDocument
+     * @return \DOMDocument
      */
     public function toDom()
     {
-        return $this->document;
+        return $this->domDocument;
     }
 
     /**
@@ -105,14 +105,14 @@ class ArrayToXml
      * @param string $key
      * @param array  $value
      */
-    protected function addNode(DOMElement $element, $key, $value): void
+    protected function addNode(DOMElement $domElement, $key, $value): void
     {
         if ($this->replaceSpacesByUnderScoresInKeyNames) {
             $key = str_replace(' ', '_', $key);
         }
 
-        $child = $this->document->createElement($key);
-        $element->appendChild($child);
+        $child = $this->domDocument->createElement($key);
+        $domElement->appendChild($child);
         $this->convertElement($child, $value);
     }
 
@@ -121,16 +121,16 @@ class ArrayToXml
      *
      * @param array $value
      */
-    protected function addCollectionNode(DOMElement $element, $value): void
+    protected function addCollectionNode(DOMElement $domElement, $value): void
     {
-        if (0 === $element->childNodes->length && 0 === $element->attributes->length) {
-            $this->convertElement($element, $value);
+        if (0 === $domElement->childNodes->length && 0 === $domElement->attributes->length) {
+            $this->convertElement($domElement, $value);
 
             return;
         }
 
-        $child = new DOMElement($element->tagName);
-        $element->parentNode->appendChild($child);
+        $child = new DOMElement($domElement->tagName);
+        $domElement->parentNode->appendChild($child);
         $this->convertElement($child, $value);
     }
 
@@ -139,23 +139,23 @@ class ArrayToXml
      *
      * @param array $value
      */
-    protected function addSequentialNode(DOMElement $element, $value): void
+    protected function addSequentialNode(DOMElement $domElement, $value): void
     {
-        if (empty($element->nodeValue)) {
-            $element->nodeValue = htmlspecialchars($value);
+        if (empty($domElement->nodeValue)) {
+            $domElement->nodeValue = htmlspecialchars($value);
 
             return;
         }
 
-        $child = new DOMElement($element->tagName);
+        $child = new DOMElement($domElement->tagName);
         $child->nodeValue = htmlspecialchars($value);
-        $element->parentNode->appendChild($child);
+        $domElement->parentNode->appendChild($child);
     }
 
     /**
-     * Check if array are all sequential.
+     * Check if all array keys are sequential.
      *
-     * @param array $value
+     * @param array|string $value
      *
      * @return bool
      */
@@ -165,7 +165,7 @@ class ArrayToXml
             return false;
         }
 
-        if (\count($value) <= 0) {
+        if (0 === \count($value)) {
             return true;
         }
 
@@ -175,13 +175,13 @@ class ArrayToXml
     /**
      * Add attributes.
      *
-     * @param DOMElement $element
-     * @param string[]   $data
+     * @param \DOMElement $domElement
+     * @param string[]    $data
      */
-    protected function addAttributes($element, $data): void
+    protected function addAttributes($domElement, $data): void
     {
         foreach ($data as $attrKey => $attrVal) {
-            $element->setAttribute($attrKey, $attrVal);
+            $domElement->setAttribute($attrKey, $attrVal);
         }
     }
 
@@ -190,42 +190,42 @@ class ArrayToXml
      *
      * @param array|string $rootElement
      *
-     * @return DOMElement
+     * @return \DOMElement
      */
     protected function createRootElement($rootElement)
     {
         if (\is_string($rootElement)) {
             $rootElementName = $rootElement ?: 'root';
 
-            return $this->document->createElement($rootElementName);
+            return $this->domDocument->createElement($rootElementName);
         }
 
         $rootElementName = isset($rootElement['rootElementName']) ? $rootElement['rootElementName'] : 'root';
 
-        $element = $this->document->createElement($rootElementName);
+        $domElement = $this->domDocument->createElement($rootElementName);
 
         foreach ($rootElement as $key => $value) {
             if ('_attributes' !== $key && '@attributes' !== $key) {
                 continue;
             }
 
-            $this->addAttributes($element, $rootElement[$key]);
+            $this->addAttributes($domElement, $rootElement[$key]);
         }
 
-        return $element;
+        return $domElement;
     }
 
     /**
      * Parse individual element.
      *
-     * @param array $value
+     * @param array|string $value
      */
-    protected function convertElement(DOMElement $element, $value): void
+    protected function convertElement(DOMElement $domElement, $value): void
     {
         $sequential = $this->isArrayAllKeySequential($value);
 
         if (! \is_array($value)) {
-            $element->nodeValue = htmlspecialchars($value);
+            $domElement->nodeValue = htmlspecialchars($value);
 
             return;
         }
@@ -233,18 +233,18 @@ class ArrayToXml
         foreach ($value as $key => $data) {
             if (! $sequential) {
                 if (('_attributes' === $key) || ('@attributes' === $key)) {
-                    $this->addAttributes($element, $data);
+                    $this->addAttributes($domElement, $data);
                 } elseif ((('_value' === $key) || ('@value' === $key)) && \is_string($data)) {
-                    $element->nodeValue = htmlspecialchars($data);
+                    $domElement->nodeValue = htmlspecialchars($data);
                 } elseif ((('_cdata' === $key) || ('@cdata' === $key)) && \is_string($data)) {
-                    $element->appendChild($this->document->createCDATASection($data));
+                    $domElement->appendChild($this->domDocument->createCDATASection($data));
                 } else {
-                    $this->addNode($element, $key, $data);
+                    $this->addNode($domElement, $key, $data);
                 }
             } elseif (\is_array($data)) {
-                $this->addCollectionNode($element, $data);
+                $this->addCollectionNode($domElement, $data);
             } else {
-                $this->addSequentialNode($element, $data);
+                $this->addSequentialNode($domElement, $data);
             }
         }
     }
