@@ -16,11 +16,12 @@ class LaravelXml
     /**
      * Convert the an array to an xml string.
      *
-     * @param  string[]  $arr
-     * @param  string  $rootElementName
-     * @param  bool  $replaceSpacesByUnderScoresInKeyNames
-     * @param  string  $xmlEncoding
-     * @param  string  $xmlVersion
+     * @param string[] $arr
+     * @param string $rootElementName
+     * @param bool $replaceSpacesByUnderScoresInKeyNames
+     * @param string $xmlEncoding
+     * @param string $xmlVersion
+     *
      * @return string
      */
     public function encode(
@@ -40,11 +41,12 @@ class LaravelXml
      * @see https://stackoverflow.com/a/20431742/2732184
      * @see https://stackoverflow.com/a/2970701/2732184
      *
-     * @param  string  $data  A well-formed XML string
-     * @param  string  $class_name  Default: SimpleXMLElement
-     * @param  int  $options
-     * @param  string  $ns  Namespace prefix or URI
-     * @param  bool  $is_prefix  TRUE if ns is a prefix, FALSE if it's a URI, defaults to FALSE
+     * @param string $data A well-formed XML string
+     * @param string $class_name Default: SimpleXMLElement
+     * @param int $options
+     * @param string $ns Namespace prefix or URI
+     * @param bool $is_prefix TRUE if ns is a prefix, FALSE if it's a URI, defaults to FALSE
+     *
      * @return mixed Array or FALSE on failure
      */
     public function decode($data, $class_name = 'SimpleXMLElement', $options = 0, $ns = '', $is_prefix = false)
@@ -59,8 +61,9 @@ class LaravelXml
     /**
      * Check if a string is valid XML.
      *
-     * @param  string  $xmlStr
-     * @param  bool  $ignoreHtml
+     * @param string $xmlStr
+     * @param bool $ignoreHtml
+     *
      * @return bool
      */
     public function is_valid($xmlStr, $ignoreHtml = true)
@@ -71,10 +74,11 @@ class LaravelXml
     /**
      * Validate XML string.
      *
-     * @param  string  $xmlStr
-     * @param  string  $xsdFilePath
-     * @param  int  $flags
-     * @param  bool  $checkXml
+     * @param string $xmlStr
+     * @param string $xsdFilePath
+     * @param int $flags
+     * @param bool $checkXml
+     *
      * @return array Rrrors
      */
     public function validate($xmlStr, $xsdFilePath, $flags = 0, $checkXml = false)

@@ -62,7 +62,9 @@ $rules = [
     'phpdoc_indent' => true,
     'phpdoc_to_comment' => true,
     'phpdoc_trim' => true,
-    'phpdoc_align' => true,
+    'phpdoc_align' => [
+        'align' => 'left',
+    ],
     'phpdoc_summary' => true,
     'phpdoc_separation' => true,
     'phpdoc_scalar' => true,

@@ -116,17 +116,9 @@ final class ExampleTest extends TestCase
 
     public function testXmlStrIsValidAgainstXsdSchemaThrowsExceptionForMalformedXml()
     {
-        // $this->expectException(\ErrorException::class);
-
-        // LaravelXml::validate('<document></document>', 'unknown.xsd');
-
-        // ....
-
         $this->expectException(\Exception::class);
 
-        $errors = LaravelXml::validate('', __DIR__.'/user.xsd');
-
-        static::assertSame(['error' => 'Invalid xml'], $errors);
+        $errors = LaravelXml::validate('nothing</see>', __DIR__.'/user.xsd', 0, true);
     }
 
     public function testXmlStrIsValidAgainstXsdSchema()
