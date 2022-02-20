@@ -49,7 +49,7 @@ class XmlValidator
     {
         $xmlStr = trim($xmlStr);
 
-        if (0 === \strlen($xmlStr)) {
+        if ('' === $xmlStr) {
             return false;
         }
 
