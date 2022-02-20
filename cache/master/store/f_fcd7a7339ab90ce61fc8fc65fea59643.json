@@ -1,7 +1,7 @@
 {
     "namespace": "",
     "name": "xml_encode",
-    "line": 18,
+    "line": 19,
     "file": "\/home\/runner\/work\/laravel-xml\/laravel-xml\/src\/Support\/helpers.php",
     "relative_file": "\/src\/Support\/helpers.php",
     "short_desc": "Convert the an array to an xml string.",
@@ -21,7 +21,7 @@
     "parameters": {
         "array": {
             "name": "array",
-            "line": 18,
+            "line": 19,
             "short_desc": "",
             "long_desc": null,
             "hint": [
@@ -39,7 +39,7 @@
         },
         "rootElementName": {
             "name": "rootElementName",
-            "line": 18,
+            "line": 19,
             "short_desc": "",
             "long_desc": null,
             "hint": [
@@ -57,7 +57,7 @@
         },
         "replaceSpacesByUnderScoresInKeyNames": {
             "name": "replaceSpacesByUnderScoresInKeyNames",
-            "line": 18,
+            "line": 19,
             "short_desc": "",
             "long_desc": null,
             "hint": [
@@ -75,7 +75,7 @@
         },
         "xmlEncoding": {
             "name": "xmlEncoding",
-            "line": 18,
+            "line": 19,
             "short_desc": "",
             "long_desc": null,
             "hint": [
@@ -93,7 +93,7 @@
         },
         "xmlVersion": {
             "name": "xmlVersion",
-            "line": 18,
+            "line": 19,
             "short_desc": "",
             "long_desc": null,
             "hint": [

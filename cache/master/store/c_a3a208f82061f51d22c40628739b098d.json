@@ -8,7 +8,7 @@
     "namespace": "Bmatovu\\LaravelXml\\Support\\Facades",
     "file": "\/home\/runner\/work\/laravel-xml\/laravel-xml\/src\/Support\/Facades\/LaravelXml.php",
     "relative_file": "\/src\/Support\/Facades\/LaravelXml.php",
-    "hash": "b36a5669e168331f35f964a68b71902b20433536",
+    "hash": "4fc1224ba79d9c39deb0d406257764dfcec3f3c4",
     "parent": null,
     "modifiers": 0,
     "is_trait": false,
@@ -41,7 +41,7 @@
         },
         "encode": {
             "name": "encode",
-            "line": 26,
+            "line": 27,
             "short_desc": "Convert the an array to an xml string.",
             "long_desc": "",
             "hint": [
@@ -60,7 +60,7 @@
             "parameters": {
                 "arr": {
                     "name": "arr",
-                    "line": 27,
+                    "line": 28,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -78,7 +78,7 @@
                 },
                 "rootElementName": {
                     "name": "rootElementName",
-                    "line": 28,
+                    "line": 29,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -96,7 +96,7 @@
                 },
                 "replaceSpacesByUnderScoresInKeyNames": {
                     "name": "replaceSpacesByUnderScoresInKeyNames",
-                    "line": 29,
+                    "line": 30,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -114,7 +114,7 @@
                 },
                 "xmlEncoding": {
                     "name": "xmlEncoding",
-                    "line": 30,
+                    "line": 31,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -132,7 +132,7 @@
                 },
                 "xmlVersion": {
                     "name": "xmlVersion",
-                    "line": 31,
+                    "line": 32,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -152,7 +152,7 @@
         },
         "decode": {
             "name": "decode",
-            "line": 50,
+            "line": 52,
             "short_desc": "Convert a string of XML into an array.",
             "long_desc": "",
             "hint": [
@@ -205,7 +205,7 @@
             "parameters": {
                 "data": {
                     "name": "data",
-                    "line": 50,
+                    "line": 52,
                     "short_desc": "A well-formed XML string",
                     "long_desc": null,
                     "hint": [
@@ -223,7 +223,7 @@
                 },
                 "class_name": {
                     "name": "class_name",
-                    "line": 50,
+                    "line": 52,
                     "short_desc": "Default: SimpleXMLElement",
                     "long_desc": null,
                     "hint": [
@@ -241,7 +241,7 @@
                 },
                 "options": {
                     "name": "options",
-                    "line": 50,
+                    "line": 52,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -259,7 +259,7 @@
                 },
                 "ns": {
                     "name": "ns",
-                    "line": 50,
+                    "line": 52,
                     "short_desc": "Namespace prefix or URI",
                     "long_desc": null,
                     "hint": [
@@ -277,7 +277,7 @@
                 },
                 "is_prefix": {
                     "name": "is_prefix",
-                    "line": 50,
+                    "line": 52,
                     "short_desc": "TRUE if ns is a prefix, FALSE if it's a URI, defaults to FALSE",
                     "long_desc": null,
                     "hint": [
@@ -297,7 +297,7 @@
         },
         "is_valid": {
             "name": "is_valid",
-            "line": 66,
+            "line": 69,
             "short_desc": "Check if a string is valid XML.",
             "long_desc": "",
             "hint": [
@@ -316,7 +316,7 @@
             "parameters": {
                 "xmlStr": {
                     "name": "xmlStr",
-                    "line": 66,
+                    "line": 69,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -334,7 +334,7 @@
                 },
                 "ignoreHtml": {
                     "name": "ignoreHtml",
-                    "line": 66,
+                    "line": 69,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -354,7 +354,7 @@
         },
         "validate": {
             "name": "validate",
-            "line": 80,
+            "line": 84,
             "short_desc": "Validate XML string.",
             "long_desc": "",
             "hint": [
@@ -373,7 +373,7 @@
             "parameters": {
                 "xmlStr": {
                     "name": "xmlStr",
-                    "line": 80,
+                    "line": 84,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -391,7 +391,7 @@
                 },
                 "xsdFilePath": {
                     "name": "xsdFilePath",
-                    "line": 80,
+                    "line": 84,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -409,7 +409,7 @@
                 },
                 "flags": {
                     "name": "flags",
-                    "line": 80,
+                    "line": 84,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -427,7 +427,7 @@
                 },
                 "checkXml": {
                     "name": "checkXml",
-                    "line": 80,
+                    "line": 84,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
