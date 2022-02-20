@@ -14,7 +14,7 @@
     "namespace": "Bmatovu\\LaravelXml\\Support",
     "file": "\/home\/runner\/work\/laravel-xml\/laravel-xml\/src\/Support\/ArrayToXml.php",
     "relative_file": "\/src\/Support\/ArrayToXml.php",
-    "hash": "6b8032b6627c366513c6c201d744c559c21b3a5f",
+    "hash": "ece7871bc4bb8cd3c0083aa02693c67f8dad5654",
     "parent": null,
     "modifiers": 0,
     "is_trait": false,
@@ -29,10 +29,10 @@
     "interfaces": [],
     "traits": [],
     "properties": {
-        "document": {
-            "name": "document",
+        "domDocument": {
+            "name": "domDocument",
             "line": 19,
-            "short_desc": "The root DOM Document.",
+            "short_desc": "The DOM Document.",
             "long_desc": "",
             "hint": [
                 [
@@ -232,8 +232,8 @@
             "exceptions": [],
             "errors": [],
             "parameters": {
-                "array": {
-                    "name": "array",
+                "arr": {
+                    "name": "arr",
                     "line": 71,
                     "short_desc": "",
                     "long_desc": null,
@@ -383,8 +383,8 @@
             "exceptions": [],
             "errors": [],
             "parameters": {
-                "element": {
-                    "name": "element",
+                "domElement": {
+                    "name": "domElement",
                     "line": 108,
                     "short_desc": null,
                     "long_desc": null,
@@ -458,8 +458,8 @@
             "exceptions": [],
             "errors": [],
             "parameters": {
-                "element": {
-                    "name": "element",
+                "domElement": {
+                    "name": "domElement",
                     "line": 124,
                     "short_desc": null,
                     "long_desc": null,
@@ -515,8 +515,8 @@
             "exceptions": [],
             "errors": [],
             "parameters": {
-                "element": {
-                    "name": "element",
+                "domElement": {
+                    "name": "domElement",
                     "line": 142,
                     "short_desc": null,
                     "long_desc": null,
@@ -556,7 +556,7 @@
         "isArrayAllKeySequential": {
             "name": "isArrayAllKeySequential",
             "line": 162,
-            "short_desc": "Check if array are all sequential.",
+            "short_desc": "Check if all array keys are sequential.",
             "long_desc": "",
             "hint": [
                 [
@@ -580,6 +580,10 @@
                     "hint": [
                         [
                             "array",
+                            false
+                        ],
+                        [
+                            "string",
                             false
                         ]
                     ],
@@ -611,8 +615,8 @@
             "exceptions": [],
             "errors": [],
             "parameters": {
-                "element": {
-                    "name": "element",
+                "domElement": {
+                    "name": "domElement",
                     "line": 181,
                     "short_desc": "",
                     "long_desc": null,
@@ -711,8 +715,8 @@
             "exceptions": [],
             "errors": [],
             "parameters": {
-                "element": {
-                    "name": "element",
+                "domElement": {
+                    "name": "domElement",
                     "line": 223,
                     "short_desc": null,
                     "long_desc": null,
@@ -737,6 +741,10 @@
                     "hint": [
                         [
                             "array",
+                            false
+                        ],
+                        [
+                            "string",
                             false
                         ]
                     ],

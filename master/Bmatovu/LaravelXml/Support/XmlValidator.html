@@ -10,31 +10,47 @@
         <link rel="stylesheet" type="text/css" href="../../../css/doctum.css">
         <link rel="stylesheet" type="text/css" href="../../../fonts/doctum-font.css">
         <script src="../../../js/jquery-3.5.1.slim.min.js"></script>
+        <script async defer src="../../../doctum.js"></script>
         <script async defer src="../../../js/bootstrap.min.js"></script>
-        <script src="../../../js/typeahead.min.js"></script>
-        <script src="../../../doctum.js"></script>
+        <script async defer src="../../../js/autocomplete.min.js"></script>
         <meta name="MobileOptimized" content="width">
         <meta name="HandheldFriendly" content="true">
         <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 
     </head>
 
-    <body id="class" data-name="class:Bmatovu_LaravelXml_Support_XmlValidator" data-root-path="../../../">
+    <body id="class" data-name="class:Bmatovu_LaravelXml_Support_XmlValidator" data-root-path="../../../" data-search-index-url="../../../doctum-search.json">
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
                     <form action="#">
-                <select  class="form-control" id="version-switcher" name="version">
-                                            <option value="../../../../1.x/index.html" data-version="1.x">v1.x</option>
-                                            <option value="../../../../master/index.html" data-version="master">Master branch</option>
+                <select class="form-control" id="version-switcher" name="version">
+                                            <option
+                            value="../../../../1.x/index.html"
+                            data-version="1.x" >v1.x</option>
+                                            <option
+                            value="../../../../master/index.html"
+                            data-version="master" selected>Master branch</option>
                                     </select>
             </form>
-                <form id="search-form" action="../../../search.html">
+                <div class="search-bar hidden" id="search-progress-bar-container">
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" id="search-progress-bar"
+                    aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+            </div>
+        </div>
+        <form id="search-form" action="../../../search.html">
             <span class="icon icon-search"></span>
             <input name="search"
+                   id="doctum-search-auto-complete"
                    class="typeahead form-control"
                    type="search"
-                   placeholder="Search">
+                   placeholder="Search"
+                   spellcheck="false"
+                   autocorrect="off"
+                   autocomplete="off"
+                   autocapitalize="off">
+            <div class="auto-complete-results" id="auto-complete-results"></div>
         </form>
     </div>
 
@@ -55,6 +71,15 @@
             </div>
             <div class="collapse navbar-collapse" id="navbar-elements">
                 <ul class="nav navbar-nav">
+                                        <li role="presentation" class="dropdown visible-xs-block visible-sm-block">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"
+                            role="button" aria-haspopup="true" aria-expanded="false">Versions&nbsp;<span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                        <li ><a href="../../../../1.x/index.html" data-version="1.x">v1.x</a></li>
+                        <li class="active"><a href="../../../../master/index.html" data-version="master">Master branch</a></li>
+                        </ul>
+                    </li>
                     <li><a href="../../../classes.html">Classes</a></li>
                     <li><a href="../../../namespaces.html">Namespaces</a></li>
                     <li><a href="../../../interfaces.html">Interfaces</a></li>
@@ -96,11 +121,11 @@
 
             <table class="table table-condensed">
                     <tr>
-                <td class="type" id="property_doc">
-                                        protected                                        <abbr title="Bmatovu\LaravelXml\Support\DOMDocument">DOMDocument</abbr>
+                <td class="type" id="property_domDocument">
+                                        protected                                        <a target="_blank" rel="noopener" href="https://www.php.net/DOMDocument">DOMDocument</a>
                                                                                 
                                     </td>
-                <td>$doc</td>
+                <td>$domDocument</td>
                 <td class="last"><p>DOM Document.</p></td>
                 <td></td>
             </tr>
@@ -126,7 +151,7 @@
                 <div class="col-md-8">
                     <a href="#method___construct">__construct</a>()
         
-                                            <p><p>Constructor.</p></p>                </div>
+                                            <p>Constructor.</p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
@@ -134,7 +159,7 @@
                     bool
                 </div>
                 <div class="col-md-8">
-                    <a href="#method_is_valid">is_valid</a>(string $xml)
+                    <a href="#method_is_valid">is_valid</a>(string $xmlStr, bool $ignoreHtml = true)
         
                                             <p><p>Check if a string is valid XML.</p></p>                </div>
                 <div class="col-md-2"></div>
@@ -144,7 +169,7 @@
                     array
                 </div>
                 <div class="col-md-8">
-                    <a href="#method_validate">validate</a>(string $xml, string $xsd, int $flags = 0)
+                    <a href="#method_validate">validate</a>(string $xmlStr, string $xsdFilePath, int $flags = 0, bool $checkXml = false)
         
                                             <p><p>Validate XML string.</p></p>                </div>
                 <div class="col-md-2"></div>
@@ -177,7 +202,7 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location"><a href="https://github.com/mtvbrianking/laravel-xml/blob/master/src/Support/XmlValidator.php#L31">at line 31</a></div>
+        <div class="location"><a href="https://github.com/mtvbrianking/laravel-xml/blob/master/src/Support/XmlValidator.php#L33">at line 33</a></div>
         <code>                    
     <strong>__construct</strong>()
         </code>
@@ -187,7 +212,7 @@
             
 
         <div class="method-description">
-                            <p><p>Constructor.</p></p>                        
+                            <p>Constructor.</p>                        
         </div>
         <div class="tags">
             
@@ -200,9 +225,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_is_valid">
-        <div class="location"><a href="https://github.com/mtvbrianking/laravel-xml/blob/master/src/Support/XmlValidator.php#L45">at line 45</a></div>
+        <div class="location"><a href="https://github.com/mtvbrianking/laravel-xml/blob/master/src/Support/XmlValidator.php#L48">at line 48</a></div>
         <code>                    bool
-    <strong>is_valid</strong>(string $xml)
+    <strong>is_valid</strong>(string $xmlStr, bool $ignoreHtml = true)
         </code>
     </h3>
     <div class="details">    
@@ -218,7 +243,12 @@
                     <table class="table table-condensed">
                     <tr>
                 <td>string</td>
-                <td>$xml</td>
+                <td>$xmlStr</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>bool</td>
+                <td>$ignoreHtml</td>
                 <td></td>
             </tr>
             </table>
@@ -253,9 +283,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_validate">
-        <div class="location"><a href="https://github.com/mtvbrianking/laravel-xml/blob/master/src/Support/XmlValidator.php#L79">at line 79</a></div>
+        <div class="location"><a href="https://github.com/mtvbrianking/laravel-xml/blob/master/src/Support/XmlValidator.php#L85">at line 85</a></div>
         <code>                    array
-    <strong>validate</strong>(string $xml, string $xsd, int $flags = 0)
+    <strong>validate</strong>(string $xmlStr, string $xsdFilePath, int $flags = 0, bool $checkXml = false)
         </code>
     </h3>
     <div class="details">    
@@ -271,17 +301,22 @@
                     <table class="table table-condensed">
                     <tr>
                 <td>string</td>
-                <td>$xml</td>
+                <td>$xmlStr</td>
                 <td></td>
             </tr>
                     <tr>
                 <td>string</td>
-                <td>$xsd</td>
-                <td><p>File path</p></td>
+                <td>$xsdFilePath</td>
+                <td></td>
             </tr>
                     <tr>
                 <td>int</td>
                 <td>$flags</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>bool</td>
+                <td>$checkXml</td>
                 <td></td>
             </tr>
             </table>
@@ -297,6 +332,15 @@
     </table>
 
             
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a target="_blank" rel="noopener" href="https://www.php.net/Exception">Exception</a></td>
+                <td></td>
+            </tr>
+            </table>
+
             
                             <h4>See also</h4>
 
@@ -316,7 +360,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getElement">
-        <div class="location"><a href="https://github.com/mtvbrianking/laravel-xml/blob/master/src/Support/XmlValidator.php#L107">at line 107</a></div>
+        <div class="location"><a href="https://github.com/mtvbrianking/laravel-xml/blob/master/src/Support/XmlValidator.php#L113">at line 113</a></div>
         <code>            protected        mixed
     <strong>getElement</strong>($message)
         </code>
@@ -358,7 +402,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getMessage">
-        <div class="location"><a href="https://github.com/mtvbrianking/laravel-xml/blob/master/src/Support/XmlValidator.php#L122">at line 122</a></div>
+        <div class="location"><a href="https://github.com/mtvbrianking/laravel-xml/blob/master/src/Support/XmlValidator.php#L128">at line 128</a></div>
         <code>            protected        string
     <strong>getMessage</strong>($message)
         </code>

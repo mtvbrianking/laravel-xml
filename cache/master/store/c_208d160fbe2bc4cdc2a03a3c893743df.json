@@ -1,6 +1,6 @@
 {
     "name": "Bmatovu\\LaravelXml\\Support\\JsonSimpleXMLElementDecorator",
-    "line": 13,
+    "line": 15,
     "short_desc": "Class JsonSimpleXMLElementDecorator.",
     "long_desc": "",
     "hint": null,
@@ -8,13 +8,19 @@
         "see": [
             [
                 "https:\/\/hakre.wordpress.com\/2013\/07\/09\/simplexml-and-json-encode-in-php-part-i"
+            ],
+            [
+                "https:\/\/gist.github.com\/hakre\/1d9e555ac1ebb1fc4ea8"
+            ],
+            [
+                "https:\/\/gist.github.com\/hakre\/c36a66708259f54e564a"
             ]
         ]
     },
     "namespace": "Bmatovu\\LaravelXml\\Support",
     "file": "\/home\/runner\/work\/laravel-xml\/laravel-xml\/src\/Support\/JsonSimpleXMLElementDecorator.php",
     "relative_file": "\/src\/Support\/JsonSimpleXMLElementDecorator.php",
-    "hash": "64d135ac7f216b4713f9a274c235ba79bcf5975f",
+    "hash": "12e20ea2759b18505afa358d3d5b2ac16235d572",
     "parent": null,
     "modifiers": 0,
     "is_trait": false,
@@ -32,7 +38,7 @@
     "properties": {
         "subject": {
             "name": "subject",
-            "line": 20,
+            "line": 22,
             "short_desc": "",
             "long_desc": "",
             "hint": [
@@ -51,7 +57,7 @@
         },
         "options": {
             "name": "options",
-            "line": 25,
+            "line": 27,
             "short_desc": "",
             "long_desc": "",
             "hint": [
@@ -72,125 +78,34 @@
                             "nodeType": "Scalar_String",
                             "value": "@attributes",
                             "attributes": {
-                                "startLine": 26,
-                                "endLine": 26,
-                                "kind": 1
-                            }
-                        },
-                        "value": {
-                            "nodeType": "Expr_ConstFetch",
-                            "name": {
-                                "nodeType": "Name",
-                                "parts": [
-                                    "true"
-                                ],
-                                "attributes": {
-                                    "startLine": 26,
-                                    "endLine": 26,
-                                    "namespacedName": {
-                                        "nodeType": "Name_FullyQualified",
-                                        "parts": [
-                                            "Bmatovu",
-                                            "LaravelXml",
-                                            "Support",
-                                            "true"
-                                        ],
-                                        "attributes": {
-                                            "startLine": 26,
-                                            "endLine": 26
-                                        }
-                                    }
-                                }
-                            },
-                            "attributes": {
-                                "startLine": 26,
-                                "endLine": 26
-                            }
-                        },
-                        "byRef": false,
-                        "unpack": false,
-                        "attributes": {
-                            "startLine": 26,
-                            "endLine": 26
-                        }
-                    },
-                    {
-                        "nodeType": "Expr_ArrayItem",
-                        "key": {
-                            "nodeType": "Scalar_String",
-                            "value": "@text",
-                            "attributes": {
-                                "startLine": 27,
-                                "endLine": 27,
-                                "kind": 1
-                            }
-                        },
-                        "value": {
-                            "nodeType": "Expr_ConstFetch",
-                            "name": {
-                                "nodeType": "Name",
-                                "parts": [
-                                    "true"
-                                ],
-                                "attributes": {
-                                    "startLine": 27,
-                                    "endLine": 27,
-                                    "namespacedName": {
-                                        "nodeType": "Name_FullyQualified",
-                                        "parts": [
-                                            "Bmatovu",
-                                            "LaravelXml",
-                                            "Support",
-                                            "true"
-                                        ],
-                                        "attributes": {
-                                            "startLine": 27,
-                                            "endLine": 27
-                                        }
-                                    }
-                                }
-                            },
-                            "attributes": {
-                                "startLine": 27,
-                                "endLine": 27
-                            }
-                        },
-                        "byRef": false,
-                        "unpack": false,
-                        "attributes": {
-                            "startLine": 27,
-                            "endLine": 27
-                        }
-                    },
-                    {
-                        "nodeType": "Expr_ArrayItem",
-                        "key": {
-                            "nodeType": "Scalar_String",
-                            "value": "depth",
-                            "attributes": {
                                 "startLine": 28,
                                 "endLine": 28,
                                 "kind": 1
                             }
                         },
                         "value": {
-                            "nodeType": "Expr_ClassConstFetch",
-                            "class": {
+                            "nodeType": "Expr_ConstFetch",
+                            "name": {
                                 "nodeType": "Name",
                                 "parts": [
-                                    "self"
+                                    "true"
                                 ],
                                 "attributes": {
                                     "startLine": 28,
-                                    "endLine": 28
-                                }
-                            },
-                            "name": {
-                                "nodeType": "Identifier",
-                                "name": "DEF_DEPTH",
-                                "attributes": {
-                                    "startLine": 28,
-                                    "endLine": 28
+                                    "endLine": 28,
+                                    "namespacedName": {
+                                        "nodeType": "Name_FullyQualified",
+                                        "parts": [
+                                            "Bmatovu",
+                                            "LaravelXml",
+                                            "Support",
+                                            "true"
+                                        ],
+                                        "attributes": {
+                                            "startLine": 28,
+                                            "endLine": 28
+                                        }
+                                    }
                                 }
                             },
                             "attributes": {
@@ -204,11 +119,102 @@
                             "startLine": 28,
                             "endLine": 28
                         }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_String",
+                            "value": "@text",
+                            "attributes": {
+                                "startLine": 29,
+                                "endLine": 29,
+                                "kind": 1
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Expr_ConstFetch",
+                            "name": {
+                                "nodeType": "Name",
+                                "parts": [
+                                    "true"
+                                ],
+                                "attributes": {
+                                    "startLine": 29,
+                                    "endLine": 29,
+                                    "namespacedName": {
+                                        "nodeType": "Name_FullyQualified",
+                                        "parts": [
+                                            "Bmatovu",
+                                            "LaravelXml",
+                                            "Support",
+                                            "true"
+                                        ],
+                                        "attributes": {
+                                            "startLine": 29,
+                                            "endLine": 29
+                                        }
+                                    }
+                                }
+                            },
+                            "attributes": {
+                                "startLine": 29,
+                                "endLine": 29
+                            }
+                        },
+                        "byRef": false,
+                        "unpack": false,
+                        "attributes": {
+                            "startLine": 29,
+                            "endLine": 29
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_String",
+                            "value": "depth",
+                            "attributes": {
+                                "startLine": 30,
+                                "endLine": 30,
+                                "kind": 1
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Expr_ClassConstFetch",
+                            "class": {
+                                "nodeType": "Name",
+                                "parts": [
+                                    "self"
+                                ],
+                                "attributes": {
+                                    "startLine": 30,
+                                    "endLine": 30
+                                }
+                            },
+                            "name": {
+                                "nodeType": "Identifier",
+                                "name": "DEF_DEPTH",
+                                "attributes": {
+                                    "startLine": 30,
+                                    "endLine": 30
+                                }
+                            },
+                            "attributes": {
+                                "startLine": 30,
+                                "endLine": 30
+                            }
+                        },
+                        "byRef": false,
+                        "unpack": false,
+                        "attributes": {
+                            "startLine": 30,
+                            "endLine": 30
+                        }
                     }
                 ],
                 "attributes": {
-                    "startLine": 25,
-                    "endLine": 29,
+                    "startLine": 27,
+                    "endLine": 31,
                     "kind": 2
                 }
             },
@@ -220,7 +226,7 @@
     "methods": {
         "__construct": {
             "name": "__construct",
-            "line": 34,
+            "line": 36,
             "short_desc": "Constructor.",
             "long_desc": "",
             "hint": null,
@@ -234,7 +240,7 @@
             "parameters": {
                 "element": {
                     "name": "element",
-                    "line": 35,
+                    "line": 37,
                     "short_desc": null,
                     "long_desc": null,
                     "hint": [
@@ -252,7 +258,7 @@
                 },
                 "useAttributes": {
                     "name": "useAttributes",
-                    "line": 36,
+                    "line": 38,
                     "short_desc": null,
                     "long_desc": null,
                     "hint": [
@@ -270,7 +276,7 @@
                 },
                 "useText": {
                     "name": "useText",
-                    "line": 37,
+                    "line": 39,
                     "short_desc": null,
                     "long_desc": null,
                     "hint": [
@@ -288,7 +294,7 @@
                 },
                 "depth": {
                     "name": "depth",
-                    "line": 38,
+                    "line": 40,
                     "short_desc": null,
                     "long_desc": null,
                     "hint": [
@@ -308,7 +314,7 @@
         },
         "useAttributes": {
             "name": "useAttributes",
-            "line": 58,
+            "line": 60,
             "short_desc": "Should use attributes.",
             "long_desc": "",
             "hint": [
@@ -327,7 +333,7 @@
             "parameters": {
                 "bool": {
                     "name": "bool",
-                    "line": 58,
+                    "line": 60,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -347,7 +353,7 @@
         },
         "useText": {
             "name": "useText",
-            "line": 68,
+            "line": 70,
             "short_desc": "Should use text.",
             "long_desc": "",
             "hint": [
@@ -366,7 +372,7 @@
             "parameters": {
                 "bool": {
                     "name": "bool",
-                    "line": 68,
+                    "line": 70,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -386,7 +392,7 @@
         },
         "setDepth": {
             "name": "setDepth",
-            "line": 78,
+            "line": 80,
             "short_desc": "Set depth.",
             "long_desc": "",
             "hint": [
@@ -405,7 +411,7 @@
             "parameters": {
                 "depth": {
                     "name": "depth",
-                    "line": 78,
+                    "line": 80,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -425,7 +431,7 @@
         },
         "jsonSerialize": {
             "name": "jsonSerialize",
-            "line": 88,
+            "line": 90,
             "short_desc": "Specify data which should be serialized to JSON.",
             "long_desc": "",
             "hint": [
@@ -447,7 +453,7 @@
     "constants": {
         "DEF_DEPTH": {
             "name": "DEF_DEPTH",
-            "line": 15,
+            "line": 17,
             "short_desc": null,
             "long_desc": null,
             "modifiers": 0,

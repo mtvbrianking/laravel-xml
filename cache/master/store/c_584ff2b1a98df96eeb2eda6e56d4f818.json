@@ -1,6 +1,6 @@
 {
     "name": "Bmatovu\\LaravelXml\\Http\\XmlResponse",
-    "line": 12,
+    "line": 13,
     "short_desc": null,
     "long_desc": null,
     "hint": null,
@@ -8,7 +8,7 @@
     "namespace": "Bmatovu\\LaravelXml\\Http",
     "file": "\/home\/runner\/work\/laravel-xml\/laravel-xml\/src\/Http\/XmlResponse.php",
     "relative_file": "\/src\/Http\/XmlResponse.php",
-    "hash": "5552dcbb400d7d998027ecb113d346e05dacfd1b",
+    "hash": "11e0e9ace2e889b5d884a056140e7a980d9d434e",
     "parent": "Symfony\\Component\\HttpFoundation\\Response",
     "modifiers": 0,
     "is_trait": false,
@@ -20,6 +20,7 @@
         "ResponseTrait": "Illuminate\\Http\\ResponseTrait",
         "Collection": "Illuminate\\Support\\Collection",
         "Macroable": "Illuminate\\Support\\Traits\\Macroable",
+        "SimpleXMLElement": "SimpleXMLElement",
         "BaseResponse": "Symfony\\Component\\HttpFoundation\\Response"
     },
     "errors": [],
@@ -31,7 +32,7 @@
     "properties": {
         "headers": {
             "name": "headers",
-            "line": 18,
+            "line": 19,
             "short_desc": null,
             "long_desc": null,
             "hint": null,
@@ -42,8 +43,8 @@
                 "nodeType": "Expr_Array",
                 "items": [],
                 "attributes": {
-                    "startLine": 18,
-                    "endLine": 18,
+                    "startLine": 19,
+                    "endLine": 19,
                     "kind": 2
                 }
             },
@@ -53,7 +54,7 @@
         },
         "options": {
             "name": "options",
-            "line": 20,
+            "line": 21,
             "short_desc": null,
             "long_desc": null,
             "hint": null,
@@ -69,33 +70,6 @@
                             "nodeType": "Scalar_String",
                             "value": "root",
                             "attributes": {
-                                "startLine": 21,
-                                "endLine": 21,
-                                "kind": 1
-                            }
-                        },
-                        "value": {
-                            "nodeType": "Scalar_String",
-                            "value": "document",
-                            "attributes": {
-                                "startLine": 21,
-                                "endLine": 21,
-                                "kind": 1
-                            }
-                        },
-                        "byRef": false,
-                        "unpack": false,
-                        "attributes": {
-                            "startLine": 21,
-                            "endLine": 21
-                        }
-                    },
-                    {
-                        "nodeType": "Expr_ArrayItem",
-                        "key": {
-                            "nodeType": "Scalar_String",
-                            "value": "encoding",
-                            "attributes": {
                                 "startLine": 22,
                                 "endLine": 22,
                                 "kind": 1
@@ -103,7 +77,7 @@
                         },
                         "value": {
                             "nodeType": "Scalar_String",
-                            "value": "UTF-8",
+                            "value": "document",
                             "attributes": {
                                 "startLine": 22,
                                 "endLine": 22,
@@ -121,7 +95,7 @@
                         "nodeType": "Expr_ArrayItem",
                         "key": {
                             "nodeType": "Scalar_String",
-                            "value": "version",
+                            "value": "encoding",
                             "attributes": {
                                 "startLine": 23,
                                 "endLine": 23,
@@ -130,7 +104,7 @@
                         },
                         "value": {
                             "nodeType": "Scalar_String",
-                            "value": "1.0",
+                            "value": "UTF-8",
                             "attributes": {
                                 "startLine": 23,
                                 "endLine": 23,
@@ -148,10 +122,37 @@
                         "nodeType": "Expr_ArrayItem",
                         "key": {
                             "nodeType": "Scalar_String",
-                            "value": "slug",
+                            "value": "version",
                             "attributes": {
                                 "startLine": 24,
                                 "endLine": 24,
+                                "kind": 1
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "1.0",
+                            "attributes": {
+                                "startLine": 24,
+                                "endLine": 24,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "unpack": false,
+                        "attributes": {
+                            "startLine": 24,
+                            "endLine": 24
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_String",
+                            "value": "slug",
+                            "attributes": {
+                                "startLine": 25,
+                                "endLine": 25,
                                 "kind": 1
                             }
                         },
@@ -163,8 +164,8 @@
                                     "true"
                                 ],
                                 "attributes": {
-                                    "startLine": 24,
-                                    "endLine": 24,
+                                    "startLine": 25,
+                                    "endLine": 25,
                                     "namespacedName": {
                                         "nodeType": "Name_FullyQualified",
                                         "parts": [
@@ -174,28 +175,28 @@
                                             "true"
                                         ],
                                         "attributes": {
-                                            "startLine": 24,
-                                            "endLine": 24
+                                            "startLine": 25,
+                                            "endLine": 25
                                         }
                                     }
                                 }
                             },
                             "attributes": {
-                                "startLine": 24,
-                                "endLine": 24
+                                "startLine": 25,
+                                "endLine": 25
                             }
                         },
                         "byRef": false,
                         "unpack": false,
                         "attributes": {
-                            "startLine": 24,
-                            "endLine": 24
+                            "startLine": 25,
+                            "endLine": 25
                         }
                     }
                 ],
                 "attributes": {
-                    "startLine": 20,
-                    "endLine": 25,
+                    "startLine": 21,
+                    "endLine": 26,
                     "kind": 2
                 }
             },
@@ -207,7 +208,7 @@
     "methods": {
         "__construct": {
             "name": "__construct",
-            "line": 35,
+            "line": 36,
             "short_desc": "Constructor.",
             "long_desc": "",
             "hint": null,
@@ -221,7 +222,7 @@
             "parameters": {
                 "data": {
                     "name": "data",
-                    "line": 35,
+                    "line": 36,
                     "short_desc": "The response data",
                     "long_desc": null,
                     "hint": [
@@ -239,7 +240,7 @@
                 },
                 "status": {
                     "name": "status",
-                    "line": 35,
+                    "line": 36,
                     "short_desc": "The response status code",
                     "long_desc": null,
                     "hint": [
@@ -257,7 +258,7 @@
                 },
                 "headers": {
                     "name": "headers",
-                    "line": 35,
+                    "line": 36,
                     "short_desc": "An array of response headers",
                     "long_desc": null,
                     "hint": [
@@ -275,7 +276,7 @@
                 },
                 "options": {
                     "name": "options",
-                    "line": 35,
+                    "line": 36,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -295,7 +296,7 @@
         },
         "setContent": {
             "name": "setContent",
-            "line": 71,
+            "line": 72,
             "short_desc": "Set the content on the response.",
             "long_desc": "",
             "hint": [
@@ -314,7 +315,7 @@
             "parameters": {
                 "content": {
                     "name": "content",
-                    "line": 71,
+                    "line": 72,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [

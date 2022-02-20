@@ -2,6 +2,8 @@
     "namespace": "",
     "name": "xml_decode",
     "line": 41,
+    "file": "\/home\/runner\/work\/laravel-xml\/laravel-xml\/src\/Support\/helpers.php",
+    "relative_file": "\/src\/Support\/helpers.php",
     "short_desc": "Convert a string of XML into an array.",
     "long_desc": "",
     "hint": [
@@ -60,7 +62,7 @@
             ],
             "tags": [],
             "modifiers": 0,
-            "default": "'SimpleXMLElement'",
+            "default": "SimpleXMLElement::class",
             "variadic": false,
             "is_by_ref": false,
             "is_read_only": false
@@ -83,8 +85,8 @@
             "is_by_ref": false,
             "is_read_only": false
         },
-        "ns": {
-            "name": "ns",
+        "namespace_or_prefix": {
+            "name": "namespace_or_prefix",
             "line": 41,
             "short_desc": "[optional] Namespace prefix or URI",
             "long_desc": null,

@@ -1,6 +1,6 @@
 {
     "name": "Bmatovu\\LaravelXml\\Http\\Middleware\\RequireXml",
-    "line": 7,
+    "line": 8,
     "short_desc": null,
     "long_desc": null,
     "hint": null,
@@ -8,13 +8,14 @@
     "namespace": "Bmatovu\\LaravelXml\\Http\\Middleware",
     "file": "\/home\/runner\/work\/laravel-xml\/laravel-xml\/src\/Http\/Middleware\/RequireXml.php",
     "relative_file": "\/src\/Http\/Middleware\/RequireXml.php",
-    "hash": "a4993534ea5a86d3f901655e0cabb348e0557b79",
+    "hash": "3ddb1f425e6e4ef389af74c950f891e54e05e498",
     "parent": null,
     "modifiers": 0,
     "is_trait": false,
     "is_interface": false,
     "is_read_only": false,
     "aliases": {
+        "LaravelXml": "Bmatovu\\LaravelXml\\LaravelXml",
         "Closure": "Closure"
     },
     "errors": [],
@@ -24,7 +25,7 @@
     "methods": {
         "handle": {
             "name": "handle",
-            "line": 19,
+            "line": 20,
             "short_desc": "Handle an incoming request.",
             "long_desc": "",
             "hint": [
@@ -57,7 +58,7 @@
             "parameters": {
                 "request": {
                     "name": "request",
-                    "line": 19,
+                    "line": 20,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -75,7 +76,7 @@
                 },
                 "next": {
                     "name": "next",
-                    "line": 19,
+                    "line": 20,
                     "short_desc": null,
                     "long_desc": null,
                     "hint": [
@@ -91,24 +92,20 @@
                     "is_by_ref": false,
                     "is_read_only": false
                 },
-                "guard": {
-                    "name": "guard",
-                    "line": 19,
+                "isValidXml": {
+                    "name": "isValidXml",
+                    "line": 20,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
                         [
-                            "null",
-                            false
-                        ],
-                        [
-                            "string",
+                            "bool",
                             false
                         ]
                     ],
                     "tags": [],
                     "modifiers": 0,
-                    "default": "null",
+                    "default": "false",
                     "variadic": false,
                     "is_by_ref": false,
                     "is_read_only": false
