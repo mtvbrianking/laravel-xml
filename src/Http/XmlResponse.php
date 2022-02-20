@@ -28,13 +28,14 @@ class XmlResponse extends BaseResponse
     /**
      * Constructor.
      *
-<<<<<<< HEAD
+     * <<<<<<< HEAD
+     *
      * @param mixed $data The response data
      * @param int $status The response status code
-=======
-     * @param mixed $data    The response data
-     * @param int   $status  The response status code
->>>>>>> 1a75ed3efce34a9abdb0ac65a8adbd55b1e19c65
+     *                    =======
+     * @param mixed $data The response data
+     * @param int $status The response status code
+     *                    >>>>>>> 1a75ed3efce34a9abdb0ac65a8adbd55b1e19c65
      * @param array $headers An array of response headers
      * @param array $options
      */
