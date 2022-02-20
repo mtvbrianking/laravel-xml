@@ -65,11 +65,11 @@ class XmlResponse extends BaseResponse
     /**
      * Set the content on the response.
      *
-     * @param string $content
+     * @param string|null $content
      *
      * @return $this
      */
-    public function setContent($content)
+    public function setContent(?string $content)
     {
         $this->header('Content-Type', 'text/xml');
 
