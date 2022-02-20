@@ -1,7 +1,7 @@
 {
     "namespace": "",
     "name": "validate_xml",
-    "line": 76,
+    "line": 72,
     "file": "\/home\/runner\/work\/laravel-xml\/laravel-xml\/src\/Support\/helpers.php",
     "relative_file": "\/src\/Support\/helpers.php",
     "short_desc": "Validate XML string.",
@@ -21,7 +21,7 @@
     "parameters": {
         "xml": {
             "name": "xml",
-            "line": 76,
+            "line": 72,
             "short_desc": "",
             "long_desc": null,
             "hint": [
@@ -39,7 +39,7 @@
         },
         "xsd": {
             "name": "xsd",
-            "line": 76,
+            "line": 72,
             "short_desc": "file",
             "long_desc": null,
             "hint": [

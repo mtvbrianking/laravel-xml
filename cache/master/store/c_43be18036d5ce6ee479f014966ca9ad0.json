@@ -14,7 +14,7 @@
     "namespace": "Bmatovu\\LaravelXml\\Support",
     "file": "\/home\/runner\/work\/laravel-xml\/laravel-xml\/src\/Support\/ArrayToXml.php",
     "relative_file": "\/src\/Support\/ArrayToXml.php",
-    "hash": "ece7871bc4bb8cd3c0083aa02693c67f8dad5654",
+    "hash": "e6e8d0b9b213507990c5bf55858582f6bfb12222",
     "parent": null,
     "modifiers": 0,
     "is_trait": false,
@@ -215,7 +215,7 @@
         },
         "convert": {
             "name": "convert",
-            "line": 70,
+            "line": 69,
             "short_desc": "Convert the given array to an xml string.",
             "long_desc": "",
             "hint": [
@@ -234,7 +234,7 @@
             "parameters": {
                 "arr": {
                     "name": "arr",
-                    "line": 71,
+                    "line": 70,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -252,7 +252,7 @@
                 },
                 "rootElementName": {
                     "name": "rootElementName",
-                    "line": 72,
+                    "line": 71,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -270,7 +270,7 @@
                 },
                 "replaceSpacesByUnderScoresInKeyNames": {
                     "name": "replaceSpacesByUnderScoresInKeyNames",
-                    "line": 73,
+                    "line": 72,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -288,7 +288,7 @@
                 },
                 "xmlEncoding": {
                     "name": "xmlEncoding",
-                    "line": 74,
+                    "line": 73,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -306,7 +306,7 @@
                 },
                 "xmlVersion": {
                     "name": "xmlVersion",
-                    "line": 75,
+                    "line": 74,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -326,7 +326,7 @@
         },
         "toXml": {
             "name": "toXml",
-            "line": 87,
+            "line": 86,
             "short_desc": "Return as XML.",
             "long_desc": "",
             "hint": [
@@ -346,7 +346,7 @@
         },
         "toDom": {
             "name": "toDom",
-            "line": 97,
+            "line": 96,
             "short_desc": "Return as DOM object.",
             "long_desc": "",
             "hint": [
@@ -366,7 +366,7 @@
         },
         "addNode": {
             "name": "addNode",
-            "line": 108,
+            "line": 107,
             "short_desc": "Add node.",
             "long_desc": "",
             "hint": [
@@ -385,7 +385,7 @@
             "parameters": {
                 "domElement": {
                     "name": "domElement",
-                    "line": 108,
+                    "line": 107,
                     "short_desc": null,
                     "long_desc": null,
                     "hint": [
@@ -403,7 +403,7 @@
                 },
                 "key": {
                     "name": "key",
-                    "line": 108,
+                    "line": 107,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -421,7 +421,7 @@
                 },
                 "value": {
                     "name": "value",
-                    "line": 108,
+                    "line": 107,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -441,7 +441,7 @@
         },
         "addCollectionNode": {
             "name": "addCollectionNode",
-            "line": 124,
+            "line": 123,
             "short_desc": "Add collection node.",
             "long_desc": "",
             "hint": [
@@ -460,7 +460,7 @@
             "parameters": {
                 "domElement": {
                     "name": "domElement",
-                    "line": 124,
+                    "line": 123,
                     "short_desc": null,
                     "long_desc": null,
                     "hint": [
@@ -478,7 +478,7 @@
                 },
                 "value": {
                     "name": "value",
-                    "line": 124,
+                    "line": 123,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -498,7 +498,7 @@
         },
         "addSequentialNode": {
             "name": "addSequentialNode",
-            "line": 142,
+            "line": 141,
             "short_desc": "Add sequential node.",
             "long_desc": "",
             "hint": [
@@ -517,7 +517,7 @@
             "parameters": {
                 "domElement": {
                     "name": "domElement",
-                    "line": 142,
+                    "line": 141,
                     "short_desc": null,
                     "long_desc": null,
                     "hint": [
@@ -535,7 +535,7 @@
                 },
                 "value": {
                     "name": "value",
-                    "line": 142,
+                    "line": 141,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -555,7 +555,7 @@
         },
         "isArrayAllKeySequential": {
             "name": "isArrayAllKeySequential",
-            "line": 162,
+            "line": 160,
             "short_desc": "Check if all array keys are sequential.",
             "long_desc": "",
             "hint": [
@@ -574,7 +574,7 @@
             "parameters": {
                 "value": {
                     "name": "value",
-                    "line": 162,
+                    "line": 160,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -598,7 +598,7 @@
         },
         "addAttributes": {
             "name": "addAttributes",
-            "line": 181,
+            "line": 179,
             "short_desc": "Add attributes.",
             "long_desc": "",
             "hint": [
@@ -617,7 +617,7 @@
             "parameters": {
                 "domElement": {
                     "name": "domElement",
-                    "line": 181,
+                    "line": 179,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -635,7 +635,7 @@
                 },
                 "data": {
                     "name": "data",
-                    "line": 181,
+                    "line": 179,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -655,7 +655,7 @@
         },
         "createRootElement": {
             "name": "createRootElement",
-            "line": 195,
+            "line": 192,
             "short_desc": "Create the root element.",
             "long_desc": "",
             "hint": [
@@ -674,7 +674,7 @@
             "parameters": {
                 "rootElement": {
                     "name": "rootElement",
-                    "line": 195,
+                    "line": 192,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -698,7 +698,7 @@
         },
         "convertElement": {
             "name": "convertElement",
-            "line": 223,
+            "line": 220,
             "short_desc": "Parse individual element.",
             "long_desc": "",
             "hint": [
@@ -717,7 +717,7 @@
             "parameters": {
                 "domElement": {
                     "name": "domElement",
-                    "line": 223,
+                    "line": 220,
                     "short_desc": null,
                     "long_desc": null,
                     "hint": [
@@ -735,7 +735,7 @@
                 },
                 "value": {
                     "name": "value",
-                    "line": 223,
+                    "line": 220,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [

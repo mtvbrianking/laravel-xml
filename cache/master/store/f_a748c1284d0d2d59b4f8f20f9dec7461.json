@@ -1,7 +1,7 @@
 {
     "namespace": "",
     "name": "xml_decode",
-    "line": 41,
+    "line": 39,
     "file": "\/home\/runner\/work\/laravel-xml\/laravel-xml\/src\/Support\/helpers.php",
     "relative_file": "\/src\/Support\/helpers.php",
     "short_desc": "Convert a string of XML into an array.",
@@ -33,7 +33,7 @@
     "parameters": {
         "data": {
             "name": "data",
-            "line": 41,
+            "line": 39,
             "short_desc": "A well-formed XML string",
             "long_desc": null,
             "hint": [
@@ -51,7 +51,7 @@
         },
         "class_name": {
             "name": "class_name",
-            "line": 41,
+            "line": 39,
             "short_desc": "[optional] Default: SimpleXMLElement",
             "long_desc": null,
             "hint": [
@@ -69,7 +69,7 @@
         },
         "options": {
             "name": "options",
-            "line": 41,
+            "line": 39,
             "short_desc": "",
             "long_desc": null,
             "hint": [
@@ -87,7 +87,7 @@
         },
         "namespace_or_prefix": {
             "name": "namespace_or_prefix",
-            "line": 41,
+            "line": 39,
             "short_desc": "[optional] Namespace prefix or URI",
             "long_desc": null,
             "hint": [
@@ -105,7 +105,7 @@
         },
         "is_prefix": {
             "name": "is_prefix",
-            "line": 41,
+            "line": 39,
             "short_desc": "[optional] TRUE if ns is a prefix, FALSE if it's a URI, defaults to FALSE",
             "long_desc": null,
             "hint": [

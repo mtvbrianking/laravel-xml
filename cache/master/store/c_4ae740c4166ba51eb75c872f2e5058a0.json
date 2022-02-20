@@ -8,7 +8,7 @@
     "namespace": "Bmatovu\\LaravelXml\\Support",
     "file": "\/home\/runner\/work\/laravel-xml\/laravel-xml\/src\/Support\/XmlElement.php",
     "relative_file": "\/src\/Support\/XmlElement.php",
-    "hash": "85e669c5b0204335ec0770ac5c792b7c1e84b9f5",
+    "hash": "0c1c577c2c2fd424ffebb737fc4799d35a088653",
     "parent": "SimpleXMLElement",
     "modifiers": 0,
     "is_trait": false,
@@ -22,7 +22,7 @@
     "methods": {
         "get": {
             "name": "get",
-            "line": 17,
+            "line": 16,
             "short_desc": "Provides access to element's children.",
             "long_desc": "With chance for default value.",
             "hint": [
@@ -41,7 +41,7 @@
             "parameters": {
                 "attr": {
                     "name": "attr",
-                    "line": 17,
+                    "line": 16,
                     "short_desc": "Attribute",
                     "long_desc": null,
                     "hint": [
@@ -59,7 +59,7 @@
                 },
                 "default": {
                     "name": "default",
-                    "line": 17,
+                    "line": 16,
                     "short_desc": "Default Value",
                     "long_desc": null,
                     "hint": [

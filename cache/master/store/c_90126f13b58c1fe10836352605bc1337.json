@@ -8,7 +8,7 @@
     "namespace": "Bmatovu\\LaravelXml\\Http\\Middleware",
     "file": "\/home\/runner\/work\/laravel-xml\/laravel-xml\/src\/Http\/Middleware\/RequireXml.php",
     "relative_file": "\/src\/Http\/Middleware\/RequireXml.php",
-    "hash": "3ddb1f425e6e4ef389af74c950f891e54e05e498",
+    "hash": "f3fa5321fdf7861ccba98378ad97db7157eaa59c",
     "parent": null,
     "modifiers": 0,
     "is_trait": false,
@@ -25,7 +25,7 @@
     "methods": {
         "handle": {
             "name": "handle",
-            "line": 20,
+            "line": 19,
             "short_desc": "Handle an incoming request.",
             "long_desc": "",
             "hint": [
@@ -58,7 +58,7 @@
             "parameters": {
                 "request": {
                     "name": "request",
-                    "line": 20,
+                    "line": 19,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
@@ -76,7 +76,7 @@
                 },
                 "next": {
                     "name": "next",
-                    "line": 20,
+                    "line": 19,
                     "short_desc": null,
                     "long_desc": null,
                     "hint": [
@@ -94,7 +94,7 @@
                 },
                 "isValidXml": {
                     "name": "isValidXml",
-                    "line": 20,
+                    "line": 19,
                     "short_desc": "",
                     "long_desc": null,
                     "hint": [
