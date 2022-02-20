@@ -64,8 +64,6 @@ class XmlResponse extends BaseResponse
 
     /**
      * Set the content on the response.
-     * 
-     * @param string|null $content
      *
      * @return $this
      */
