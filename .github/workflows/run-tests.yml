@@ -28,7 +28,6 @@ jobs:
         exclude:
           - laravel: ^9.0
             php: 7.4
-        exclude:
           - laravel: ^7.0
             php: 8.1
     name: TESTS PHP ${{ matrix.php }} LARAVEL ${{ matrix.laravel }} TESTBENCH ${{ matrix.testbench }}
