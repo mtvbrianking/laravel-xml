@@ -55,7 +55,7 @@ class JsonSimpleXMLElementDecorator implements JsonSerializable
     /**
      * Should use attributes.
      *
-     * @param bool $bool
+     * @param  bool  $bool
      */
     public function useAttributes($bool): void
     {
@@ -65,7 +65,7 @@ class JsonSimpleXMLElementDecorator implements JsonSerializable
     /**
      * Should use text.
      *
-     * @param bool $bool
+     * @param  bool  $bool
      */
     public function useText($bool): void
     {
@@ -75,7 +75,7 @@ class JsonSimpleXMLElementDecorator implements JsonSerializable
     /**
      * Set depth.
      *
-     * @param int $depth
+     * @param  int  $depth
      */
     public function setDepth($depth): void
     {

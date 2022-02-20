@@ -28,10 +28,10 @@ class XmlResponse extends BaseResponse
     /**
      * Constructor.
      *
-     * @param mixed $data    The response data
-     * @param int   $status  The response status code
-     * @param array $headers An array of response headers
-     * @param array $options
+     * @param  mixed  $data  The response data
+     * @param  int  $status  The response status code
+     * @param  array  $headers  An array of response headers
+     * @param  array  $options
      */
     public function __construct($data = null, $status = 200, $headers = [], $options = [])
     {
@@ -65,8 +65,7 @@ class XmlResponse extends BaseResponse
     /**
      * Set the content on the response.
      *
-     * @param string $content
-     *
+     * @param  string  $content
      * @return $this
      */
     public function setContent($content)

@@ -28,10 +28,10 @@ class ArrayToXml
     /**
      * Construct a new instance.
      *
-     * @param array|string $rootElement
-     * @param bool         $replaceSpacesByUnderScoresInKeyNames
-     * @param string       $xmlEncoding
-     * @param string       $xmlVersion
+     * @param  array|string  $rootElement
+     * @param  bool  $replaceSpacesByUnderScoresInKeyNames
+     * @param  string  $xmlEncoding
+     * @param  string  $xmlVersion
      *
      * @throws \DOMException
      */
@@ -59,12 +59,11 @@ class ArrayToXml
     /**
      * Convert the given array to an xml string.
      *
-     * @param string[] $arr
-     * @param string   $rootElementName
-     * @param bool     $replaceSpacesByUnderScoresInKeyNames
-     * @param string   $xmlEncoding
-     * @param string   $xmlVersion
-     *
+     * @param  string[]  $arr
+     * @param  string  $rootElementName
+     * @param  bool  $replaceSpacesByUnderScoresInKeyNames
+     * @param  string  $xmlEncoding
+     * @param  string  $xmlVersion
      * @return string
      */
     public static function convert(
@@ -102,8 +101,8 @@ class ArrayToXml
     /**
      * Add node.
      *
-     * @param string $key
-     * @param array  $value
+     * @param  string  $key
+     * @param  array  $value
      */
     protected function addNode(DOMElement $domElement, $key, $value): void
     {
@@ -119,7 +118,7 @@ class ArrayToXml
     /**
      * Add collection node.
      *
-     * @param array $value
+     * @param  array  $value
      */
     protected function addCollectionNode(DOMElement $domElement, $value): void
     {
@@ -137,7 +136,7 @@ class ArrayToXml
     /**
      * Add sequential node.
      *
-     * @param array $value
+     * @param  array  $value
      */
     protected function addSequentialNode(DOMElement $domElement, $value): void
     {
@@ -155,8 +154,7 @@ class ArrayToXml
     /**
      * Check if all array keys are sequential.
      *
-     * @param array|string $value
-     *
+     * @param  array|string  $value
      * @return bool
      */
     protected function isArrayAllKeySequential($value)
@@ -175,8 +173,8 @@ class ArrayToXml
     /**
      * Add attributes.
      *
-     * @param \DOMElement $domElement
-     * @param string[]    $data
+     * @param  \DOMElement  $domElement
+     * @param  string[]  $data
      */
     protected function addAttributes($domElement, $data): void
     {
@@ -188,8 +186,7 @@ class ArrayToXml
     /**
      * Create the root element.
      *
-     * @param array|string $rootElement
-     *
+     * @param  array|string  $rootElement
      * @return \DOMElement
      */
     protected function createRootElement($rootElement)
@@ -218,7 +215,7 @@ class ArrayToXml
     /**
      * Parse individual element.
      *
-     * @param array|string $value
+     * @param  array|string  $value
      */
     protected function convertElement(DOMElement $domElement, $value): void
     {
