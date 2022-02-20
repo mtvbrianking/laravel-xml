@@ -40,9 +40,8 @@ class XmlValidator
      *
      * @see https://stackoverflow.com/a/31240779/2732184
      *
-     * @param string $xmlStr
-     * @param bool   $ignoreHtml
-     *
+     * @param  string  $xmlStr
+     * @param  bool  $ignoreHtml
      * @return bool
      */
     public function is_valid($xmlStr, $ignoreHtml = true)
@@ -73,14 +72,13 @@ class XmlValidator
      *
      * @see https://www.php.net/manual/en/class.simplexmlelement.php#107869
      *
-     * @param string $xmlStr
-     * @param string $xsdFilePath
-     * @param int    $flags
-     * @param bool   $checkXml
+     * @param  string  $xmlStr
+     * @param  string  $xsdFilePath
+     * @param  int  $flags
+     * @param  bool  $checkXml
+     * @return array
      *
      * @throws \Exception
-     *
-     * @return array
      */
     public function validate($xmlStr, $xsdFilePath, $flags = 0, $checkXml = false)
     {
@@ -107,7 +105,6 @@ class XmlValidator
      * Get element from message.
      *
      * @param $message
-     *
      * @return mixed
      */
     protected function getElement($message)
@@ -122,7 +119,6 @@ class XmlValidator
      * Get refined message.
      *
      * @param $message
-     *
      * @return string
      */
     protected function getMessage($message)
