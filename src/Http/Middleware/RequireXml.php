@@ -12,8 +12,9 @@ class RequireXml
      *
      * @see https://stackoverflow.com/a/11973933/2732184
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  bool  $isValidXml
+     * @param \Illuminate\Http\Request $request
+     * @param bool                     $isValidXml
+     *
      * @return mixed
      */
     public function handle($request, Closure $next, $isValidXml = false)
