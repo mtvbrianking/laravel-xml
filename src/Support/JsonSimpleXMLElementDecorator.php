@@ -135,7 +135,7 @@ class JsonSimpleXMLElementDecorator implements JsonSerializable
         }
 
         // return empty elements as NULL (self-closing or empty tags)
-        if (! $array) {
+        if (! $array && $array != '0') {
             $array = null;
         }
 
