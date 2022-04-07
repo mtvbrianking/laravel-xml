@@ -93,6 +93,13 @@ final class ExampleTest extends TestCase
         static::assertSame(['alias' => 'jdoe'], $arr);
     }
 
+    public function testDecodeArrayWithZeroAsContentFromXml()
+    {
+        $arr = LaravelXml::decode('<document><alias>0</alias></document>');
+
+        static::assertSame(['alias' => '0'], $arr);
+    }
+
     public function testIsValidXmlStr()
     {
         $isValid = LaravelXml::is_valid('');
