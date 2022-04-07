@@ -13,7 +13,7 @@ use Twig\Source;
 use Twig\Template;
 
 /* namespace.twig */
-class __TwigTemplate_0588d8a1e3129e41e335319a064b36904f323efdb47109850df7815b5c55024c extends Template
+class __TwigTemplate_e92fb8b9ec06b015509085d9e06af0795f8e11e0e4f3eb87f773f70eaebc0de1 extends Template
 {
     private $source;
     private $macros = [];
@@ -43,7 +43,7 @@ class __TwigTemplate_0588d8a1e3129e41e335319a064b36904f323efdb47109850df7815b5c5
     {
         $macros = $this->macros;
         // line 2
-        $macros["__internal_parse_0"] = $this->macros["__internal_parse_0"] = $this->loadTemplate("macros.twig", "namespace.twig", 2)->unwrap();
+        $macros["__internal_parse_12"] = $this->macros["__internal_parse_12"] = $this->loadTemplate("macros.twig", "namespace.twig", 2)->unwrap();
         // line 1
         $this->parent = $this->loadTemplate("layout/layout.twig", "namespace.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
@@ -85,7 +85,7 @@ echo \Wdes\phpI18nL10n\Launcher::getPlugin()->gettext("Namespace");
         echo "</span></li>
             ";
         // line 11
-        echo twig_call_macro($macros["__internal_parse_0"], "macro_breadcrumbs", [(isset($context["namespace"]) || array_key_exists("namespace", $context) ? $context["namespace"] : (function () { throw new RuntimeError('Variable "namespace" does not exist.', 11, $this->source); })())], 11, $context, $this->getSourceContext());
+        echo twig_call_macro($macros["__internal_parse_12"], "macro_breadcrumbs", [(isset($context["namespace"]) || array_key_exists("namespace", $context) ? $context["namespace"] : (function () { throw new RuntimeError('Variable "namespace" does not exist.', 11, $this->source); })())], 11, $context, $this->getSourceContext());
         echo "
         </ol>
     </div>
@@ -118,7 +118,7 @@ echo \Wdes\phpI18nL10n\Launcher::getPlugin()->gettext("Namespaces");
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable((isset($context["subnamespaces"]) || array_key_exists("subnamespaces", $context) ? $context["subnamespaces"] : (function () { throw new RuntimeError('Variable "subnamespaces" does not exist.', 25, $this->source); })()));
             foreach ($context['_seq'] as $context["_key"] => $context["ns"]) {
-                echo twig_call_macro($macros["__internal_parse_0"], "macro_namespace_link", [$context["ns"]], 25, $context, $this->getSourceContext());
+                echo twig_call_macro($macros["__internal_parse_12"], "macro_namespace_link", [$context["ns"]], 25, $context, $this->getSourceContext());
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['ns'], $context['_parent'], $context['loop']);
@@ -137,7 +137,7 @@ echo \Wdes\phpI18nL10n\Launcher::getPlugin()->gettext("Namespaces");
 echo \Wdes\phpI18nL10n\Launcher::getPlugin()->gettext("Classes");
             echo "</h2>";
             // line 31
-            echo twig_call_macro($macros["__internal_parse_0"], "macro_render_classes", [(isset($context["classes"]) || array_key_exists("classes", $context) ? $context["classes"] : (function () { throw new RuntimeError('Variable "classes" does not exist.', 31, $this->source); })())], 31, $context, $this->getSourceContext());
+            echo twig_call_macro($macros["__internal_parse_12"], "macro_render_classes", [(isset($context["classes"]) || array_key_exists("classes", $context) ? $context["classes"] : (function () { throw new RuntimeError('Variable "classes" does not exist.', 31, $this->source); })())], 31, $context, $this->getSourceContext());
         }
         // line 33
         echo "
@@ -149,7 +149,7 @@ echo \Wdes\phpI18nL10n\Launcher::getPlugin()->gettext("Classes");
 echo \Wdes\phpI18nL10n\Launcher::getPlugin()->gettext("Interfaces");
             echo "</h2>";
             // line 36
-            echo twig_call_macro($macros["__internal_parse_0"], "macro_render_classes", [(isset($context["interfaces"]) || array_key_exists("interfaces", $context) ? $context["interfaces"] : (function () { throw new RuntimeError('Variable "interfaces" does not exist.', 36, $this->source); })())], 36, $context, $this->getSourceContext());
+            echo twig_call_macro($macros["__internal_parse_12"], "macro_render_classes", [(isset($context["interfaces"]) || array_key_exists("interfaces", $context) ? $context["interfaces"] : (function () { throw new RuntimeError('Variable "interfaces" does not exist.', 36, $this->source); })())], 36, $context, $this->getSourceContext());
         }
         // line 38
         echo "
@@ -189,7 +189,7 @@ echo \Wdes\phpI18nL10n\Launcher::getPlugin()->gettext("Functions");
                 }
                 // line 49
                 echo "                        ";
-                echo twig_call_macro($macros["__internal_parse_0"], "macro_hint_link", [twig_get_attribute($this->env, $this->source, $context["function"], "hint", [], "any", false, false, false, 49)], 49, $context, $this->getSourceContext());
+                echo twig_call_macro($macros["__internal_parse_12"], "macro_hint_link", [twig_get_attribute($this->env, $this->source, $context["function"], "hint", [], "any", false, false, false, 49)], 49, $context, $this->getSourceContext());
                 echo "
                     </div>
                     <div class=\"col-md-8\">
@@ -197,7 +197,7 @@ echo \Wdes\phpI18nL10n\Launcher::getPlugin()->gettext("Functions");
                 // line 52
                 echo twig_get_attribute($this->env, $this->source, $context["function"], "name", [], "any", false, false, false, 52);
                 // line 53
-                echo twig_call_macro($macros["__internal_parse_0"], "macro_function_parameters_signature", [$context["function"]], 53, $context, $this->getSourceContext());
+                echo twig_call_macro($macros["__internal_parse_12"], "macro_function_parameters_signature", [$context["function"]], 53, $context, $this->getSourceContext());
                 // line 54
                 echo "<br>
                         ";
@@ -254,7 +254,7 @@ echo \Wdes\phpI18nL10n\Launcher::getPlugin()->gettext("No description");
                     echo "</a></em>";
                 }
                 // line 71
-                echo twig_call_macro($macros["__internal_parse_0"], "macro_method_source_link", [$context["function"]], 71, $context, $this->getSourceContext());
+                echo twig_call_macro($macros["__internal_parse_12"], "macro_method_source_link", [$context["function"]], 71, $context, $this->getSourceContext());
                 echo "
                         </div>
                     </div>
@@ -278,7 +278,7 @@ echo \Wdes\phpI18nL10n\Launcher::getPlugin()->gettext("No description");
 echo \Wdes\phpI18nL10n\Launcher::getPlugin()->gettext("Exceptions");
             echo "</h2>";
             // line 81
-            echo twig_call_macro($macros["__internal_parse_0"], "macro_render_classes", [(isset($context["exceptions"]) || array_key_exists("exceptions", $context) ? $context["exceptions"] : (function () { throw new RuntimeError('Variable "exceptions" does not exist.', 81, $this->source); })())], 81, $context, $this->getSourceContext());
+            echo twig_call_macro($macros["__internal_parse_12"], "macro_render_classes", [(isset($context["exceptions"]) || array_key_exists("exceptions", $context) ? $context["exceptions"] : (function () { throw new RuntimeError('Variable "exceptions" does not exist.', 81, $this->source); })())], 81, $context, $this->getSourceContext());
         }
         // line 83
         echo "

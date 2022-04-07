@@ -13,7 +13,7 @@ use Twig\Source;
 use Twig\Template;
 
 /* doc-index.twig */
-class __TwigTemplate_9bf2ccbe47f3535aaf25b704fa8e23a2adbcc05d0e1d1b0d567d0f9199e1102a extends Template
+class __TwigTemplate_32be1e4e14e3f5835651928b388c3c12e2b4c13c54408b4d5c2a27bebbd2a14c extends Template
 {
     private $source;
     private $macros = [];
@@ -41,7 +41,7 @@ class __TwigTemplate_9bf2ccbe47f3535aaf25b704fa8e23a2adbcc05d0e1d1b0d567d0f9199e
     {
         $macros = $this->macros;
         // line 2
-        $macros["__internal_parse_0"] = $this->macros["__internal_parse_0"] = $this->loadTemplate("macros.twig", "doc-index.twig", 2)->unwrap();
+        $macros["__internal_parse_7"] = $this->macros["__internal_parse_7"] = $this->loadTemplate("macros.twig", "doc-index.twig", 2)->unwrap();
         // line 1
         $this->parent = $this->loadTemplate("layout/layout.twig", "doc-index.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
@@ -137,10 +137,10 @@ echo \Wdes\phpI18nL10n\Launcher::getPlugin()->gettext("Index");
                 if (("class" == (isset($context["type"]) || array_key_exists("type", $context) ? $context["type"] : (function () { throw new RuntimeError('Variable "type" does not exist.', 28, $this->source); })()))) {
                     // line 29
                     echo "<dt>";
-                    echo twig_call_macro($macros["__internal_parse_0"], "macro_class_link", [(isset($context["value"]) || array_key_exists("value", $context) ? $context["value"] : (function () { throw new RuntimeError('Variable "value" does not exist.', 29, $this->source); })())], 29, $context, $this->getSourceContext());
+                    echo twig_call_macro($macros["__internal_parse_7"], "macro_class_link", [(isset($context["value"]) || array_key_exists("value", $context) ? $context["value"] : (function () { throw new RuntimeError('Variable "value" does not exist.', 29, $this->source); })())], 29, $context, $this->getSourceContext());
                     if ((isset($context["has_namespaces"]) || array_key_exists("has_namespaces", $context) ? $context["has_namespaces"] : (function () { throw new RuntimeError('Variable "has_namespaces" does not exist.', 29, $this->source); })())) {
                         echo " &mdash; <em>";
-                        echo twig_sprintf(\Wdes\phpI18nL10n\Launcher::gettext("Class in namespace %s"), twig_call_macro($macros["__internal_parse_0"], "macro_namespace_link", [twig_get_attribute($this->env, $this->source,                         // line 30
+                        echo twig_sprintf(\Wdes\phpI18nL10n\Launcher::gettext("Class in namespace %s"), twig_call_macro($macros["__internal_parse_7"], "macro_namespace_link", [twig_get_attribute($this->env, $this->source,                         // line 30
 (isset($context["value"]) || array_key_exists("value", $context) ? $context["value"] : (function () { throw new RuntimeError('Variable "value" does not exist.', 30, $this->source); })()), "namespace", [], "any", false, false, false, 30)], 30, $context, $this->getSourceContext()));
                     }
                     // line 31
@@ -153,9 +153,9 @@ echo \Wdes\phpI18nL10n\Launcher::getPlugin()->gettext("Index");
 (isset($context["type"]) || array_key_exists("type", $context) ? $context["type"] : (function () { throw new RuntimeError('Variable "type" does not exist.', 33, $this->source); })()))) {
                     // line 34
                     echo "<dt>";
-                    echo twig_call_macro($macros["__internal_parse_0"], "macro_method_link", [(isset($context["value"]) || array_key_exists("value", $context) ? $context["value"] : (function () { throw new RuntimeError('Variable "value" does not exist.', 34, $this->source); })())], 34, $context, $this->getSourceContext());
+                    echo twig_call_macro($macros["__internal_parse_7"], "macro_method_link", [(isset($context["value"]) || array_key_exists("value", $context) ? $context["value"] : (function () { throw new RuntimeError('Variable "value" does not exist.', 34, $this->source); })())], 34, $context, $this->getSourceContext());
                     echo "() &mdash; <em>";
-                    echo twig_sprintf(\Wdes\phpI18nL10n\Launcher::gettext("Method in class %s"), twig_call_macro($macros["__internal_parse_0"], "macro_class_link", [twig_get_attribute($this->env, $this->source,                     // line 35
+                    echo twig_sprintf(\Wdes\phpI18nL10n\Launcher::gettext("Method in class %s"), twig_call_macro($macros["__internal_parse_7"], "macro_class_link", [twig_get_attribute($this->env, $this->source,                     // line 35
 (isset($context["value"]) || array_key_exists("value", $context) ? $context["value"] : (function () { throw new RuntimeError('Variable "value" does not exist.', 35, $this->source); })()), "class", [], "any", false, false, false, 35)], 35, $context, $this->getSourceContext()));
                     // line 36
                     echo "</em></dt>
@@ -167,9 +167,9 @@ echo \Wdes\phpI18nL10n\Launcher::getPlugin()->gettext("Index");
 (isset($context["type"]) || array_key_exists("type", $context) ? $context["type"] : (function () { throw new RuntimeError('Variable "type" does not exist.', 38, $this->source); })()))) {
                     // line 39
                     echo "<dt>\$";
-                    echo twig_call_macro($macros["__internal_parse_0"], "macro_property_link", [(isset($context["value"]) || array_key_exists("value", $context) ? $context["value"] : (function () { throw new RuntimeError('Variable "value" does not exist.', 39, $this->source); })())], 39, $context, $this->getSourceContext());
+                    echo twig_call_macro($macros["__internal_parse_7"], "macro_property_link", [(isset($context["value"]) || array_key_exists("value", $context) ? $context["value"] : (function () { throw new RuntimeError('Variable "value" does not exist.', 39, $this->source); })())], 39, $context, $this->getSourceContext());
                     echo " &mdash; <em>";
-                    echo twig_sprintf(\Wdes\phpI18nL10n\Launcher::gettext("Property in class %s"), twig_call_macro($macros["__internal_parse_0"], "macro_class_link", [twig_get_attribute($this->env, $this->source,                     // line 40
+                    echo twig_sprintf(\Wdes\phpI18nL10n\Launcher::gettext("Property in class %s"), twig_call_macro($macros["__internal_parse_7"], "macro_class_link", [twig_get_attribute($this->env, $this->source,                     // line 40
 (isset($context["value"]) || array_key_exists("value", $context) ? $context["value"] : (function () { throw new RuntimeError('Variable "value" does not exist.', 40, $this->source); })()), "class", [], "any", false, false, false, 40)], 40, $context, $this->getSourceContext()));
                     // line 41
                     echo "</em></dt>

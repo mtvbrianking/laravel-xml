@@ -13,7 +13,7 @@ use Twig\Source;
 use Twig\Template;
 
 /* opensearch.twig */
-class __TwigTemplate_c929a93c442e70ba2d74e3fcab46db034adc1d74bc9a8e2a0f587a2872d7ed87 extends Template
+class __TwigTemplate_81496ab2608327f2f4b76db4e235f48da38be27816c4b7e73d9805a4b3874299 extends Template
 {
     private $source;
     private $macros = [];

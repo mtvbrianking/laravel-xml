@@ -13,7 +13,7 @@ use Twig\Source;
 use Twig\Template;
 
 /* interfaces.twig */
-class __TwigTemplate_f3b9a47153fa5ad9bebef039d893edc38ee038961b12501f37a95f108f0b1436 extends Template
+class __TwigTemplate_3fb8604e32f71076afa269d08f44c8f1d5d7e4d53538f988047e5f6edbf7dd8d extends Template
 {
     private $source;
     private $macros = [];
@@ -41,7 +41,7 @@ class __TwigTemplate_f3b9a47153fa5ad9bebef039d893edc38ee038961b12501f37a95f108f0
     {
         $macros = $this->macros;
         // line 2
-        $macros["__internal_parse_0"] = $this->macros["__internal_parse_0"] = $this->loadTemplate("macros.twig", "interfaces.twig", 2)->unwrap();
+        $macros["__internal_parse_9"] = $this->macros["__internal_parse_9"] = $this->loadTemplate("macros.twig", "interfaces.twig", 2)->unwrap();
         // line 1
         $this->parent = $this->loadTemplate("layout/layout.twig", "interfaces.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
@@ -77,7 +77,7 @@ echo \Wdes\phpI18nL10n\Launcher::getPlugin()->gettext("Interfaces");
 
     ";
         // line 11
-        echo twig_call_macro($macros["__internal_parse_0"], "macro_render_classes", [(isset($context["interfaces"]) || array_key_exists("interfaces", $context) ? $context["interfaces"] : (function () { throw new RuntimeError('Variable "interfaces" does not exist.', 11, $this->source); })())], 11, $context, $this->getSourceContext());
+        echo twig_call_macro($macros["__internal_parse_9"], "macro_render_classes", [(isset($context["interfaces"]) || array_key_exists("interfaces", $context) ? $context["interfaces"] : (function () { throw new RuntimeError('Variable "interfaces" does not exist.', 11, $this->source); })())], 11, $context, $this->getSourceContext());
         echo "
 ";
     }

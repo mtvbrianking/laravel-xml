@@ -13,7 +13,7 @@ use Twig\Source;
 use Twig\Template;
 
 /* traits.twig */
-class __TwigTemplate_a4daab47e60642f3526f3c4ac434a63ffe766840c54252ebee17e200204fa792 extends Template
+class __TwigTemplate_d277bb49d161b6801dca93c792b7263b7a6b9138d51d03cfd7a4209bea429ed1 extends Template
 {
     private $source;
     private $macros = [];
@@ -41,7 +41,7 @@ class __TwigTemplate_a4daab47e60642f3526f3c4ac434a63ffe766840c54252ebee17e200204
     {
         $macros = $this->macros;
         // line 2
-        $macros["__internal_parse_0"] = $this->macros["__internal_parse_0"] = $this->loadTemplate("macros.twig", "traits.twig", 2)->unwrap();
+        $macros["__internal_parse_10"] = $this->macros["__internal_parse_10"] = $this->loadTemplate("macros.twig", "traits.twig", 2)->unwrap();
         // line 1
         $this->parent = $this->loadTemplate("layout/layout.twig", "traits.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
@@ -89,7 +89,7 @@ echo \Wdes\phpI18nL10n\Launcher::getPlugin()->gettext("Traits");
                     <div class=\"col-md-6\">
                         ";
                 // line 16
-                echo twig_call_macro($macros["__internal_parse_0"], "macro_class_link", [$context["class"], true], 16, $context, $this->getSourceContext());
+                echo twig_call_macro($macros["__internal_parse_10"], "macro_class_link", [$context["class"], true], 16, $context, $this->getSourceContext());
                 echo "
                     </div>
                     <div class=\"col-md-6\">

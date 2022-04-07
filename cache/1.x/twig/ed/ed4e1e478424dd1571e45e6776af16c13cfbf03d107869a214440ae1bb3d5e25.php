@@ -13,7 +13,7 @@ use Twig\Source;
 use Twig\Template;
 
 /* macros.twig */
-class __TwigTemplate_d3aaea2422b72e9798b82af6b8f13b6490d55d6fdf4683268823fcc6e53a4334 extends Template
+class __TwigTemplate_46e8c2ceeb2b1953ca7fbe63957d36fc34c9f564a0c8d6cdd3c3d3a6e63c892b extends Template
 {
     private $source;
     private $macros = [];
@@ -268,7 +268,7 @@ echo \Wdes\phpI18nL10n\Launcher::getPlugin()->gettext("trait");
         ob_start();
         try {
             // line 35
-            $macros["__internal_parse_0"] = $this;
+            $macros["__internal_parse_1"] = $this;
             // line 37
             if ((isset($context["hints"]) || array_key_exists("hints", $context) ? $context["hints"] : (function () { throw new RuntimeError('Variable "hints" does not exist.', 37, $this->source); })())) {
                 // line 38
@@ -291,7 +291,7 @@ echo \Wdes\phpI18nL10n\Launcher::getPlugin()->gettext("trait");
                     // line 39
                     if (twig_get_attribute($this->env, $this->source, $context["hint"], "class", [], "any", false, false, false, 39)) {
                         // line 40
-                        echo twig_call_macro($macros["__internal_parse_0"], "macro_class_link", [twig_get_attribute($this->env, $this->source, $context["hint"], "name", [], "any", false, false, false, 40)], 40, $context, $this->getSourceContext());
+                        echo twig_call_macro($macros["__internal_parse_1"], "macro_class_link", [twig_get_attribute($this->env, $this->source, $context["hint"], "name", [], "any", false, false, false, 40)], 40, $context, $this->getSourceContext());
                     } elseif (twig_get_attribute($this->env, $this->source,                     // line 41
 $context["hint"], "name", [], "any", false, false, false, 41)) {
                         // line 42
@@ -404,7 +404,7 @@ echo \Wdes\phpI18nL10n\Launcher::getPlugin()->gettext("View source");
         ob_start();
         try {
             // line 71
-            $macros["__internal_parse_1"] = $this->loadTemplate("macros.twig", "macros.twig", 71)->unwrap();
+            $macros["__internal_parse_2"] = $this->loadTemplate("macros.twig", "macros.twig", 71)->unwrap();
             // line 72
             echo "(";
             // line 73
@@ -426,7 +426,7 @@ echo \Wdes\phpI18nL10n\Launcher::getPlugin()->gettext("View source");
             foreach ($context['_seq'] as $context["_key"] => $context["parameter"]) {
                 // line 74
                 if (twig_get_attribute($this->env, $this->source, $context["parameter"], "hashint", [], "any", false, false, false, 74)) {
-                    echo twig_call_macro($macros["__internal_parse_1"], "macro_hint_link", [twig_get_attribute($this->env, $this->source, $context["parameter"], "hint", [], "any", false, false, false, 74)], 74, $context, $this->getSourceContext());
+                    echo twig_call_macro($macros["__internal_parse_2"], "macro_hint_link", [twig_get_attribute($this->env, $this->source, $context["parameter"], "hint", [], "any", false, false, false, 74)], 74, $context, $this->getSourceContext());
                     echo " ";
                 }
                 // line 75
@@ -479,7 +479,7 @@ echo \Wdes\phpI18nL10n\Launcher::getPlugin()->gettext("View source");
         ob_start();
         try {
             // line 83
-            $macros["__internal_parse_2"] = $this->loadTemplate("macros.twig", "macros.twig", 83)->unwrap();
+            $macros["__internal_parse_3"] = $this->loadTemplate("macros.twig", "macros.twig", 83)->unwrap();
             // line 84
             echo "(";
             // line 85
@@ -501,7 +501,7 @@ echo \Wdes\phpI18nL10n\Launcher::getPlugin()->gettext("View source");
             foreach ($context['_seq'] as $context["_key"] => $context["parameter"]) {
                 // line 86
                 if (twig_get_attribute($this->env, $this->source, $context["parameter"], "hashint", [], "any", false, false, false, 86)) {
-                    echo twig_call_macro($macros["__internal_parse_2"], "macro_hint_link", [twig_get_attribute($this->env, $this->source, $context["parameter"], "hint", [], "any", false, false, false, 86)], 86, $context, $this->getSourceContext());
+                    echo twig_call_macro($macros["__internal_parse_3"], "macro_hint_link", [twig_get_attribute($this->env, $this->source, $context["parameter"], "hint", [], "any", false, false, false, 86)], 86, $context, $this->getSourceContext());
                     echo " ";
                 }
                 // line 87
@@ -554,7 +554,7 @@ echo \Wdes\phpI18nL10n\Launcher::getPlugin()->gettext("View source");
         ob_start();
         try {
             // line 95
-            $macros["__internal_parse_3"] = $this;
+            $macros["__internal_parse_4"] = $this;
             // line 96
             echo "
     <div class=\"container-fluid underlined\">
@@ -571,15 +571,15 @@ echo \Wdes\phpI18nL10n\Launcher::getPlugin()->gettext("View source");
                 if (twig_get_attribute($this->env, $this->source, $context["class"], "isInterface", [], "any", false, false, false, 101)) {
                     // line 102
                     echo "                        <em>";
-                    echo twig_call_macro($macros["__internal_parse_3"], "macro_class_link", [$context["class"], true], 102, $context, $this->getSourceContext());
+                    echo twig_call_macro($macros["__internal_parse_4"], "macro_class_link", [$context["class"], true], 102, $context, $this->getSourceContext());
                     echo "</em>
                     ";
                 } else {
                     // line 104
-                    echo twig_call_macro($macros["__internal_parse_3"], "macro_class_link", [$context["class"], true], 104, $context, $this->getSourceContext());
+                    echo twig_call_macro($macros["__internal_parse_4"], "macro_class_link", [$context["class"], true], 104, $context, $this->getSourceContext());
                 }
                 // line 106
-                echo twig_call_macro($macros["__internal_parse_3"], "macro_deprecated", [$context["class"]], 106, $context, $this->getSourceContext());
+                echo twig_call_macro($macros["__internal_parse_4"], "macro_deprecated", [$context["class"]], 106, $context, $this->getSourceContext());
                 // line 107
                 echo "</div>
                 <div class=\"col-md-6\">";
@@ -690,7 +690,7 @@ echo \Wdes\phpI18nL10n\Launcher::getPlugin()->gettext("deprecated");
         try {
             // line 133
             echo "    ";
-            $macros["__internal_parse_4"] = $this;
+            $macros["__internal_parse_5"] = $this;
             // line 134
             echo "
     ";
@@ -700,7 +700,7 @@ echo \Wdes\phpI18nL10n\Launcher::getPlugin()->gettext("deprecated");
                 echo "        <p>
             ";
                 // line 137
-                echo twig_call_macro($macros["__internal_parse_4"], "macro_deprecated", [(isset($context["reflection"]) || array_key_exists("reflection", $context) ? $context["reflection"] : (function () { throw new RuntimeError('Variable "reflection" does not exist.', 137, $this->source); })())], 137, $context, $this->getSourceContext());
+                echo twig_call_macro($macros["__internal_parse_5"], "macro_deprecated", [(isset($context["reflection"]) || array_key_exists("reflection", $context) ? $context["reflection"] : (function () { throw new RuntimeError('Variable "reflection" does not exist.', 137, $this->source); })())], 137, $context, $this->getSourceContext());
                 echo "
             ";
                 // line 138
@@ -834,7 +834,7 @@ echo \Wdes\phpI18nL10n\Launcher::getPlugin()->gettext("todo");
         try {
             // line 169
             echo "        ";
-            $macros["__internal_parse_5"] = $this;
+            $macros["__internal_parse_6"] = $this;
             // line 170
             echo "
         ";
@@ -844,7 +844,7 @@ echo \Wdes\phpI18nL10n\Launcher::getPlugin()->gettext("todo");
                 echo "            <p>
                 ";
                 // line 173
-                echo twig_call_macro($macros["__internal_parse_5"], "macro_todo", [(isset($context["reflection"]) || array_key_exists("reflection", $context) ? $context["reflection"] : (function () { throw new RuntimeError('Variable "reflection" does not exist.', 173, $this->source); })())], 173, $context, $this->getSourceContext());
+                echo twig_call_macro($macros["__internal_parse_6"], "macro_todo", [(isset($context["reflection"]) || array_key_exists("reflection", $context) ? $context["reflection"] : (function () { throw new RuntimeError('Variable "reflection" does not exist.', 173, $this->source); })())], 173, $context, $this->getSourceContext());
                 echo "
                 ";
                 // line 174

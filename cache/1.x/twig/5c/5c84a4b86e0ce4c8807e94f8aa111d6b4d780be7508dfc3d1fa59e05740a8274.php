@@ -13,7 +13,7 @@ use Twig\Source;
 use Twig\Template;
 
 /* classes.twig */
-class __TwigTemplate_41b7fdff47462fce64bf412f883c1166b68c40465cf266df570322d707de91de extends Template
+class __TwigTemplate_fbd4efb80a60570f12c7e0bcaf0d849afe1279367d579ba47411a1c31a289472 extends Template
 {
     private $source;
     private $macros = [];
@@ -41,7 +41,7 @@ class __TwigTemplate_41b7fdff47462fce64bf412f883c1166b68c40465cf266df570322d707d
     {
         $macros = $this->macros;
         // line 2
-        $macros["__internal_parse_0"] = $this->macros["__internal_parse_0"] = $this->loadTemplate("macros.twig", "classes.twig", 2)->unwrap();
+        $macros["__internal_parse_8"] = $this->macros["__internal_parse_8"] = $this->loadTemplate("macros.twig", "classes.twig", 2)->unwrap();
         // line 1
         $this->parent = $this->loadTemplate("layout/layout.twig", "classes.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
@@ -77,7 +77,7 @@ echo \Wdes\phpI18nL10n\Launcher::getPlugin()->gettext("Classes");
 
     ";
         // line 11
-        echo twig_call_macro($macros["__internal_parse_0"], "macro_render_classes", [(isset($context["classes"]) || array_key_exists("classes", $context) ? $context["classes"] : (function () { throw new RuntimeError('Variable "classes" does not exist.', 11, $this->source); })())], 11, $context, $this->getSourceContext());
+        echo twig_call_macro($macros["__internal_parse_8"], "macro_render_classes", [(isset($context["classes"]) || array_key_exists("classes", $context) ? $context["classes"] : (function () { throw new RuntimeError('Variable "classes" does not exist.', 11, $this->source); })())], 11, $context, $this->getSourceContext());
         echo "
 ";
     }
