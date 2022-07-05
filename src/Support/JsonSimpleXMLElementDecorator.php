@@ -140,7 +140,7 @@ class JsonSimpleXMLElementDecorator implements JsonSerializable
         }
 
         // json encode element simplexml text values depends on allow whitespace config.
-        $text = $this->options['allowWhiteSpace'] ? $subject: trim($subject);
+        $text = $this->options['@allowWhiteSpace'] ? $subject: trim($subject);
         if (\strlen($text)) {
             if ($array) {
                 $this->options['@text'] && $array['@text'] = $text;
