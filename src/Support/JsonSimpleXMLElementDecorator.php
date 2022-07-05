@@ -28,6 +28,7 @@ class JsonSimpleXMLElementDecorator implements JsonSerializable
         '@attributes' => true,
         '@text' => true,
         'depth' => self::DEF_DEPTH,
+        '@allowWhiteSpace' => false
     ];
 
     /**
@@ -37,7 +38,8 @@ class JsonSimpleXMLElementDecorator implements JsonSerializable
         SimpleXMLElement $element,
         bool $useAttributes = true,
         bool $useText = true,
-        int $depth = self::DEF_DEPTH
+        int $depth = self::DEF_DEPTH,
+        bool $allowWhiteSpace = false
     ) {
         $this->subject = $element;
 
@@ -49,6 +51,9 @@ class JsonSimpleXMLElementDecorator implements JsonSerializable
         }
         if (null !== $depth) {
             $this->setDepth($depth);
+        }
+        if (null !== $allowWhiteSpace) {
+            $this->allowWhiteSpace($allowWhiteSpace);
         }
     }
 
@@ -80,6 +85,16 @@ class JsonSimpleXMLElementDecorator implements JsonSerializable
     public function setDepth($depth): void
     {
         $this->options['depth'] = (int) max(0, $depth);
+    }
+
+    /**
+     * Allow white space.
+     *
+     * @param bool $bool
+     */
+    public function allowWhiteSpace($bool): void
+    {
+        $this->options['@allowWhiteSpace'] = (bool) $bool;
     }
 
     /**
@@ -124,8 +139,8 @@ class JsonSimpleXMLElementDecorator implements JsonSerializable
             }
         }
 
-        // json encode non-whitespace element simplexml text values.
-        $text = trim($subject);
+        // json encode element simplexml text values depends on allow whitespace config.
+        $text = $this->options['allowWhiteSpace'] ? $subject: trim($subject);
         if (\strlen($text)) {
             if ($array) {
                 $this->options['@text'] && $array['@text'] = $text;
