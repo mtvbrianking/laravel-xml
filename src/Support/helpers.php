@@ -38,11 +38,11 @@ if (! function_exists('xml_decode')) {
      *
      * @return mixed Array or FALSE on failure
      */
-    function xml_decode($data, $class_name = SimpleXMLElement::class, $options = 0, $namespace_or_prefix = '', $is_prefix = false)
+    function xml_decode($data, $class_name = SimpleXMLElement::class, $options = 0, $namespace_or_prefix = '', $is_prefix = false, $allowWhiteSpace = false)
     {
         $simple_xml = simplexml_load_string($data, $class_name, $options, $namespace_or_prefix, $is_prefix);
 
-        $json_simple_xml = new JsonSimpleXMLElementDecorator($simple_xml);
+        $json_simple_xml = new JsonSimpleXMLElementDecorator($simple_xml, true, true, JsonSimpleXMLElementDecorator::DEF_DEPTH, $allowWhiteSpace);
 
         return json_decode(json_encode($json_simple_xml), true);
     }
