@@ -1,11 +1,10 @@
 name: gen-docs
 
 on:
-  push:
-    branches: [ master ]
-
-# on:
-#   workflow_dispatch:
+  workflow_dispatch:
+  # push:
+  #   tags:
+  #     - '*'
 
 jobs:
   docs:
@@ -14,7 +13,7 @@ jobs:
       fail-fast: true
       matrix:
         php: [8.0]
-    name: DOCS PHP ${{ matrix.php }}
+    name: Docs P${{ matrix.php }}
 
     steps:
       - name: Checkout
@@ -22,12 +21,6 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: false
-
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: ${{ matrix.php }}
-          tools: composer:v2
 
       - name: Cache
         uses: actions/cache@v2
@@ -46,5 +39,5 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: build/docs # The folder the action should deploy.
+          FOLDER: docs # The folder the action should deploy.
           CLEAN: true # Automatically remove deleted files from the deploy branch

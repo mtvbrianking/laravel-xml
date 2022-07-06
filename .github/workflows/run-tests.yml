@@ -80,7 +80,7 @@ jobs:
       fail-fast: true
       matrix:
         php: [7.4]
-    name: Coverage PHP ${{ matrix.php }}
+    name: Coverage P${{ matrix.php }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
