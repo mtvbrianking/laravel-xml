@@ -8,10 +8,6 @@ use Bmatovu\LaravelXml\LaravelXml;
 use Bmatovu\LaravelXml\Support\XmlElement;
 use Illuminate\Http\Request;
 
-/**
- * @internal
- * @coversNothing
- */
 final class ExampleTest extends TestCase
 {
     // Bmatovu\LaravelXml\LaravelXmlServiceProvider
