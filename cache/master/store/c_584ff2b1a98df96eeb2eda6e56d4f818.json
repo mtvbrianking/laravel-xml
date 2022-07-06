@@ -72,7 +72,8 @@
                             "attributes": {
                                 "startLine": 22,
                                 "endLine": 22,
-                                "kind": 1
+                                "kind": 1,
+                                "rawValue": "'root'"
                             }
                         },
                         "value": {
@@ -81,7 +82,8 @@
                             "attributes": {
                                 "startLine": 22,
                                 "endLine": 22,
-                                "kind": 1
+                                "kind": 1,
+                                "rawValue": "'document'"
                             }
                         },
                         "byRef": false,
@@ -99,7 +101,8 @@
                             "attributes": {
                                 "startLine": 23,
                                 "endLine": 23,
-                                "kind": 1
+                                "kind": 1,
+                                "rawValue": "'encoding'"
                             }
                         },
                         "value": {
@@ -108,7 +111,8 @@
                             "attributes": {
                                 "startLine": 23,
                                 "endLine": 23,
-                                "kind": 1
+                                "kind": 1,
+                                "rawValue": "'UTF-8'"
                             }
                         },
                         "byRef": false,
@@ -126,7 +130,8 @@
                             "attributes": {
                                 "startLine": 24,
                                 "endLine": 24,
-                                "kind": 1
+                                "kind": 1,
+                                "rawValue": "'version'"
                             }
                         },
                         "value": {
@@ -135,7 +140,8 @@
                             "attributes": {
                                 "startLine": 24,
                                 "endLine": 24,
-                                "kind": 1
+                                "kind": 1,
+                                "rawValue": "'1.0'"
                             }
                         },
                         "byRef": false,
@@ -153,7 +159,8 @@
                             "attributes": {
                                 "startLine": 25,
                                 "endLine": 25,
-                                "kind": 1
+                                "kind": 1,
+                                "rawValue": "'slug'"
                             }
                         },
                         "value": {

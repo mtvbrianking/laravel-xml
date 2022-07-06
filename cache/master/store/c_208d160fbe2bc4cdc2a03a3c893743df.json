@@ -20,7 +20,7 @@
     "namespace": "Bmatovu\\LaravelXml\\Support",
     "file": "\/home\/runner\/work\/laravel-xml\/laravel-xml\/src\/Support\/JsonSimpleXMLElementDecorator.php",
     "relative_file": "\/src\/Support\/JsonSimpleXMLElementDecorator.php",
-    "hash": "58f449c1e2ca5f75c79b33f3bc2ae358281499bf",
+    "hash": "5ed5398f79b0023ce6732e988792ca9401c4ceec",
     "parent": null,
     "modifiers": 0,
     "is_trait": false,
@@ -80,7 +80,8 @@
                             "attributes": {
                                 "startLine": 28,
                                 "endLine": 28,
-                                "kind": 1
+                                "kind": 1,
+                                "rawValue": "'@attributes'"
                             }
                         },
                         "value": {
@@ -128,7 +129,8 @@
                             "attributes": {
                                 "startLine": 29,
                                 "endLine": 29,
-                                "kind": 1
+                                "kind": 1,
+                                "rawValue": "'@text'"
                             }
                         },
                         "value": {
@@ -176,7 +178,8 @@
                             "attributes": {
                                 "startLine": 30,
                                 "endLine": 30,
-                                "kind": 1
+                                "kind": 1,
+                                "rawValue": "'depth'"
                             }
                         },
                         "value": {

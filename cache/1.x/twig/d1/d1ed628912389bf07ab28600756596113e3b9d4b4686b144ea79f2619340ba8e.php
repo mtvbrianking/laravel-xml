@@ -13,7 +13,7 @@ use Twig\Source;
 use Twig\Template;
 
 /* doc-index.twig */
-class __TwigTemplate_32be1e4e14e3f5835651928b388c3c12e2b4c13c54408b4d5c2a27bebbd2a14c extends Template
+class __TwigTemplate_e45cf9e5ecf0b14853e0fe1338c1b91ff401ce461e136dab1f0abe5d67ac47d1 extends Template
 {
     private $source;
     private $macros = [];

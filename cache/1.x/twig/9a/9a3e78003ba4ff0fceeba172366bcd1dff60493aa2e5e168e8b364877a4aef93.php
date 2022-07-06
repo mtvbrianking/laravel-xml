@@ -13,7 +13,7 @@ use Twig\Source;
 use Twig\Template;
 
 /* doctum-search.json.twig */
-class __TwigTemplate_82d68045f1d29a96efba6919647a16a1426d9360ed12e5f738a1225aeda3d981 extends Template
+class __TwigTemplate_82a45f664efb71826116bb3f33193969940f4aa4da0ae2c3b0edc06845d672b4 extends Template
 {
     private $source;
     private $macros = [];

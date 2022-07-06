@@ -48,7 +48,8 @@
                 "attributes": {
                     "startLine": 21,
                     "endLine": 21,
-                    "kind": 1
+                    "kind": 1,
+                    "rawValue": "''"
                 }
             },
             "errors": [],
@@ -75,7 +76,8 @@
                 "attributes": {
                     "startLine": 28,
                     "endLine": 28,
-                    "kind": 1
+                    "kind": 1,
+                    "rawValue": "''"
                 }
             },
             "errors": [],
