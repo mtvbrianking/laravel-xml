@@ -106,6 +106,19 @@ final class ExampleTest extends TestCase
 
         static::assertSame(['alias' => ' Name'], $arr);
     }
+    
+    public function testDecodeArrayWithAllowWhiteSpaceFromXmlMultiline()
+    {
+        $userXml = <<<XML
+    <user>
+        <alias> jdoe</alias>
+    </user>
+XML;
+
+        $user = LaravelXml::decode($userXml, 'SimpleXMLElement', 0, '', false, true);
+
+        static::assertSame(['alias' => ' jdoe'], $user);
+    }
 
     public function testIsValidXmlStr()
     {
