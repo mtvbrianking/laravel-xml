@@ -10,15 +10,15 @@ if (! function_exists('xml_encode')) {
      *
      * @param string[] $array
      * @param string $rootElementName
-     * @param bool $replaceSpacesByUnderScoresInKeyNames
-     * @param string $xmlEncoding
+     * @param string $elementCase
      * @param string $xmlVersion
+     * @param string $xmlEncoding
      *
      * @return string
      */
-    function xml_encode(array $array, $rootElementName = 'document', $replaceSpacesByUnderScoresInKeyNames = true, $xmlEncoding = 'UTF-8', $xmlVersion = '1.0')
+    function xml_encode(array $array, $rootElementName = 'document', $elementCase = 'slug', $xmlVersion = '1.0', $xmlEncoding = 'UTF-8')
     {
-        return ArrayToXml::convert($array, $rootElementName, $replaceSpacesByUnderScoresInKeyNames, $xmlEncoding, $xmlVersion);
+        return ArrayToXml::convert($array, $rootElementName, $elementCase, $xmlVersion, $xmlEncoding);
     }
 }
 

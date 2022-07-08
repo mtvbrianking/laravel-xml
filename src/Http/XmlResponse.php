@@ -16,15 +16,6 @@ class XmlResponse extends BaseResponse
         Macroable::__call as macroCall;
     }
 
-    public $headers = [];
-
-    public $options = [
-        'root' => 'document',
-        'encoding' => 'UTF-8',
-        'version' => '1.0',
-        'slug' => true,
-    ];
-
     /**
      * Constructor.
      *
@@ -35,9 +26,7 @@ class XmlResponse extends BaseResponse
      */
     public function __construct($data = null, $status = 200, $headers = [], $options = [])
     {
-        $this->headers = array_merge($this->headers, $headers);
-
-        $this->options = array_merge($this->options, $options);
+        $headers = array_merge(config('xml.headers'), $headers);
 
         if ($data instanceof SimpleXmlElement) {
             parent::__construct($data->asXML(), $status, $headers);
@@ -52,29 +41,13 @@ class XmlResponse extends BaseResponse
         if (\is_array($data)) {
             $data = ArrayToXml::convert(
                 $data,
-                $this->options['root'],
-                $this->options['slug'],
-                $this->options['encoding'],
-                $this->options['version']
+                $options['root'] ?? config('xml.root'),
+                $options['case'] ?? config('xml.case'),
+                $options['declaration']['version'] ?? config('xml.declaration.version'),
+                $options['declaration']['encoding'] ?? config('xml.declaration.encoding'),
             );
         }
 
         parent::__construct($data, $status, $headers);
-    }
-
-    /**
-     * Set the content on the response.
-     *
-     * @param ?string $content
-     *
-     * @return $this
-     */
-    public function setContent(?string $content): static
-    {
-        $this->header('Content-Type', 'text/xml');
-
-        parent::setContent($content);
-
-        return $this;
     }
 }

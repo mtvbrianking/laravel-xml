@@ -11,6 +11,7 @@ $excludes = [
 
 $finder = PhpCsFixer\Finder::create()
     ->exclude($excludes)
+    ->in(__DIR__.'/config')
     ->in(__DIR__.'/src')
     ->in(__DIR__.'/tests')
     ->name('*.php')
