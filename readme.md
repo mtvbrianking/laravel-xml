@@ -2,10 +2,13 @@
 
 ![](./art/banner.png)
 
+
+[![Total Downloads](https://poser.pugx.org/bmatovu/laravel-xml/downloads)](https://packagist.org/packages/bmatovu/laravel-xml)
+[![Latest Stable Version](https://poser.pugx.org/bmatovu/laravel-xml/v/stable)](https://packagist.org/packages/bmatovu/laravel-xml)
 [![License](https://poser.pugx.org/bmatovu/laravel-xml/license)](https://packagist.org/packages/bmatovu/laravel-xml)
+[![Quality](https://scrutinizer-ci.com/g/mtvbrianking/laravel-xml/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/mtvbrianking/laravel-xml/?branch=master)
+[![Coverage](https://scrutinizer-ci.com/g/mtvbrianking/laravel-xml/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/mtvbrianking/laravel-xml/?branch=master)
 [![Unit Tests](https://github.com/mtvbrianking/laravel-xml/workflows/run-tests/badge.svg)](https://github.com/mtvbrianking/laravel-xml/actions?query=workflow:run-tests)
-[![Code Quality](https://scrutinizer-ci.com/g/mtvbrianking/laravel-xml/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/mtvbrianking/laravel-xml/?branch=master)
-[![Code Coverage](https://scrutinizer-ci.com/g/mtvbrianking/laravel-xml/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/mtvbrianking/laravel-xml/?branch=master)
 [![Documentation](https://github.com/mtvbrianking/laravel-xml/workflows/gen-docs/badge.svg)](https://mtvbrianking.github.io/laravel-xml/master)
 
 This package comes with the much desired xml support for you Laravel project.
