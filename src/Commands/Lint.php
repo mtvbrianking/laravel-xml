@@ -88,8 +88,6 @@ class Lint extends Command
             $commands[] = $schema;
         }
 
-        $commands = array_filter($commands);
-
         return array_merge($commands, $this->getRawOptions());
     }
 
@@ -106,13 +104,7 @@ class Lint extends Command
         $raw = [];
 
         foreach ($argv as $arg) {
-            if ('--' === $arg) {
-                $raw[] = $arg;
-
-                continue;
-            }
-
-            if (! Str::startsWith($arg, '-')) {
+            if ('--' === $arg || ! Str::startsWith($arg, '-')) {
                 $raw[] = $arg;
 
                 continue;
