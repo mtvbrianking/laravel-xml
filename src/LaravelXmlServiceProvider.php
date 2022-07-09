@@ -21,6 +21,10 @@ class LaravelXmlServiceProvider extends ServiceProvider
             $this->publishes([
                 __DIR__.'/../config/xml.php' => config_path('xml.php'),
             ], 'config');
+
+            $this->commands([
+                Commands\Lint::class,
+            ]);
         }
 
         /*
