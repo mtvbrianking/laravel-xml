@@ -28,11 +28,18 @@ class Lint extends Command
      */
     protected $description = 'Parsing XML files.';
 
-    public function __construct(?string $name = '')
+    /**
+     * Configure the current command.
+     *
+     * @return void
+     */
+    protected function configure()
     {
-        $this->ignoreValidationErrors();
+        parent::configure();
 
-        parent::__construct($name);
+        if ($this->hasRawOptions()) {
+            $this->ignoreValidationErrors();
+        }
     }
 
     /**
@@ -91,11 +98,14 @@ class Lint extends Command
         return array_merge($commands, $this->getRawOptions());
     }
 
-    protected function getRawOptions()
+    protected function hasRawOptions() //: bool
     {
-        $argv = $_SERVER['argv'];
+        return \in_array('--', $_SERVER['argv'], true);
+    }
 
-        if (! \in_array('--', $argv, true)) {
+    protected function getRawOptions() //: array
+    {
+        if (! $this->hasRawOptions()) {
             return [];
         }
 
