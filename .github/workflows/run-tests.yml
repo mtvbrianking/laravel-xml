@@ -2,9 +2,9 @@ name: run-tests
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 # # https://levelup.gitconnected.com/how-to-manually-trigger-a-github-actions-workflow-4712542f1960
 # on:
@@ -17,8 +17,10 @@ jobs:
       fail-fast: true
       matrix:
         php: [8.1, 8.0]
-        laravel: [^9.0, ^8.0, ^7.0]
+        laravel: [dev-master, ^9.0, ^8.0, ^7.0]
         include:
+          - laravel: dev-master
+            testbench: ^8.0
           - laravel: ^9.0
             testbench: ^7.0
           - laravel: ^8.0
@@ -26,6 +28,8 @@ jobs:
           - laravel: ^7.0
             testbench: ^5.0
         exclude:
+          - laravel: dev-master
+            php: 8.0
           - laravel: ^7.0
             php: 8.1
     name: TESTS PHP ${{ matrix.php }} LARAVEL ${{ matrix.laravel }} TESTBENCH ${{ matrix.testbench }}
