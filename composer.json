@@ -29,7 +29,8 @@
   "require-dev": {
     "code-lts/doctum": "^5.5",
     "friendsofphp/php-cs-fixer": "^3.14",
-    "orchestra/testbench": "^5.0|^6.0|^7.0|^8.0",
+    "laravel/framework": "^10.0",
+    "orchestra/testbench": "^8.0",
     "phpunit/phpunit": "^8.4|^9.0|^10.0"
   },
   "autoload": {
@@ -58,6 +59,9 @@
     "sort-packages": true
   },
   "extra": {
+    "branch-alias": {
+      "dev-master": "4.x-dev"
+    },
     "laravel": {
       "providers": [
         "Bmatovu\\LaravelXml\\LaravelXmlServiceProvider"
