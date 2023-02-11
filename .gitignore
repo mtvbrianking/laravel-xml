@@ -1,6 +1,5 @@
 .idea
-.php-cs-fixer.cache
-.phpunit.result.cache
+*.cache
 composer.lock
 coverage.clover
 build
