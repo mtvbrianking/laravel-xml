@@ -4,13 +4,17 @@
 
 $excludes = [
     'build',
+    'coverage',
+    'docs',
     'vendor',
 ];
 
 $finder = PhpCsFixer\Finder::create()
     ->exclude($excludes)
+    ->in(__DIR__.'/config')
     ->in(__DIR__.'/src')
     ->in(__DIR__.'/tests')
+    ->name('*.php')
     ->ignoreDotFiles(true)
     ->ignoreVCS(true);
 
@@ -77,6 +81,9 @@ $rules = [
     'phpdoc_add_missing_param_annotation' => [
         'only_untyped' => false,
     ],
+    'php_unit_internal_class' => false,
+    'final_internal_class' => false,
+    'php_unit_test_class_requires_covers' => false,
 ];
 
 $config = new PhpCsFixer\Config();

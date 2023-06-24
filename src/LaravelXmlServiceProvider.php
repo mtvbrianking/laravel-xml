@@ -17,6 +17,12 @@ class LaravelXmlServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__.'/../config/xml.php' => config_path('xml.php'),
+            ], 'config');
+        }
+
         /*
          * Determine if the request is sending XML.
          * @deprecated v3.0.0
@@ -80,6 +86,8 @@ class LaravelXmlServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
+        $this->mergeConfigFrom(__DIR__.'/../config/xml.php', 'xml');
+
         $this->app->bind('laravel-xml', function () {
             return new LaravelXml();
         });

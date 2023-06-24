@@ -5,6 +5,7 @@ namespace Bmatovu\LaravelXml\Support;
 use DOMDocument;
 use DOMElement;
 use DOMException;
+use Illuminate\Support\Str;
 
 /**
  * @see https://github.com/spatie/array-to-xml
@@ -21,29 +22,30 @@ class ArrayToXml
     /**
      * Set to enable replacing space with underscore.
      *
-     * @var bool
+     * @var string
      */
-    protected $replaceSpacesByUnderScoresInKeyNames = true;
+    protected $elementCase = 'snake';
 
     /**
      * Construct a new instance.
      *
-     * @param array|string $rootElement
-     * @param bool $replaceSpacesByUnderScoresInKeyNames
-     * @param string $xmlEncoding
+     * @param string $rootElement
+     * @param string $elementCase
      * @param string $xmlVersion
+     * @param string $xmlEncoding
      *
      * @throws \DOMException
      */
     public function __construct(
         array $content,
-        $rootElement = '',
-        $replaceSpacesByUnderScoresInKeyNames = true,
-        $xmlEncoding = 'UTF-8',
-        $xmlVersion = '1.0'
+        $rootElement = 'root',
+        $elementCase = 'snake',
+        $xmlVersion = '1.0',
+        $xmlEncoding = 'UTF-8'
     ) {
         $this->domDocument = new DOMDocument($xmlVersion, $xmlEncoding);
-        $this->replaceSpacesByUnderScoresInKeyNames = $replaceSpacesByUnderScoresInKeyNames;
+
+        $this->elementCase = $elementCase;
 
         if ($this->isArrayAllKeySequential($content) && ! empty($content)) {
             throw new DOMException('Invalid Character Error');
@@ -61,20 +63,20 @@ class ArrayToXml
      *
      * @param string[] $arr
      * @param string $rootElementName
-     * @param bool $replaceSpacesByUnderScoresInKeyNames
-     * @param string $xmlEncoding
+     * @param string $elementCase
      * @param string $xmlVersion
+     * @param string $xmlEncoding
      *
      * @return string
      */
     public static function convert(
         array $arr,
-        $rootElementName = 'document',
-        $replaceSpacesByUnderScoresInKeyNames = true,
-        $xmlEncoding = 'UTF-8',
-        $xmlVersion = '1.0'
+        $rootElementName = 'root',
+        $elementCase = 'snake',
+        $xmlVersion = '1.0',
+        $xmlEncoding = 'UTF-8'
     ) {
-        $converter = new static($arr, $rootElementName, $replaceSpacesByUnderScoresInKeyNames, $xmlEncoding, $xmlVersion);
+        $converter = new static($arr, $rootElementName, $elementCase, $xmlVersion, $xmlEncoding);
 
         return $converter->toXml();
     }
@@ -107,10 +109,7 @@ class ArrayToXml
      */
     protected function addNode(DOMElement $domElement, $key, $value): void
     {
-        if ($this->replaceSpacesByUnderScoresInKeyNames) {
-            $key = str_replace(' ', '_', $key);
-        }
-
+        $key = Str::{$this->elementCase}($key);
         $child = $this->domDocument->createElement($key);
         $domElement->appendChild($child);
         $this->convertElement($child, $value);

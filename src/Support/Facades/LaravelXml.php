@@ -18,20 +18,20 @@ class LaravelXml
      *
      * @param string[] $arr
      * @param string $rootElementName
-     * @param bool $replaceSpacesByUnderScoresInKeyNames
-     * @param string $xmlEncoding
+     * @param string $elementCase
      * @param string $xmlVersion
+     * @param string $xmlEncoding
      *
      * @return string
      */
     public function encode(
         $arr,
         $rootElementName = 'document',
-        $replaceSpacesByUnderScoresInKeyNames = true,
-        $xmlEncoding = 'UTF-8',
-        $xmlVersion = '1.0'
+        $elementCase = 'snake',
+        $xmlVersion = '1.0',
+        $xmlEncoding = 'UTF-8'
     ) {
-        return ArrayToXml::convert($arr, $rootElementName, $replaceSpacesByUnderScoresInKeyNames, $xmlEncoding, $xmlVersion);
+        return ArrayToXml::convert($arr, $rootElementName, $elementCase, $xmlVersion, $xmlEncoding);
     }
 
     /**

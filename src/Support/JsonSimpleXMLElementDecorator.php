@@ -102,6 +102,7 @@ class JsonSimpleXMLElementDecorator implements JsonSerializable
      *
      * @return mixed Data which can be serialized by json_encode
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
         $subject = $this->subject;

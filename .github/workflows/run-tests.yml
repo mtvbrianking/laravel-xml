@@ -2,9 +2,9 @@ name: run-tests
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 # # https://levelup.gitconnected.com/how-to-manually-trigger-a-github-actions-workflow-4712542f1960
 # on:
@@ -17,8 +17,10 @@ jobs:
       fail-fast: true
       matrix:
         php: [8.1, 8.0]
-        laravel: [^9.0, ^8.0, ^7.0]
+        laravel: [^10.0, ^9.0, ^8.0, ^7.0]
         include:
+          - laravel: ^10.0
+            testbench: ^8.0
           - laravel: ^9.0
             testbench: ^7.0
           - laravel: ^8.0
@@ -26,12 +28,14 @@ jobs:
           - laravel: ^7.0
             testbench: ^5.0
         exclude:
+          - laravel: ^10.0
+            php: 8.0
           - laravel: ^7.0
             php: 8.1
     name: TESTS PHP ${{ matrix.php }} LARAVEL ${{ matrix.laravel }} TESTBENCH ${{ matrix.testbench }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
           persist-credentials: false
@@ -45,7 +49,7 @@ jobs:
           coverage: pcov
 
       - name: Cache dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ~/.composer/cache/files
           key: dependencies-laravel-${{ matrix.laravel }}-php-${{ matrix.php }}-composer-${{ hashFiles('composer.json') }}
@@ -68,7 +72,7 @@ jobs:
         run: vendor/bin/phpunit --coverage-text --coverage-clover=coverage.clover
 
       - name: Save code coverage report
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: coverage
           path: coverage.clover
@@ -80,10 +84,10 @@ jobs:
       fail-fast: true
       matrix:
         php: [7.4]
-    name: Coverage PHP ${{ matrix.php }}
+    name: Coverage P${{ matrix.php }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -91,7 +95,7 @@ jobs:
           php-version: ${{ matrix.php }}
 
       - name: Retrieve code coverage report
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: coverage
 
