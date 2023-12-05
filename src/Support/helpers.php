@@ -13,12 +13,13 @@ if (! function_exists('xml_encode')) {
      * @param string $elementCase
      * @param string $xmlVersion
      * @param string $xmlEncoding
+     * @param bool $xmlStandalone
      *
      * @return string
      */
-    function xml_encode(array $array, $rootElementName = 'document', $elementCase = 'slug', $xmlVersion = '1.0', $xmlEncoding = 'UTF-8')
+    function xml_encode(array $array, $rootElementName = 'document', $elementCase = 'slug', $xmlVersion = '1.0', $xmlEncoding = 'UTF-8', $xmlStandalone = false)
     {
-        return ArrayToXml::convert($array, $rootElementName, $elementCase, $xmlVersion, $xmlEncoding);
+        return ArrayToXml::convert($array, $rootElementName, $elementCase, $xmlVersion, $xmlEncoding, $xmlStandalone);
     }
 }
 

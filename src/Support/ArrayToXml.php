@@ -33,6 +33,7 @@ class ArrayToXml
      * @param string $elementCase
      * @param string $xmlVersion
      * @param string $xmlEncoding
+     * @param bool $xmlStandalone
      *
      * @throws \DOMException
      */
@@ -41,9 +42,14 @@ class ArrayToXml
         $rootElement = 'root',
         $elementCase = 'snake',
         $xmlVersion = '1.0',
-        $xmlEncoding = 'UTF-8'
+        $xmlEncoding = 'UTF-8',
+        $xmlStandalone = false
     ) {
         $this->domDocument = new DOMDocument($xmlVersion, $xmlEncoding);
+
+        if ($xmlStandalone) {
+            $this->domDocument->xmlStandalone = true;
+        }
 
         $this->elementCase = $elementCase;
 
@@ -66,6 +72,7 @@ class ArrayToXml
      * @param string $elementCase
      * @param string $xmlVersion
      * @param string $xmlEncoding
+     * @param bool $xmlStandalone
      *
      * @return string
      */
@@ -74,9 +81,10 @@ class ArrayToXml
         $rootElementName = 'root',
         $elementCase = 'snake',
         $xmlVersion = '1.0',
-        $xmlEncoding = 'UTF-8'
+        $xmlEncoding = 'UTF-8',
+        $xmlStandalone = false
     ) {
-        $converter = new static($arr, $rootElementName, $elementCase, $xmlVersion, $xmlEncoding);
+        $converter = new static($arr, $rootElementName, $elementCase, $xmlVersion, $xmlEncoding, $xmlStandalone);
 
         return $converter->toXml();
     }

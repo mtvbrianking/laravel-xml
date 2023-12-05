@@ -82,6 +82,15 @@ final class ExampleTest extends TestCase
         static::assertSame($xmlElement->asXML(), $xmlStr);
     }
 
+    public function testEncodeArrayToXmlStandalone()
+    {
+        $xmlElement = new XmlElement('<?xml version="1.0" encoding="UTF-8" standalone="yes"?><root><alias>jdoe</alias></root>');
+
+        $xmlStr = LaravelXml::encode(['alias' => 'jdoe'], 'root', 'snake', '1.0', 'UTF-8', true);
+
+        static::assertSame($xmlElement->asXML(), $xmlStr);
+    }
+
     public function testDecodeArrayFromXml()
     {
         $arr = LaravelXml::decode('<document><alias>jdoe</alias></document>');

@@ -21,6 +21,7 @@ class LaravelXml
      * @param string $elementCase
      * @param string $xmlVersion
      * @param string $xmlEncoding
+     * @param bool $xmlStandalone
      *
      * @return string
      */
@@ -29,9 +30,10 @@ class LaravelXml
         $rootElementName = 'document',
         $elementCase = 'snake',
         $xmlVersion = '1.0',
-        $xmlEncoding = 'UTF-8'
+        $xmlEncoding = 'UTF-8',
+        $xmlStandalone = false
     ) {
-        return ArrayToXml::convert($arr, $rootElementName, $elementCase, $xmlVersion, $xmlEncoding);
+        return ArrayToXml::convert($arr, $rootElementName, $elementCase, $xmlVersion, $xmlEncoding, $xmlStandalone);
     }
 
     /**
