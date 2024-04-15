@@ -71,6 +71,7 @@ jobs:
         with:
           name: coverage
           path: coverage.clover
+          overwrite: true
 
   coverage:
     needs: tests
