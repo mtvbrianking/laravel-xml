@@ -152,11 +152,25 @@ final class ExampleTest extends TestCase
 
     public function testXmlElementGetter()
     {
-        $user = new XmlElement('<document><alias>jdoe</alias></document>');
+        $xmlStr = <<<XML
+<variables>
+    <empty/>
+    <zero>0</zero>
+    <false>false</false>
+    <!--<missing/>-->
+    <key>value</key>
+    <number>3</number>
+</variables>
+XML;
 
-        static::assertSame('jdoe', (string) $user->get('alias'));
-        static::assertNull($user->get('email'));
-        static::assertFalse((bool) $user->get('is_admin', false));
+        $variables = new XmlElement($xmlStr);
+
+        static::assertEmpty((string) $variables->get('empty'));
+        static::assertSame('0', (string) $variables->get('zero'));
+        static::assertSame(0, (int) $variables->get('zero'));
+        static::assertSame('false', (string) $variables->get('false'));
+        static::assertSame('value', (string) $variables->get('key'));
+        static::assertSame(3, (int) $variables->get('number'));
     }
 
     // Bmatovu\LaravelXml\Http\Middleware\RequireXml

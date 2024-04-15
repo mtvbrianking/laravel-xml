@@ -16,7 +16,7 @@ class XmlElement extends \SimpleXMLElement
      */
     public function get($attr, $default = null)
     {
-        if (empty($this->{$attr})) {
+        if (is_null($this->{$attr})) {
             return $default;
         }
 
