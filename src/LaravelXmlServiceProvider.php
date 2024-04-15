@@ -30,7 +30,7 @@ class LaravelXmlServiceProvider extends ServiceProvider
          * @return bool
          */
         Request::macro('isXml', function () {
-            return 'xml' === $this->getContentType();
+            return 'xml' === $this->getContentTypeFormat();
         });
 
         /*
@@ -39,7 +39,7 @@ class LaravelXmlServiceProvider extends ServiceProvider
          * @return bool
          */
         Request::macro('sentXml', function () {
-            return 'xml' === $this->getContentType();
+            return 'xml' === $this->getContentTypeFormat();
         });
 
         /*

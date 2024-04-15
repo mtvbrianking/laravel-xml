@@ -19,7 +19,7 @@ class RequireXml
      */
     public function handle($request, Closure $next, $isValidXml = false)
     {
-        if ('xml' !== $request->getContentType()) {
+        if ('xml' !== $request->getContentTypeFormat()) {
             return response()->xml(['message' => 'Only accepting content of type XML.'], 415);
         }
 
