@@ -22,14 +22,14 @@
     ],
     "require": {
         "php": "^8.1",
-        "illuminate/http": "^10.0|^11.1",
-        "illuminate/support": "^10.0|^11.1",
-        "illuminate/database": "^10.0|^11.1"
+        "illuminate/http": "^10.0|^11.0",
+        "illuminate/support": "^10.0|^11.0",
+        "illuminate/database": "^10.0|^11.0"
     },
     "require-dev": {
         "code-lts/doctum": "^5.5",
         "friendsofphp/php-cs-fixer": "^3.14",
-        "laravel/framework": "^10.0|^11.1",
+        "laravel/framework": "^10.0|^11.0",
         "orchestra/testbench": "^8.0|^9.0",
         "phpunit/phpunit": "^9.0|^10.0|^11.0"
     },
