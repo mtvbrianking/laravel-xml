@@ -102,4 +102,5 @@ jobs:
       - name: Upload code coverage report
         run: |
           composer global require scrutinizer/ocular
-          ~/.composer/vendor/bin/ocular code-coverage:upload --format=php-clover coverage-clover.xml
+          composer global config --list | grep "vendor-dir"
+          ~/.composer/vendor/bin/ocular code-coverage:upload --format=php-clover coverage.clover
