@@ -1,6 +1,7 @@
 .idea
 .vscode
 *.cache
+*.phar
 composer.lock
 coverage.clover
 build
