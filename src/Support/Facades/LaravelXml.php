@@ -51,11 +51,11 @@ class LaravelXml
      *
      * @return mixed Array or FALSE on failure
      */
-    public function decode($data, $class_name = 'SimpleXMLElement', $options = 0, $ns = '', $is_prefix = false)
+    public function decode($data, $class_name = 'SimpleXMLElement', $options = 0, $ns = '', $is_prefix = false, $allowWhiteSpace = false)
     {
         $simple_xml = simplexml_load_string($data, $class_name, $options, $ns, $is_prefix);
 
-        $json_simple_xml = new JsonSimpleXMLElementDecorator($simple_xml);
+        $json_simple_xml = new JsonSimpleXMLElementDecorator($simple_xml, true, true, JsonSimpleXMLElementDecorator::DEF_DEPTH, $allowWhiteSpace);
 
         return json_decode(json_encode($json_simple_xml), true);
     }
