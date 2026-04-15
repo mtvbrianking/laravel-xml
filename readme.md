@@ -13,8 +13,6 @@
 
 This package comes with the much desired xml support for you Laravel project.
 
-**Supports:** Laravel versions v5.3 and above
-
 ### Installation
 
 ```bash
